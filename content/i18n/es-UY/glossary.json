@@ -1,0 +1,3029 @@
+{
+  "amor": {
+    "word": "amor",
+    "definition": "Sentimiento de cariño hacia una persona, animal o cosa.",
+    "variations": [
+      "amores"
+    ],
+    "emoji": "❤️",
+    "id": "gl001"
+  },
+  "animal": {
+    "word": "animal",
+    "definition": "Ser vivo que puede moverse, sentir y alimentarse.",
+    "variations": [
+      "animal",
+      "animales"
+    ],
+    "emoji": "🐾",
+    "id": "gl002"
+  },
+  "baba": {
+    "word": "baba",
+    "definition": "Saliva que sale de la boca; también la dejan algunos animales como los caracoles.",
+    "variations": [
+      "baba",
+      "babas"
+    ],
+    "emoji": "💧🐌",
+    "id": "gl003"
+  },
+  "bajada": {
+    "word": "bajada",
+    "definition": "Camino o parte que va hacia abajo.",
+    "variations": [
+      "bajada",
+      "bajadas"
+    ],
+    "emoji": "⬇️🛣️",
+    "id": "gl004"
+  },
+  "balde": {
+    "word": "balde",
+    "definition": "Recipiente con manija que se usa para llevar agua, arena u otras cosas.",
+    "variations": [
+      "balde",
+      "baldes"
+    ],
+    "emoji": "🪣",
+    "id": "gl005"
+  },
+  "ballena": {
+    "word": "ballena",
+    "definition": "Animal marino muy grande que vive en el océano.",
+    "variations": [
+      "ballena",
+      "ballenas"
+    ],
+    "emoji": "🐋🌊",
+    "id": "gl006"
+  },
+  "banana": {
+    "word": "banana",
+    "definition": "Fruta larga, amarilla y dulce.",
+    "variations": [
+      "banana",
+      "bananas"
+    ],
+    "emoji": "🍌",
+    "id": "gl007"
+  },
+  "banco": {
+    "word": "banco",
+    "definition": "Asiento largo donde se pueden sentar una o varias personas.",
+    "variations": [
+      "banco",
+      "bancos"
+    ],
+    "emoji": "🪑🏞️",
+    "id": "gl008"
+  },
+  "baño": {
+    "word": "baño",
+    "definition": "Lugar de la casa donde está el inodoro y donde nos lavamos.",
+    "variations": [
+      "baño",
+      "baños"
+    ],
+    "emoji": "🚽🛁",
+    "id": "gl009"
+  },
+  "barba": {
+    "word": "barba",
+    "definition": "Pelo que crece en la cara, sobre todo en el mentón y las mejillas.",
+    "variations": [
+      "barba",
+      "barbas"
+    ],
+    "emoji": "🧔",
+    "id": "gl010"
+  },
+  "barco": {
+    "word": "barco",
+    "definition": "Vehículo que se mueve por el agua.",
+    "variations": [
+      "barcos"
+    ],
+    "emoji": "🚢",
+    "id": "gl011"
+  },
+  "barrer": {
+    "word": "barrer",
+    "definition": "Limpiar el piso con una escoba.",
+    "variations": [
+      "barrer",
+      "barro",
+      "barrés",
+      "barrí",
+      "barrido"
+    ],
+    "emoji": "🧹✨",
+    "id": "gl012"
+  },
+  "barril": {
+    "word": "barril",
+    "definition": "Recipiente grande, generalmente redondo, que sirve para guardar líquidos u otras cosas.",
+    "variations": [
+      "barril",
+      "barriles"
+    ],
+    "emoji": "🛢️🍷",
+    "id": "gl013"
+  },
+  "baúl": {
+    "word": "baúl",
+    "definition": "Caja grande con tapa que se usa para guardar cosas.",
+    "variations": [
+      "baúl",
+      "baúles"
+    ],
+    "emoji": "📦🧳",
+    "id": "gl014"
+  },
+  "bebé": {
+    "word": "bebé",
+    "definition": "Niña o niño muy pequeño.",
+    "variations": [
+      "bebé",
+      "bebés"
+    ],
+    "emoji": "👶",
+    "id": "gl015"
+  },
+  "beso": {
+    "word": "beso",
+    "definition": "Gesto de cariño que se da con los labios.",
+    "variations": [
+      "beso",
+      "besos"
+    ],
+    "emoji": "💋❤️",
+    "id": "gl016"
+  },
+  "billete": {
+    "word": "billete",
+    "definition": "Papel de dinero que se usa para pagar.",
+    "variations": [
+      "billete",
+      "billetes"
+    ],
+    "emoji": "💵💰",
+    "id": "gl017"
+  },
+  "boca": {
+    "word": "boca",
+    "definition": "Parte de la cara que usamos para comer, hablar y sonreír.",
+    "variations": [
+      "boca",
+      "bocas"
+    ],
+    "emoji": "👄😊",
+    "id": "gl018"
+  },
+  "bocado": {
+    "word": "bocado",
+    "definition": "Cantidad de comida que entra en la boca de una vez.",
+    "variations": [
+      "bocado",
+      "bocados"
+    ],
+    "emoji": "🍽️😋",
+    "id": "gl019"
+  },
+  "bodega": {
+    "word": "bodega",
+    "definition": "Lugar donde se guardan vinos, alimentos u otras cosas.",
+    "variations": [
+      "bodega",
+      "bodegas"
+    ],
+    "emoji": "🍷🏠",
+    "id": "gl020"
+  },
+  "bollo": {
+    "word": "bollo",
+    "definition": "Pan o masa dulce, generalmente redonda y pequeña.",
+    "variations": [
+      "bollo",
+      "bollos"
+    ],
+    "emoji": "🥐🍞",
+    "id": "gl021"
+  },
+  "bolsa": {
+    "word": "bolsa",
+    "definition": "Objeto flexible que sirve para guardar o llevar cosas.",
+    "variations": [
+      "bolsa",
+      "bolsas"
+    ],
+    "emoji": "🛍️",
+    "id": "gl022"
+  },
+  "bolsillo": {
+    "word": "bolsillo",
+    "definition": "Parte de la ropa o de una bolsa donde se pueden guardar cosas pequeñas.",
+    "variations": [
+      "bolsillo",
+      "bolsillos"
+    ],
+    "emoji": "👖",
+    "id": "gl023"
+  },
+  "bombero": {
+    "word": "bombero",
+    "definition": "Persona que apaga incendios y ayuda en emergencias.",
+    "variations": [
+      "bombero",
+      "bombera",
+      "bomberos",
+      "bomberas"
+    ],
+    "emoji": "🚒🔥",
+    "id": "gl024"
+  },
+  "bota": {
+    "word": "bota",
+    "definition": "Calzado que cubre el pie y parte de la pierna.",
+    "variations": [
+      "bota",
+      "botas"
+    ],
+    "emoji": "👢",
+    "id": "gl025"
+  },
+  "bote": {
+    "word": "bote",
+    "definition": "Embarcación pequeña que sirve para andar por el agua.",
+    "variations": [
+      "bote",
+      "botes"
+    ],
+    "emoji": "🚣⛵",
+    "id": "gl026"
+  },
+  "botella": {
+    "word": "botella",
+    "definition": "Recipiente que sirve para guardar agua u otros líquidos.",
+    "variations": [
+      "botella",
+      "botellas"
+    ],
+    "emoji": "🍼🍾",
+    "id": "gl027"
+  },
+  "bufanda": {
+    "word": "bufanda",
+    "definition": "Prenda larga que se usa en el cuello para abrigarse.",
+    "variations": [
+      "bufanda",
+      "bufandas"
+    ],
+    "emoji": "🧣",
+    "id": "gl028"
+  },
+  "burro": {
+    "word": "burro",
+    "definition": "Animal parecido al caballo, con orejas largas.",
+    "variations": [
+      "burro",
+      "burros"
+    ],
+    "emoji": "🫏",
+    "id": "gl029"
+  },
+  "cabra": {
+    "word": "cabra",
+    "definition": "Animal con cuernos que puede dar leche.",
+    "variations": [
+      "cabra",
+      "cabras"
+    ],
+    "emoji": "🐐",
+    "id": "gl030"
+  },
+  "cadena": {
+    "word": "cadena",
+    "definition": "Serie de eslabones unidos; también puede servir para atar o colgar algo.",
+    "variations": [
+      "cadena",
+      "cadenas"
+    ],
+    "emoji": "⛓️",
+    "id": "gl031"
+  },
+  "café": {
+    "word": "café",
+    "definition": "Bebida caliente de color oscuro; también puede ser el grano con que se prepara.",
+    "variations": [
+      "café",
+      "cafés"
+    ],
+    "emoji": "☕",
+    "id": "gl032"
+  },
+  "calle": {
+    "word": "calle",
+    "definition": "Camino dentro de un pueblo o ciudad por donde pasan personas y vehículos.",
+    "variations": [
+      "calle",
+      "calles"
+    ],
+    "emoji": "🛣️🚗",
+    "id": "gl033"
+  },
+  "calma": {
+    "word": "calma",
+    "definition": "Tranquilidad; momento sin ruido, apuro o problema.",
+    "variations": [
+      "calma"
+    ],
+    "emoji": "😌🌿",
+    "id": "gl034"
+  },
+  "cama": {
+    "word": "cama",
+    "definition": "Mueble donde una persona se acuesta para dormir o descansar.",
+    "variations": [
+      "cama",
+      "camas"
+    ],
+    "emoji": "🛏️😴",
+    "id": "gl035"
+  },
+  "campana": {
+    "word": "campana",
+    "definition": "Objeto de metal que suena cuando se golpea.",
+    "variations": [
+      "campanas"
+    ],
+    "emoji": "🔔",
+    "id": "gl036"
+  },
+  "campera": {
+    "word": "campera",
+    "definition": "Prenda de abrigo con mangas que se usa sobre la ropa.",
+    "variations": [
+      "campera",
+      "camperas"
+    ],
+    "emoji": "🧥❄️",
+    "id": "gl037"
+  },
+  "campo": {
+    "word": "campo",
+    "definition": "Lugar con tierra, plantas o animales, fuera de la ciudad.",
+    "variations": [
+      "campo",
+      "campos"
+    ],
+    "emoji": "🌾🐄",
+    "id": "gl038"
+  },
+  "candado": {
+    "word": "candado",
+    "definition": "Objeto con llave o combinación que sirve para cerrar algo con seguridad.",
+    "variations": [
+      "candado",
+      "candados"
+    ],
+    "emoji": "🔒",
+    "id": "gl039"
+  },
+  "cantante": {
+    "word": "cantante",
+    "definition": "Persona que canta.",
+    "variations": [
+      "cantante",
+      "cantantes"
+    ],
+    "emoji": "🎤🎶",
+    "id": "gl040"
+  },
+  "caño": {
+    "word": "caño",
+    "definition": "Tubo por donde puede pasar agua, gas u otro material.",
+    "variations": [
+      "caño",
+      "caños"
+    ],
+    "emoji": "🚰🔧",
+    "id": "gl041"
+  },
+  "capa": {
+    "word": "capa",
+    "definition": "Prenda que se usa sobre los hombros; también puede ser una parte que cubre algo.",
+    "variations": [
+      "capa",
+      "capas"
+    ],
+    "emoji": "🦸🧥",
+    "id": "gl042"
+  },
+  "cara": {
+    "word": "cara",
+    "definition": "Parte delantera de la cabeza, donde están los ojos, la nariz y la boca.",
+    "variations": [
+      "caras"
+    ],
+    "emoji": "🙂",
+    "id": "gl043"
+  },
+  "cardón": {
+    "word": "cardón",
+    "definition": "Planta parecida a un cactus, alta y con espinas.",
+    "variations": [
+      "cardones"
+    ],
+    "emoji": "🌵",
+    "id": "gl044"
+  },
+  "carpa": {
+    "word": "carpa",
+    "definition": "Tienda de tela que se arma para dormir o estar al aire libre.",
+    "variations": [
+      "carpa",
+      "carpas"
+    ],
+    "emoji": "⛺🏕️",
+    "id": "gl045"
+  },
+  "carreta": {
+    "word": "carreta",
+    "definition": "Vehículo antiguo con ruedas, tirado por animales.",
+    "variations": [
+      "carreta",
+      "carretas"
+    ],
+    "emoji": "🛞🐂",
+    "id": "gl046"
+  },
+  "carta": {
+    "word": "carta",
+    "definition": "Mensaje escrito que una persona envía a otra.",
+    "variations": [
+      "carta",
+      "cartas"
+    ],
+    "emoji": "✉️📝",
+    "id": "gl047"
+  },
+  "cartero": {
+    "word": "cartero",
+    "definition": "Persona que reparte cartas y otros envíos.",
+    "variations": [
+      "cartero",
+      "cartera",
+      "carteros",
+      "carteras"
+    ],
+    "emoji": "📬✉️",
+    "id": "gl048"
+  },
+  "casa": {
+    "word": "casa",
+    "definition": "Lugar donde viven las personas.",
+    "variations": [
+      "casas"
+    ],
+    "emoji": "🏠",
+    "id": "gl049"
+  },
+  "castillo": {
+    "word": "castillo",
+    "definition": "Construcción grande y antigua, con torres, donde vivían reyes o nobles.",
+    "variations": [
+      "castillo",
+      "castillos"
+    ],
+    "emoji": "🏰👑",
+    "id": "gl050"
+  },
+  "cerro": {
+    "word": "cerro",
+    "definition": "Elevación de tierra más baja que una montaña.",
+    "variations": [
+      "cerro",
+      "cerros"
+    ],
+    "emoji": "⛰️🌄",
+    "id": "gl051"
+  },
+  "chancho": {
+    "word": "chancho",
+    "definition": "Animal de granja, también llamado cerdo.",
+    "variations": [
+      "chancho",
+      "chancha",
+      "chanchos",
+      "chanchas"
+    ],
+    "emoji": "🐷🐖",
+    "id": "gl052"
+  },
+  "chivo": {
+    "word": "chivo",
+    "definition": "Animal parecido a la cabra, con cuernos y barba.",
+    "variations": [
+      "chivo",
+      "chivos"
+    ],
+    "emoji": "🐐",
+    "id": "gl053"
+  },
+  "chupete": {
+    "word": "chupete",
+    "definition": "Objeto que usan algunos bebés para chupar y calmarse.",
+    "variations": [
+      "chupete",
+      "chupetes"
+    ],
+    "emoji": "👶🍼",
+    "id": "gl054"
+  },
+  "circo": {
+    "word": "circo",
+    "definition": "Lugar o espectáculo con artistas, payasos, acróbatas y otros números.",
+    "variations": [
+      "circo",
+      "circos"
+    ],
+    "emoji": "🎪",
+    "id": "gl055"
+  },
+  "clasificar": {
+    "word": "clasificar",
+    "definition": "Ordenar cosas en grupos según algo que tienen en común.",
+    "variations": [
+      "clasificar",
+      "clasificá",
+      "clasifican",
+      "clasificarlas"
+    ],
+    "emoji": "📦✅",
+    "id": "gl056"
+  },
+  "cocina": {
+    "word": "cocina",
+    "definition": "Lugar de la casa donde se prepara la comida.",
+    "variations": [
+      "cocina",
+      "cocinas"
+    ],
+    "emoji": "🍳🏠",
+    "id": "gl057"
+  },
+  "cohete": {
+    "word": "cohete",
+    "definition": "Vehículo que sube al cielo o al espacio impulsado por motores.",
+    "variations": [
+      "cohete",
+      "cohetes"
+    ],
+    "emoji": "🚀🌌",
+    "id": "gl058"
+  },
+  "collar": {
+    "word": "collar",
+    "definition": "Adorno que se usa alrededor del cuello.",
+    "variations": [
+      "collares"
+    ],
+    "emoji": "📿",
+    "id": "gl059"
+  },
+  "color": {
+    "word": "color",
+    "definition": "Cualidad que permite ver si algo es rojo, azul, verde u otro tono.",
+    "variations": [
+      "colores"
+    ],
+    "emoji": "🎨",
+    "id": "gl060"
+  },
+  "cometa": {
+    "word": "cometa",
+    "definition": "Objeto liviano que vuela con el viento y se sostiene con un hilo.",
+    "variations": [
+      "cometa",
+      "cometas"
+    ],
+    "emoji": "🪁🌬️",
+    "id": "gl061"
+  },
+  "cóndor": {
+    "word": "cóndor",
+    "definition": "Ave muy grande que vuela alto y vive en zonas de montañas.",
+    "variations": [
+      "cóndor",
+      "cóndores"
+    ],
+    "emoji": "🦅⛰️",
+    "id": "gl062"
+  },
+  "copa": {
+    "word": "copa",
+    "definition": "Vaso con pie que se usa para beber; también puede ser un premio deportivo.",
+    "variations": [
+      "copas"
+    ],
+    "emoji": "🏆🍷",
+    "id": "gl063"
+  },
+  "corazón": {
+    "word": "corazón",
+    "definition": "Órgano del cuerpo que late y hace circular la sangre; también representa el amor.",
+    "variations": [
+      "corazones"
+    ],
+    "emoji": "❤️",
+    "id": "gl064"
+  },
+  "corbata": {
+    "word": "corbata",
+    "definition": "Prenda larga y angosta que se usa alrededor del cuello, generalmente con camisa.",
+    "variations": [
+      "corbatas"
+    ],
+    "emoji": "👔",
+    "id": "gl065"
+  },
+  "corona": {
+    "word": "corona",
+    "definition": "Adorno que usan en la cabeza los reyes, reinas o personas premiadas.",
+    "variations": [
+      "corona",
+      "coronas"
+    ],
+    "emoji": "👑",
+    "id": "gl066"
+  },
+  "corral": {
+    "word": "corral",
+    "definition": "Lugar cerrado donde se guardan animales.",
+    "variations": [
+      "corral",
+      "corrales"
+    ],
+    "emoji": "🐄🚧",
+    "id": "gl067"
+  },
+  "correa": {
+    "word": "correa",
+    "definition": "Tira de cuero, tela u otro material que sirve para sujetar algo, como un perro o un reloj.",
+    "variations": [
+      "correa",
+      "correas"
+    ],
+    "emoji": "🐕⌚",
+    "id": "gl068"
+  },
+  "correo": {
+    "word": "correo",
+    "definition": "Servicio que lleva cartas, paquetes y mensajes.",
+    "variations": [
+      "correo",
+      "correos"
+    ],
+    "emoji": "📮✉️",
+    "id": "gl069"
+  },
+  "correr": {
+    "word": "correr",
+    "definition": "Moverse rápido usando las piernas.",
+    "variations": [
+      "correr",
+      "corro",
+      "corrés",
+      "corre",
+      "corrí"
+    ],
+    "emoji": "🏃💨",
+    "id": "gl070"
+  },
+  "cosa": {
+    "word": "cosa",
+    "definition": "Palabra general para nombrar un objeto, una idea o algo que no se especifica.",
+    "variations": [
+      "cosas"
+    ],
+    "emoji": "📦",
+    "id": "gl071"
+  },
+  "coyote": {
+    "word": "coyote",
+    "definition": "Animal salvaje parecido a un perro o a un lobo pequeño.",
+    "variations": [
+      "coyote",
+      "coyotes"
+    ],
+    "emoji": "🐺🌵",
+    "id": "gl072"
+  },
+  "cuaderno": {
+    "word": "cuaderno",
+    "definition": "Conjunto de hojas unidas que se usan para escribir o dibujar.",
+    "variations": [
+      "cuaderno",
+      "cuadernos"
+    ],
+    "emoji": "📓✏️",
+    "id": "gl073"
+  },
+  "cuarto": {
+    "word": "cuarto",
+    "definition": "Habitación de una casa o edificio.",
+    "variations": [
+      "cuarto",
+      "cuartos"
+    ],
+    "emoji": "🚪🏠",
+    "id": "gl074"
+  },
+  "cubierto": {
+    "word": "cubierto",
+    "definition": "Utensilio que se usa para comer, como cuchara, tenedor o cuchillo.",
+    "variations": [
+      "cubierto",
+      "cubiertos"
+    ],
+    "emoji": "🍴🥄",
+    "id": "gl075"
+  },
+  "cura": {
+    "word": "cura",
+    "definition": "Sacerdote o padre de una iglesia.",
+    "variations": [
+      "cura",
+      "curas"
+    ],
+    "emoji": "⛪🙏",
+    "id": "gl076"
+  },
+  "dado": {
+    "word": "dado",
+    "definition": "Cubo con puntos o números que se usa en juegos.",
+    "variations": [
+      "dados"
+    ],
+    "emoji": "🎲",
+    "id": "gl077"
+  },
+  "dama": {
+    "word": "dama",
+    "definition": "Mujer adulta, especialmente cuando se habla con respeto.",
+    "variations": [
+      "dama",
+      "damas"
+    ],
+    "emoji": "👩🎩",
+    "id": "gl078"
+  },
+  "dardo": {
+    "word": "dardo",
+    "definition": "Objeto pequeño y puntiagudo que se lanza hacia un blanco.",
+    "variations": [
+      "dardo",
+      "dardos"
+    ],
+    "emoji": "🎯",
+    "id": "gl079"
+  },
+  "dedo": {
+    "word": "dedo",
+    "definition": "Cada una de las partes largas de la mano o del pie.",
+    "variations": [
+      "dedo",
+      "dedos"
+    ],
+    "emoji": "☝️",
+    "id": "gl080"
+  },
+  "delantal": {
+    "word": "delantal",
+    "definition": "Prenda que se pone sobre la ropa para no ensuciarse.",
+    "variations": [
+      "delantal",
+      "delantales"
+    ],
+    "emoji": "🧑‍🍳",
+    "id": "gl081"
+  },
+  "delfín": {
+    "word": "delfín",
+    "definition": "Animal marino inteligente que nada muy bien.",
+    "variations": [
+      "delfines"
+    ],
+    "emoji": "🐬",
+    "id": "gl082"
+  },
+  "desierto": {
+    "word": "desierto",
+    "definition": "Lugar muy seco donde casi no llueve y hay poca vegetación.",
+    "variations": [
+      "desierto",
+      "desiertos"
+    ],
+    "emoji": "🏜️☀️",
+    "id": "gl083"
+  },
+  "día": {
+    "word": "día",
+    "definition": "Tiempo en que hay luz del sol; también puede ser un período de 24 horas.",
+    "variations": [
+      "día",
+      "días"
+    ],
+    "emoji": "☀️📅",
+    "id": "gl084"
+  },
+  "diente": {
+    "word": "diente",
+    "definition": "Parte dura y blanca de la boca que sirve para morder y masticar.",
+    "variations": [
+      "diente",
+      "dientes"
+    ],
+    "emoji": "🦷",
+    "id": "gl085"
+  },
+  "dino": {
+    "word": "dino",
+    "definition": "Forma corta de decir dinosaurio, un animal que vivió hace muchísimo tiempo.",
+    "variations": [
+      "dino",
+      "dinos",
+      "dinosaurio",
+      "dinosaurios"
+    ],
+    "emoji": "🦖",
+    "id": "gl086"
+  },
+  "dominó": {
+    "word": "dominó",
+    "definition": "Juego con fichas que tienen puntos y se unen por números iguales.",
+    "variations": [
+      "dominó",
+      "dominós"
+    ],
+    "emoji": " domino🎲",
+    "id": "gl087"
+  },
+  "dos": {
+    "word": "dos",
+    "definition": "Número que indica una cantidad de dos cosas.",
+    "variations": [
+      "2"
+    ],
+    "emoji": "2️⃣",
+    "id": "gl088"
+  },
+  "duende": {
+    "word": "duende",
+    "definition": "Personaje pequeño de cuentos y fantasías.",
+    "variations": [
+      "duende",
+      "duendes"
+    ],
+    "emoji": "🧝",
+    "id": "gl089"
+  },
+  "duna": {
+    "word": "duna",
+    "definition": "Montón de arena formado por el viento, generalmente en la playa o el desierto.",
+    "variations": [
+      "duna",
+      "dunas"
+    ],
+    "emoji": "🏖️🌬️",
+    "id": "gl090"
+  },
+  "duro": {
+    "word": "duro",
+    "definition": "Que es firme y difícil de doblar, romper o apretar.",
+    "variations": [
+      "duro",
+      "dura",
+      "duros",
+      "duras"
+    ],
+    "emoji": "🪨💪",
+    "id": "gl091"
+  },
+  "empanada": {
+    "word": "empanada",
+    "definition": "Comida hecha con masa rellena, que puede ser de carne, queso u otros ingredientes.",
+    "variations": [
+      "empanadas"
+    ],
+    "emoji": "🥟",
+    "id": "gl092"
+  },
+  "enchufe": {
+    "word": "enchufe",
+    "definition": "Pieza que se conecta a la corriente eléctrica para que un aparato funcione.",
+    "variations": [
+      "enchufe",
+      "enchufes"
+    ],
+    "emoji": "🔌⚡",
+    "id": "gl093"
+  },
+  "escoba": {
+    "word": "escoba",
+    "definition": "Objeto con un palo y fibras que se usa para barrer el piso.",
+    "variations": [
+      "escoba",
+      "escobas"
+    ],
+    "emoji": "🧹",
+    "id": "gl094"
+  },
+  "escondite": {
+    "word": "escondite",
+    "definition": "Lugar donde alguien se esconde para que no lo encuentren.",
+    "variations": [
+      "escondite",
+      "escondites"
+    ],
+    "emoji": "🙈🏠",
+    "id": "gl095"
+  },
+  "escuela": {
+    "word": "escuela",
+    "definition": "Lugar donde los niños y niñas aprenden con docentes.",
+    "variations": [
+      "escuela",
+      "escuelas"
+    ],
+    "emoji": "🏫",
+    "id": "gl096"
+  },
+  "espada": {
+    "word": "espada",
+    "definition": "Arma larga de metal con filo, usada antiguamente para pelear.",
+    "variations": [
+      "espada",
+      "espadas"
+    ],
+    "emoji": "⚔️",
+    "id": "gl097"
+  },
+  "espejo": {
+    "word": "espejo",
+    "definition": "Objeto donde podemos ver nuestro reflejo.",
+    "variations": [
+      "espejo",
+      "espejos"
+    ],
+    "emoji": "🪞",
+    "id": "gl098"
+  },
+  "espina": {
+    "word": "espina",
+    "definition": "Parte dura y puntiaguda de algunas plantas o pescados.",
+    "variations": [
+      "espina",
+      "espinas"
+    ],
+    "emoji": "🌵🐟",
+    "id": "gl099"
+  },
+  "esquina": {
+    "word": "esquina",
+    "definition": "Lugar donde se cruzan dos calles o donde se juntan dos lados de algo.",
+    "variations": [
+      "esquina",
+      "esquinas"
+    ],
+    "emoji": "🚦🏙️",
+    "id": "gl100"
+  },
+  "estante": {
+    "word": "estante",
+    "definition": "Tabla o mueble donde se apoyan libros u objetos.",
+    "variations": [
+      "estante",
+      "estantes"
+    ],
+    "emoji": "📚",
+    "id": "gl101"
+  },
+  "fantasma": {
+    "word": "fantasma",
+    "definition": "Personaje de cuentos que parece un espíritu.",
+    "variations": [
+      "fantasma",
+      "fantasmas"
+    ],
+    "emoji": "👻",
+    "id": "gl102"
+  },
+  "fardo": {
+    "word": "fardo",
+    "definition": "Paquete grande y atado de pasto, lana u otro material.",
+    "variations": [
+      "fardo",
+      "fardos"
+    ],
+    "emoji": "📦🌾",
+    "id": "gl103"
+  },
+  "faro": {
+    "word": "faro",
+    "definition": "Torre con una luz fuerte que guía a los barcos.",
+    "variations": [
+      "faro",
+      "faros"
+    ],
+    "emoji": "🗼💡🚢",
+    "id": "gl104"
+  },
+  "farol": {
+    "word": "farol",
+    "definition": "Lámpara que sirve para iluminar una calle, una casa o un lugar.",
+    "variations": [
+      "faroles"
+    ],
+    "emoji": "🏮💡",
+    "id": "gl105"
+  },
+  "fideos": {
+    "word": "fideos",
+    "definition": "Alimento hecho con masa, que suele comerse con salsa o en sopa.",
+    "variations": [
+      "fideo",
+      "fideos"
+    ],
+    "emoji": "🍝",
+    "id": "gl106"
+  },
+  "fila": {
+    "word": "fila",
+    "definition": "Grupo de personas o cosas una detrás de otra.",
+    "variations": [
+      "fila",
+      "filas"
+    ],
+    "emoji": "🧍➡️",
+    "id": "gl107"
+  },
+  "flor": {
+    "word": "flor",
+    "definition": "Parte colorida de una planta, muchas veces con rico olor.",
+    "variations": [
+      "flor",
+      "flores"
+    ],
+    "emoji": "🌸🌼",
+    "id": "gl108"
+  },
+  "foca": {
+    "word": "foca",
+    "definition": "Animal marino que nada muy bien.",
+    "variations": [
+      "foca",
+      "focas"
+    ],
+    "emoji": "🦭",
+    "id": "gl109"
+  },
+  "foco": {
+    "word": "foco",
+    "definition": "Objeto que da luz, como una lamparita.",
+    "variations": [
+      "focos"
+    ],
+    "emoji": "💡",
+    "id": "gl110"
+  },
+  "foto": {
+    "word": "foto",
+    "definition": "Imagen tomada con una cámara o un celular.",
+    "variations": [
+      "fotos"
+    ],
+    "emoji": "📷",
+    "id": "gl111"
+  },
+  "fuego": {
+    "word": "fuego",
+    "definition": "Llama que da luz y calor, y puede quemar.",
+    "variations": [
+      "fuego",
+      "fuegos"
+    ],
+    "emoji": "🔥",
+    "id": "gl112"
+  },
+  "gajo": {
+    "word": "gajo",
+    "definition": "Parte de una fruta, como la naranja o la mandarina.",
+    "variations": [
+      "gajo",
+      "gajos"
+    ],
+    "emoji": "🍊",
+    "id": "gl113"
+  },
+  "galera": {
+    "word": "galera",
+    "definition": "Sombrero alto, generalmente de copa dura.",
+    "variations": [
+      "galera",
+      "galeras"
+    ],
+    "emoji": "🎩",
+    "id": "gl114"
+  },
+  "galleta": {
+    "word": "galleta",
+    "definition": "Comida dulce o salada, chata y crocante.",
+    "variations": [
+      "galleta",
+      "galletas"
+    ],
+    "emoji": "🍪",
+    "id": "gl115"
+  },
+  "gallina": {
+    "word": "gallina",
+    "definition": "Ave que pone huevos y vive en granjas o corrales.",
+    "variations": [
+      "gallina",
+      "gallinas"
+    ],
+    "emoji": "🐔🥚",
+    "id": "gl116"
+  },
+  "gallo": {
+    "word": "gallo",
+    "definition": "Ave macho que canta, especialmente al amanecer.",
+    "variations": [
+      "gallos"
+    ],
+    "emoji": "🐓",
+    "id": "gl117"
+  },
+  "ganado": {
+    "word": "ganado",
+    "definition": "Conjunto de animales de campo, como vacas u ovejas, que se crían.",
+    "variations": [
+      "ganado"
+    ],
+    "emoji": "🐄🐑",
+    "id": "gl118"
+  },
+  "gasa": {
+    "word": "gasa",
+    "definition": "Tela fina que se usa para cubrir y proteger una herida.",
+    "variations": [
+      "gasa",
+      "gasas"
+    ],
+    "emoji": "🩹⚕️",
+    "id": "gl119"
+  },
+  "gato": {
+    "word": "gato",
+    "definition": "Animal doméstico pequeño que suele maullar.",
+    "variations": [
+      "gatos",
+      "gata",
+      "gatas"
+    ],
+    "emoji": "🐱",
+    "id": "gl120"
+  },
+  "gigante": {
+    "word": "gigante",
+    "definition": "Persona, animal o cosa de tamaño muy grande.",
+    "variations": [
+      "gigante",
+      "gigantes"
+    ],
+    "emoji": "🧌📏",
+    "id": "gl121"
+  },
+  "gol": {
+    "word": "gol",
+    "definition": "Punto que se consigue cuando la pelota entra en el arco en algunos deportes.",
+    "variations": [
+      "goles"
+    ],
+    "emoji": "⚽🥅",
+    "id": "gl122"
+  },
+  "golpe": {
+    "word": "golpe",
+    "definition": "Choque fuerte entre una cosa y otra.",
+    "variations": [
+      "golpe",
+      "golpes"
+    ],
+    "emoji": "💥",
+    "id": "gl123"
+  },
+  "goma": {
+    "word": "goma",
+    "definition": "Objeto que se usa para borrar lo escrito con lápiz.",
+    "variations": [
+      "goma",
+      "gomas"
+    ],
+    "emoji": "🧽✏️",
+    "id": "gl124"
+  },
+  "gota": {
+    "word": "gota",
+    "definition": "Pequeña cantidad de líquido con forma redondeada.",
+    "variations": [
+      "gota",
+      "gotas"
+    ],
+    "emoji": "💧",
+    "id": "gl125"
+  },
+  "gotera": {
+    "word": "gotera",
+    "definition": "Agua que cae en gotas desde un techo o una cañería rota.",
+    "variations": [
+      "gotera",
+      "goteras"
+    ],
+    "emoji": "💧🏠",
+    "id": "gl126"
+  },
+  "guante": {
+    "word": "guante",
+    "definition": "Prenda que cubre la mano y los dedos.",
+    "variations": [
+      "guante",
+      "guantes"
+    ],
+    "emoji": "🧤",
+    "id": "gl127"
+  },
+  "gusano": {
+    "word": "gusano",
+    "definition": "Animal pequeño, blando y alargado que se arrastra.",
+    "variations": [
+      "gusano",
+      "gusanos"
+    ],
+    "emoji": "🐛",
+    "id": "gl128"
+  },
+  "helado": {
+    "word": "helado",
+    "definition": "Postre frío y dulce, de distintos sabores.",
+    "variations": [
+      "helado",
+      "helados"
+    ],
+    "emoji": "🍦🍨",
+    "id": "gl129"
+  },
+  "hilo": {
+    "word": "hilo",
+    "definition": "Hebra fina y larga que se usa para coser o atar.",
+    "variations": [
+      "hilo",
+      "hilos"
+    ],
+    "emoji": "🧵",
+    "id": "gl130"
+  },
+  "hoja": {
+    "word": "hoja",
+    "definition": "Parte verde de una planta; también puede ser una página de papel.",
+    "variations": [
+      "hoja",
+      "hojas"
+    ],
+    "emoji": "🍃📄",
+    "id": "gl131"
+  },
+  "hormiga": {
+    "word": "hormiga",
+    "definition": "Insecto pequeño que vive en grupos y suele caminar en fila.",
+    "variations": [
+      "hormiga",
+      "hormigas"
+    ],
+    "emoji": "🐜",
+    "id": "gl132"
+  },
+  "horno": {
+    "word": "horno",
+    "definition": "Aparato que calienta y sirve para cocinar o calentar comida.",
+    "variations": [
+      "horno",
+      "hornos"
+    ],
+    "emoji": "🔥🍞",
+    "id": "gl133"
+  },
+  "imagen": {
+    "word": "imagen",
+    "definition": "Dibujo o foto que muestra una persona, animal, objeto o lugar.",
+    "variations": [
+      "imagen",
+      "imágenes"
+    ],
+    "emoji": "🖼️👀",
+    "id": "gl134"
+  },
+  "imán": {
+    "word": "imán",
+    "definition": "Objeto que atrae algunos metales, como el hierro.",
+    "variations": [
+      "imanes"
+    ],
+    "emoji": "🧲",
+    "id": "gl135"
+  },
+  "incendio": {
+    "word": "incendio",
+    "definition": "Fuego grande que quema algo y puede ser peligroso.",
+    "variations": [
+      "incendio",
+      "incendios"
+    ],
+    "emoji": "🔥",
+    "id": "gl136"
+  },
+  "isla": {
+    "word": "isla",
+    "definition": "Tierra rodeada de agua por todos lados.",
+    "variations": [
+      "isla",
+      "islas"
+    ],
+    "emoji": "🏝️",
+    "id": "gl137"
+  },
+  "jabón": {
+    "word": "jabón",
+    "definition": "Producto que se usa con agua para lavar y limpiar.",
+    "variations": [
+      "jabones"
+    ],
+    "emoji": "🧼",
+    "id": "gl138"
+  },
+  "jardín": {
+    "word": "jardín",
+    "definition": "Lugar con plantas, flores o pasto, que puede estar en una casa o escuela.",
+    "variations": [
+      "jardín",
+      "jardines"
+    ],
+    "emoji": "🌷🌿",
+    "id": "gl139"
+  },
+  "jardinero": {
+    "word": "jardinero",
+    "definition": "Persona que cuida plantas, flores y jardines.",
+    "variations": [
+      "jardinero",
+      "jardinera",
+      "jardineros",
+      "jardineras"
+    ],
+    "emoji": "🌷🪴",
+    "id": "gl140"
+  },
+  "jarro": {
+    "word": "jarro",
+    "definition": "Recipiente con asa que se usa para tomar líquidos.",
+    "variations": [
+      "jarro",
+      "jarros"
+    ],
+    "emoji": "☕🥤",
+    "id": "gl141"
+  },
+  "jarrón": {
+    "word": "jarrón",
+    "definition": "Recipiente alto que suele usarse para poner flores.",
+    "variations": [
+      "jarrón",
+      "jarrones"
+    ],
+    "emoji": "🏺💐",
+    "id": "gl142"
+  },
+  "jinete": {
+    "word": "jinete",
+    "definition": "Persona que anda a caballo.",
+    "variations": [
+      "jinete",
+      "jinetes"
+    ],
+    "emoji": "🏇🐴",
+    "id": "gl143"
+  },
+  "jirafa": {
+    "word": "jirafa",
+    "definition": "Animal alto, con cuello muy largo y manchas en el cuerpo.",
+    "variations": [
+      "jirafa",
+      "jirafas"
+    ],
+    "emoji": "🦒",
+    "id": "gl144"
+  },
+  "joya": {
+    "word": "joya",
+    "definition": "Adorno valioso, como un anillo, collar o pulsera.",
+    "variations": [
+      "joya",
+      "joyas"
+    ],
+    "emoji": "💍💎",
+    "id": "gl145"
+  },
+  "jugada": {
+    "word": "jugada",
+    "definition": "Acción que se hace en un juego o deporte.",
+    "variations": [
+      "jugada",
+      "jugadas"
+    ],
+    "emoji": "🎲⚽",
+    "id": "gl146"
+  },
+  "jugo": {
+    "word": "jugo",
+    "definition": "Bebida que se obtiene de frutas u otros alimentos.",
+    "variations": [
+      "jugos"
+    ],
+    "emoji": "🧃",
+    "id": "gl147"
+  },
+  "jugoso": {
+    "word": "jugoso",
+    "definition": "Que tiene mucho jugo.",
+    "variations": [
+      "jugoso",
+      "jugosa",
+      "jugosos",
+      "jugosas"
+    ],
+    "emoji": "🍊💧",
+    "id": "gl148"
+  },
+  "juguete": {
+    "word": "juguete",
+    "definition": "Objeto que se usa para jugar.",
+    "variations": [
+      "juguete",
+      "juguetes"
+    ],
+    "emoji": "🧸🪀",
+    "id": "gl149"
+  },
+  "lámpara": {
+    "word": "lámpara",
+    "definition": "Objeto que sirve para dar luz.",
+    "variations": [
+      "lámparas"
+    ],
+    "emoji": "💡",
+    "id": "gl150"
+  },
+  "lana": {
+    "word": "lana",
+    "definition": "Material suave que se obtiene de algunos animales y se usa para tejer.",
+    "variations": [
+      "lanas"
+    ],
+    "emoji": "🧶",
+    "id": "gl151"
+  },
+  "lengua": {
+    "word": "lengua",
+    "definition": "Parte de la boca que sirve para saborear y hablar.",
+    "variations": [
+      "lengua",
+      "lenguas"
+    ],
+    "emoji": "👅",
+    "id": "gl152"
+  },
+  "león": {
+    "word": "león",
+    "definition": "Animal grande de la familia de los felinos; el macho tiene melena.",
+    "variations": [
+      "león",
+      "leona",
+      "leones",
+      "leonas"
+    ],
+    "emoji": "🦁",
+    "id": "gl153"
+  },
+  "letra": {
+    "word": "letra",
+    "definition": "Signo que usamos para escribir palabras, como A, B o C.",
+    "variations": [
+      "letra",
+      "letras"
+    ],
+    "emoji": "🔤✏️",
+    "id": "gl154"
+  },
+  "limón": {
+    "word": "limón",
+    "definition": "Fruta amarilla o verde, de sabor ácido.",
+    "variations": [
+      "limón",
+      "limones"
+    ],
+    "emoji": "🍋",
+    "id": "gl155"
+  },
+  "líquido": {
+    "word": "líquido",
+    "definition": "Sustancia que fluye y toma la forma del recipiente, como el agua o la leche.",
+    "variations": [
+      "líquido",
+      "líquidos",
+      "líquida",
+      "líquidas"
+    ],
+    "emoji": "💧🥛",
+    "id": "gl156"
+  },
+  "llama": {
+    "word": "llama",
+    "definition": "Fuego pequeño; también es un animal de los Andes parecido a un camello.",
+    "variations": [
+      "llama",
+      "llamas"
+    ],
+    "emoji": "🔥🦙",
+    "id": "gl157"
+  },
+  "loro": {
+    "word": "loro",
+    "definition": "Ave de colores que puede imitar sonidos o palabras.",
+    "variations": [
+      "loro",
+      "loros"
+    ],
+    "emoji": "🦜",
+    "id": "gl158"
+  },
+  "lugar": {
+    "word": "lugar",
+    "definition": "Espacio o sitio donde está algo o alguien.",
+    "variations": [
+      "lugar",
+      "lugares"
+    ],
+    "emoji": "📍🗺️",
+    "id": "gl159"
+  },
+  "luna": {
+    "word": "luna",
+    "definition": "Astro que se ve en el cielo, sobre todo de noche, y gira alrededor de la Tierra.",
+    "variations": [
+      "lunas"
+    ],
+    "emoji": "🌙",
+    "id": "gl160"
+  },
+  "lunar": {
+    "word": "lunar",
+    "definition": "Manchita pequeña y oscura que aparece en la piel.",
+    "variations": [
+      "lunar",
+      "lunares"
+    ],
+    "emoji": "⚫🖐️",
+    "id": "gl161"
+  },
+  "lupa": {
+    "word": "lupa",
+    "definition": "Objeto con un vidrio que hace ver las cosas más grandes.",
+    "variations": [
+      "lupas"
+    ],
+    "emoji": "🔍",
+    "id": "gl162"
+  },
+  "manga": {
+    "word": "manga",
+    "definition": "Parte de una prenda que cubre el brazo.",
+    "variations": [
+      "manga",
+      "mangas"
+    ],
+    "emoji": "👕💪",
+    "id": "gl163"
+  },
+  "manguera": {
+    "word": "manguera",
+    "definition": "Tubo flexible por donde pasa agua u otro líquido.",
+    "variations": [
+      "manguera",
+      "mangueras"
+    ],
+    "emoji": "💧🚿",
+    "id": "gl164"
+  },
+  "mano": {
+    "word": "mano",
+    "definition": "Parte del cuerpo que está al final del brazo y sirve para agarrar cosas.",
+    "variations": [
+      "manos"
+    ],
+    "emoji": "✋",
+    "id": "gl165"
+  },
+  "manta": {
+    "word": "manta",
+    "definition": "Tela grande y abrigada que se usa para taparse.",
+    "variations": [
+      "manta",
+      "mantas"
+    ],
+    "emoji": "🛏️❄️",
+    "id": "gl166"
+  },
+  "manzana": {
+    "word": "manzana",
+    "definition": "Fruta redonda, dulce y crocante.",
+    "variations": [
+      "manzana",
+      "manzanas"
+    ],
+    "emoji": "🍎",
+    "id": "gl167"
+  },
+  "mapa": {
+    "word": "mapa",
+    "definition": "Dibujo que muestra lugares, calles o caminos.",
+    "variations": [
+      "mapa",
+      "mapas"
+    ],
+    "emoji": "🗺️",
+    "id": "gl168"
+  },
+  "mar": {
+    "word": "mar",
+    "definition": "Gran cantidad de agua salada que cubre parte de la Tierra.",
+    "variations": [
+      "mares"
+    ],
+    "emoji": "🌊",
+    "id": "gl169"
+  },
+  "martillo": {
+    "word": "martillo",
+    "definition": "Herramienta que se usa para golpear clavos u otros objetos.",
+    "variations": [
+      "martillo",
+      "martillos"
+    ],
+    "emoji": "🔨",
+    "id": "gl170"
+  },
+  "medalla": {
+    "word": "medalla",
+    "definition": "Objeto redondo de metal que se da como premio o recuerdo.",
+    "variations": [
+      "medalla",
+      "medallas"
+    ],
+    "emoji": "🏅🥇",
+    "id": "gl171"
+  },
+  "media": {
+    "word": "media",
+    "definition": "Prenda que se usa en el pie y parte de la pierna.",
+    "variations": [
+      "medias"
+    ],
+    "emoji": "🧦",
+    "id": "gl172"
+  },
+  "melón": {
+    "word": "melón",
+    "definition": "Fruta grande, dulce y jugosa.",
+    "variations": [
+      "melones"
+    ],
+    "emoji": "🍈",
+    "id": "gl173"
+  },
+  "mes": {
+    "word": "mes",
+    "definition": "Cada una de las doce partes en que se divide un año.",
+    "variations": [
+      "meses"
+    ],
+    "emoji": "📅",
+    "id": "gl174"
+  },
+  "mesa": {
+    "word": "mesa",
+    "definition": "Mueble con patas donde se apoyan cosas.",
+    "variations": [
+      "mesa",
+      "mesas"
+    ],
+    "emoji": "🪑",
+    "id": "gl175"
+  },
+  "miel": {
+    "word": "miel",
+    "definition": "Alimento dulce que hacen las abejas.",
+    "variations": [
+      "mieles"
+    ],
+    "emoji": "🍯🐝",
+    "id": "gl176"
+  },
+  "migaja": {
+    "word": "migaja",
+    "definition": "Pedacito muy pequeño de pan u otra comida.",
+    "variations": [
+      "migaja",
+      "migajas"
+    ],
+    "emoji": "🍞🐜",
+    "id": "gl177"
+  },
+  "minuto": {
+    "word": "minuto",
+    "definition": "Tiempo corto; 60 segundos forman un minuto.",
+    "variations": [
+      "minuto",
+      "minutos"
+    ],
+    "emoji": "⏱️🕐",
+    "id": "gl178"
+  },
+  "moneda": {
+    "word": "moneda",
+    "definition": "Pieza de metal o valor que se usa para pagar.",
+    "variations": [
+      "moneda",
+      "monedas"
+    ],
+    "emoji": "🪙💰",
+    "id": "gl179"
+  },
+  "monja": {
+    "word": "monja",
+    "definition": "Mujer que vive dedicada a la religión.",
+    "variations": [
+      "monja",
+      "monjas"
+    ],
+    "emoji": "⛪",
+    "id": "gl180"
+  },
+  "mono": {
+    "word": "mono",
+    "definition": "Animal que trepa árboles y tiene manos parecidas a las de las personas.",
+    "variations": [
+      "monos",
+      "mona",
+      "monas"
+    ],
+    "emoji": "🐒",
+    "id": "gl181"
+  },
+  "monte": {
+    "word": "monte",
+    "definition": "Lugar con muchos árboles y plantas.",
+    "variations": [
+      "monte",
+      "montes"
+    ],
+    "emoji": "🌳🌲",
+    "id": "gl182"
+  },
+  "moño": {
+    "word": "moño",
+    "definition": "Lazo o forma que se hace con una cinta o con el pelo.",
+    "variations": [
+      "moños"
+    ],
+    "emoji": "🎀",
+    "id": "gl183"
+  },
+  "mosca": {
+    "word": "mosca",
+    "definition": "Insecto pequeño que vuela.",
+    "variations": [
+      "mosca",
+      "moscas"
+    ],
+    "emoji": "🪰",
+    "id": "gl184"
+  },
+  "moto": {
+    "word": "moto",
+    "definition": "Vehículo de dos ruedas con motor.",
+    "variations": [
+      "moto",
+      "motos"
+    ],
+    "emoji": "🏍️",
+    "id": "gl185"
+  },
+  "motor": {
+    "word": "motor",
+    "definition": "Parte de una máquina o vehículo que produce movimiento.",
+    "variations": [
+      "motor",
+      "motores"
+    ],
+    "emoji": "⚙️🚗",
+    "id": "gl186"
+  },
+  "mula": {
+    "word": "mula",
+    "definition": "Animal parecido a un caballo, usado a veces para cargar cosas.",
+    "variations": [
+      "mula",
+      "mulas"
+    ],
+    "emoji": "🐴🧺",
+    "id": "gl187"
+  },
+  "música": {
+    "word": "música",
+    "definition": "Sonidos y ritmos que se escuchan, cantan o tocan con instrumentos.",
+    "variations": [
+      "música",
+      "músicas"
+    ],
+    "emoji": "🎵🎶",
+    "id": "gl188"
+  },
+  "naranja": {
+    "word": "naranja",
+    "definition": "Fruta redonda, jugosa y de color naranja.",
+    "variations": [
+      "naranjas"
+    ],
+    "emoji": "🍊",
+    "id": "gl189"
+  },
+  "nariz": {
+    "word": "nariz",
+    "definition": "Parte de la cara que sirve para respirar y oler.",
+    "variations": [
+      "nariz",
+      "narices"
+    ],
+    "emoji": "👃🌸",
+    "id": "gl190"
+  },
+  "navaja": {
+    "word": "navaja",
+    "definition": "Cuchillo pequeño que se puede doblar y guardar.",
+    "variations": [
+      "navaja",
+      "navajas"
+    ],
+    "emoji": "🔪",
+    "id": "gl191"
+  },
+  "nave": {
+    "word": "nave",
+    "definition": "Vehículo que puede viajar por el espacio o por el aire.",
+    "variations": [
+      "nave",
+      "naves"
+    ],
+    "emoji": "🚀",
+    "id": "gl192"
+  },
+  "nena": {
+    "word": "nena",
+    "definition": "Niña pequeña.",
+    "variations": [
+      "nena",
+      "nenas"
+    ],
+    "emoji": "👧",
+    "id": "gl193"
+  },
+  "nene": {
+    "word": "nene",
+    "definition": "Niño pequeño.",
+    "variations": [
+      "nene",
+      "nenes"
+    ],
+    "emoji": "👦",
+    "id": "gl194"
+  },
+  "nevado": {
+    "word": "nevado",
+    "definition": "Que está cubierto de nieve.",
+    "variations": [
+      "nevado",
+      "nevada",
+      "nevados",
+      "nevadas"
+    ],
+    "emoji": "❄️🏔️",
+    "id": "gl195"
+  },
+  "nido": {
+    "word": "nido",
+    "definition": "Lugar que hacen algunos animales, como los pájaros, para vivir o poner huevos.",
+    "variations": [
+      "nido",
+      "nidos"
+    ],
+    "emoji": "🪺🐦",
+    "id": "gl196"
+  },
+  "nieto": {
+    "word": "nieto",
+    "definition": "Hijo o hija de tu hijo o de tu hija.",
+    "variations": [
+      "nieto",
+      "nieta",
+      "nietos",
+      "nietas"
+    ],
+    "emoji": "👦👵",
+    "id": "gl197"
+  },
+  "nieve": {
+    "word": "nieve",
+    "definition": "Agua congelada que cae del cielo en copos blancos.",
+    "variations": [
+      "nieve",
+      "nieves"
+    ],
+    "emoji": "❄️☃️",
+    "id": "gl198"
+  },
+  "noche": {
+    "word": "noche",
+    "definition": "Parte del día en que está oscuro y suele salir la luna.",
+    "variations": [
+      "noche",
+      "noches"
+    ],
+    "emoji": "🌙🌌",
+    "id": "gl199"
+  },
+  "nudo": {
+    "word": "nudo",
+    "definition": "Parte de una cuerda o hilo que está atada y apretada.",
+    "variations": [
+      "nudo",
+      "nudos"
+    ],
+    "emoji": "🪢",
+    "id": "gl200"
+  },
+  "nuez": {
+    "word": "nuez",
+    "definition": "Fruto seco con cáscara dura y una semilla comestible adentro.",
+    "variations": [
+      "nuez",
+      "nueces"
+    ],
+    "emoji": "🌰",
+    "id": "gl201"
+  },
+  "número": {
+    "word": "número",
+    "definition": "Signo o palabra que sirve para contar o indicar cantidad.",
+    "variations": [
+      "número",
+      "números"
+    ],
+    "emoji": "🔢",
+    "id": "gl202"
+  },
+  "oca": {
+    "word": "oca",
+    "definition": "Ave parecida a un ganso, que vive cerca del agua.",
+    "variations": [
+      "oca",
+      "ocas"
+    ],
+    "emoji": "🪿💧",
+    "id": "gl203"
+  },
+  "ogro": {
+    "word": "ogro",
+    "definition": "Personaje grande y fuerte de cuentos, a veces asustador.",
+    "variations": [
+      "ogro",
+      "ogros"
+    ],
+    "emoji": "👹",
+    "id": "gl204"
+  },
+  "orca": {
+    "word": "orca",
+    "definition": "Animal marino grande, blanco y negro, parecido a una ballena dentada.",
+    "variations": [
+      "orca",
+      "orcas"
+    ],
+    "emoji": "🐋🌊",
+    "id": "gl205"
+  },
+  "oveja": {
+    "word": "oveja",
+    "definition": "Animal con lana en el cuerpo.",
+    "variations": [
+      "oveja",
+      "ovejas"
+    ],
+    "emoji": "🐑",
+    "id": "gl206"
+  },
+  "pala": {
+    "word": "pala",
+    "definition": "Herramienta que sirve para cavar o mover tierra, arena u otras cosas.",
+    "variations": [
+      "palas"
+    ],
+    "emoji": "🪏",
+    "id": "gl207"
+  },
+  "palabra": {
+    "word": "palabra",
+    "definition": "Conjunto de letras que tiene un significado.",
+    "variations": [
+      "palabra",
+      "palabras"
+    ],
+    "emoji": "📝🔤",
+    "id": "gl208"
+  },
+  "paleta": {
+    "word": "paleta",
+    "definition": "Helado con palito que se sostiene con la mano.",
+    "variations": [
+      "paleta",
+      "paletas"
+    ],
+    "emoji": "🍭🍦",
+    "id": "gl209"
+  },
+  "palo": {
+    "word": "palo",
+    "definition": "Pedazo largo de madera.",
+    "variations": [
+      "palo",
+      "palos"
+    ],
+    "emoji": "🪵",
+    "id": "gl210"
+  },
+  "pan": {
+    "word": "pan",
+    "definition": "Alimento hecho con harina, agua y otros ingredientes, que se hornea.",
+    "variations": [
+      "panes"
+    ],
+    "emoji": "🍞",
+    "id": "gl211"
+  },
+  "panal": {
+    "word": "panal",
+    "definition": "Lugar donde las abejas guardan miel y viven juntas.",
+    "variations": [
+      "panal",
+      "panales"
+    ],
+    "emoji": "🐝🍯",
+    "id": "gl212"
+  },
+  "pantalón": {
+    "word": "pantalón",
+    "definition": "Prenda de vestir que cubre las piernas.",
+    "variations": [
+      "pantalón",
+      "pantalones"
+    ],
+    "emoji": "👖",
+    "id": "gl213"
+  },
+  "pantera": {
+    "word": "pantera",
+    "definition": "Felino grande y fuerte, de pelaje oscuro o manchado.",
+    "variations": [
+      "pantera",
+      "panteras"
+    ],
+    "emoji": "🐆🐾",
+    "id": "gl214"
+  },
+  "paquete": {
+    "word": "paquete",
+    "definition": "Objeto envuelto o caja que contiene algo adentro.",
+    "variations": [
+      "paquete",
+      "paquetes"
+    ],
+    "emoji": "📦🎁",
+    "id": "gl215"
+  },
+  "par": {
+    "word": "par",
+    "definition": "Dos cosas que van juntas o son parecidas.",
+    "variations": [
+      "par",
+      "pares"
+    ],
+    "emoji": "👥",
+    "id": "gl216"
+  },
+  "pasto": {
+    "word": "pasto",
+    "definition": "Hierba verde que crece en el suelo y comen algunos animales.",
+    "variations": [
+      "pasto",
+      "pastos"
+    ],
+    "emoji": "🌱🐄",
+    "id": "gl217"
+  },
+  "pastor": {
+    "word": "pastor",
+    "definition": "Persona que cuida animales como ovejas o cabras.",
+    "variations": [
+      "pastor",
+      "pastora",
+      "pastores",
+      "pastoras"
+    ],
+    "emoji": "🐑🐐",
+    "id": "gl218"
+  },
+  "patada": {
+    "word": "patada",
+    "definition": "Golpe que se da con el pie.",
+    "variations": [
+      "patada",
+      "patadas"
+    ],
+    "emoji": "🦶💥",
+    "id": "gl219"
+  },
+  "patín": {
+    "word": "patín",
+    "definition": "Objeto con ruedas o cuchilla que se usa en los pies para deslizarse.",
+    "variations": [
+      "patín",
+      "patines"
+    ],
+    "emoji": "🛼",
+    "id": "gl220"
+  },
+  "pato": {
+    "word": "pato",
+    "definition": "Ave que vive cerca del agua y tiene patas palmeadas.",
+    "variations": [
+      "pato",
+      "patos"
+    ],
+    "emoji": "🦆💧",
+    "id": "gl221"
+  },
+  "paz": {
+    "word": "paz",
+    "definition": "Situación en la que no hay peleas ni guerra.",
+    "variations": [],
+    "emoji": "🕊️",
+    "id": "gl222"
+  },
+  "pelo": {
+    "word": "pelo",
+    "definition": "Filamento fino que crece en la cabeza o en la piel de personas y animales.",
+    "variations": [
+      "pelos"
+    ],
+    "emoji": "💇",
+    "id": "gl223"
+  },
+  "pelota": {
+    "word": "pelota",
+    "definition": "Objeto redondo que se usa para jugar o hacer deporte.",
+    "variations": [
+      "pelota",
+      "pelotas"
+    ],
+    "emoji": "⚽🏀",
+    "id": "gl224"
+  },
+  "pera": {
+    "word": "pera",
+    "definition": "Fruta dulce, generalmente verde o amarilla.",
+    "variations": [
+      "pera",
+      "peras"
+    ],
+    "emoji": "🍐",
+    "id": "gl225"
+  },
+  "percha": {
+    "word": "percha",
+    "definition": "Objeto que se usa para colgar ropa.",
+    "variations": [
+      "percha",
+      "perchas"
+    ],
+    "emoji": "🧥",
+    "id": "gl226"
+  },
+  "perro": {
+    "word": "perro",
+    "definition": "Animal doméstico que suele ladrar y vivir con las personas.",
+    "variations": [
+      "perros",
+      "perra",
+      "perras"
+    ],
+    "emoji": "🐶",
+    "id": "gl227"
+  },
+  "pez": {
+    "word": "pez",
+    "definition": "Animal que vive en el agua y respira por branquias.",
+    "variations": [
+      "peces"
+    ],
+    "emoji": "🐟",
+    "id": "gl228"
+  },
+  "pie": {
+    "word": "pie",
+    "definition": "Parte del cuerpo que usamos para caminar.",
+    "variations": [
+      "pie",
+      "pies"
+    ],
+    "emoji": "🦶",
+    "id": "gl229"
+  },
+  "piel": {
+    "word": "piel",
+    "definition": "Capa que cubre el cuerpo de las personas y los animales.",
+    "variations": [
+      "piel",
+      "pieles"
+    ],
+    "emoji": "🖐️",
+    "id": "gl230"
+  },
+  "pila": {
+    "word": "pila",
+    "definition": "Objeto pequeño que da energía a algunos aparatos.",
+    "variations": [
+      "pilas"
+    ],
+    "emoji": "🔋",
+    "id": "gl231"
+  },
+  "pino": {
+    "word": "pino",
+    "definition": "Árbol alto con hojas finas y verdes todo el año.",
+    "variations": [
+      "pino",
+      "pinos"
+    ],
+    "emoji": "🌲",
+    "id": "gl232"
+  },
+  "pipa": {
+    "word": "pipa",
+    "definition": "Objeto con un tubo que se usa para fumar.",
+    "variations": [
+      "pipas"
+    ],
+    "emoji": "🚬",
+    "id": "gl233"
+  },
+  "pirata": {
+    "word": "pirata",
+    "definition": "Persona de cuentos que viaja en barco buscando tesoros.",
+    "variations": [
+      "pirata",
+      "piratas"
+    ],
+    "emoji": "🏴‍☠️",
+    "id": "gl234"
+  },
+  "pisa": {
+    "word": "pisa",
+    "definition": "Forma del verbo pisar: apoyar el pie sobre algo.",
+    "variations": [
+      "pisa",
+      "pisar",
+      "pisan",
+      "pisó"
+    ],
+    "emoji": "🦶",
+    "id": "gl235"
+  },
+  "piso": {
+    "word": "piso",
+    "definition": "Suelo de una casa, escuela u otro lugar.",
+    "variations": [
+      "piso",
+      "pisos"
+    ],
+    "emoji": "🏠",
+    "id": "gl236"
+  },
+  "pista": {
+    "word": "pista",
+    "definition": "Lugar preparado para correr, bailar, aterrizar o seguir una huella.",
+    "variations": [
+      "pista",
+      "pistas"
+    ],
+    "emoji": "🏃🛬",
+    "id": "gl237"
+  },
+  "plata": {
+    "word": "plata",
+    "definition": "Dinero; también es un metal brillante de color gris claro.",
+    "variations": [
+      "plata"
+    ],
+    "emoji": "💰🥈",
+    "id": "gl238"
+  },
+  "plaza": {
+    "word": "plaza",
+    "definition": "Lugar abierto de una ciudad o pueblo, con bancos, árboles o juegos.",
+    "variations": [
+      "plaza",
+      "plazas"
+    ],
+    "emoji": "🌳🏞️",
+    "id": "gl239"
+  },
+  "pollo": {
+    "word": "pollo",
+    "definition": "Cría de la gallina; también carne de esa ave.",
+    "variations": [
+      "pollo",
+      "pollos"
+    ],
+    "emoji": "🐥🍗",
+    "id": "gl240"
+  },
+  "puerta": {
+    "word": "puerta",
+    "definition": "Parte de una casa o lugar que se abre y se cierra para entrar o salir.",
+    "variations": [
+      "puertas"
+    ],
+    "emoji": "🚪",
+    "id": "gl241"
+  },
+  "puma": {
+    "word": "puma",
+    "definition": "Animal salvaje parecido a un gato grande.",
+    "variations": [
+      "puma",
+      "pumas"
+    ],
+    "emoji": "🐆🐾",
+    "id": "gl242"
+  },
+  "rama": {
+    "word": "rama",
+    "definition": "Parte de un árbol o planta que sale del tronco.",
+    "variations": [
+      "ramas"
+    ],
+    "emoji": "🌿",
+    "id": "gl243"
+  },
+  "rasta": {
+    "word": "rasta",
+    "definition": "Mechón de pelo largo y enredado, usado como peinado.",
+    "variations": [
+      "rasta",
+      "rastas"
+    ],
+    "emoji": "💇🧑‍🦱",
+    "id": "gl244"
+  },
+  "rata": {
+    "word": "rata",
+    "definition": "Animal pequeño parecido al ratón, pero más grande.",
+    "variations": [
+      "ratas"
+    ],
+    "emoji": "🐀",
+    "id": "gl245"
+  },
+  "rato": {
+    "word": "rato",
+    "definition": "Un tiempo corto.",
+    "variations": [
+      "rato",
+      "ratos"
+    ],
+    "emoji": "⏱️",
+    "id": "gl246"
+  },
+  "ratón": {
+    "word": "ratón",
+    "definition": "Animal pequeño con cola larga; también puede ser un aparato de la computadora.",
+    "variations": [
+      "ratón",
+      "ratones"
+    ],
+    "emoji": "🐭🖱️",
+    "id": "gl247"
+  },
+  "rayo": {
+    "word": "rayo",
+    "definition": "Luz fuerte y rápida que aparece en una tormenta.",
+    "variations": [
+      "rayo",
+      "rayos"
+    ],
+    "emoji": "⚡🌩️",
+    "id": "gl248"
+  },
+  "roca": {
+    "word": "roca",
+    "definition": "Piedra grande y dura.",
+    "variations": [
+      "roca",
+      "rocas"
+    ],
+    "emoji": "🪨⛰️",
+    "id": "gl249"
+  },
+  "ronca": {
+    "word": "ronca",
+    "definition": "Que tiene la voz áspera; también puede significar que hace ruido al dormir.",
+    "variations": [
+      "ronco",
+      "ronca",
+      "roncos",
+      "roncas",
+      "roncar"
+    ],
+    "emoji": "🗣️😴",
+    "id": "gl250"
+  },
+  "ronda": {
+    "word": "ronda",
+    "definition": "Grupo de personas en círculo; también puede ser un juego o una vuelta.",
+    "variations": [
+      "ronda",
+      "rondas"
+    ],
+    "emoji": "⭕🤝",
+    "id": "gl251"
+  },
+  "ropa": {
+    "word": "ropa",
+    "definition": "Prendas que usamos para vestirnos.",
+    "variations": [
+      "ropas"
+    ],
+    "emoji": "👕👖",
+    "id": "gl252"
+  },
+  "rosa": {
+    "word": "rosa",
+    "definition": "Flor que puede tener muchos colores y suele tener espinas.",
+    "variations": [
+      "rosas"
+    ],
+    "emoji": "🌹",
+    "id": "gl253"
+  },
+  "rosal": {
+    "word": "rosal",
+    "definition": "Planta que da rosas.",
+    "variations": [
+      "rosal",
+      "rosales"
+    ],
+    "emoji": "🌹🌿",
+    "id": "gl254"
+  },
+  "rueda": {
+    "word": "rueda",
+    "definition": "Objeto redondo que gira y ayuda a mover vehículos.",
+    "variations": [
+      "rueda",
+      "ruedas"
+    ],
+    "emoji": "🛞",
+    "id": "gl255"
+  },
+  "rulo": {
+    "word": "rulo",
+    "definition": "Mechón de pelo que tiene forma curva o enrollada.",
+    "variations": [
+      "rulo",
+      "rulos"
+    ],
+    "emoji": "🌀💇",
+    "id": "gl256"
+  },
+  "sal": {
+    "word": "sal",
+    "definition": "Sustancia blanca que se usa para dar sabor a la comida.",
+    "variations": [
+      "sales"
+    ],
+    "emoji": "🧂",
+    "id": "gl257"
+  },
+  "sala": {
+    "word": "sala",
+    "definition": "Habitación de una casa o edificio donde se puede estar o reunirse.",
+    "variations": [
+      "sala",
+      "salas"
+    ],
+    "emoji": "🛋️🏠",
+    "id": "gl258"
+  },
+  "salar": {
+    "word": "salar",
+    "definition": "Poner sal a una comida.",
+    "variations": [
+      "salar",
+      "salo",
+      "salás",
+      "salado",
+      "salada"
+    ],
+    "emoji": "🧂🍲",
+    "id": "gl259"
+  },
+  "salón": {
+    "word": "salón",
+    "definition": "Sala grande donde se hacen actividades, clases o reuniones.",
+    "variations": [
+      "salón",
+      "salones"
+    ],
+    "emoji": "🏫🚪",
+    "id": "gl260"
+  },
+  "sapo": {
+    "word": "sapo",
+    "definition": "Animal parecido a la rana, con piel rugosa.",
+    "variations": [
+      "sapo",
+      "sapos"
+    ],
+    "emoji": "🐸",
+    "id": "gl261"
+  },
+  "serpiente": {
+    "word": "serpiente",
+    "definition": "Animal largo y sin patas que se arrastra por el suelo.",
+    "variations": [
+      "serpiente",
+      "serpientes"
+    ],
+    "emoji": "🐍",
+    "id": "gl262"
+  },
+  "soda": {
+    "word": "soda",
+    "definition": "Agua con gas que se toma como bebida.",
+    "variations": [
+      "soda",
+      "sodas"
+    ],
+    "emoji": "🥤💧",
+    "id": "gl263"
+  },
+  "sol": {
+    "word": "sol",
+    "definition": "Estrella que da luz y calor a la Tierra.",
+    "variations": [
+      "soles"
+    ],
+    "emoji": "☀️",
+    "id": "gl264"
+  },
+  "sombrero": {
+    "word": "sombrero",
+    "definition": "Prenda que se usa en la cabeza.",
+    "variations": [
+      "sombrero",
+      "sombreros"
+    ],
+    "emoji": "👒🎩",
+    "id": "gl265"
+  },
+  "sonar": {
+    "word": "sonar",
+    "definition": "Hacer o producir un sonido.",
+    "variations": [
+      "sonar",
+      "suena",
+      "sonás",
+      "sonó",
+      "sonando"
+    ],
+    "emoji": "🔊🎵",
+    "id": "gl266"
+  },
+  "sonido": {
+    "word": "sonido",
+    "definition": "Lo que escuchamos con los oídos, como una voz, una música o una letra al hablar.",
+    "variations": [
+      "sonido",
+      "sonidos"
+    ],
+    "emoji": "👂🔊",
+    "id": "gl267"
+  },
+  "sonido inicial": {
+    "word": "sonido inicial",
+    "definition": "El primer sonido que escuchamos al decir una palabra.",
+    "variations": [
+      "sonido inicial",
+      "sonidos iniciales"
+    ],
+    "emoji": "👂🔊",
+    "id": "gl268"
+  },
+  "soñar": {
+    "word": "soñar",
+    "definition": "Ver imágenes o historias en la mente mientras dormimos.",
+    "variations": [
+      "soñar",
+      "sueño",
+      "soñás",
+      "sueña",
+      "soñé"
+    ],
+    "emoji": "💭😴",
+    "id": "gl269"
+  },
+  "sopa": {
+    "word": "sopa",
+    "definition": "Comida líquida que se toma caliente, muchas veces con verduras o fideos.",
+    "variations": [
+      "sopa",
+      "sopas"
+    ],
+    "emoji": "🍲",
+    "id": "gl270"
+  },
+  "sorda": {
+    "word": "sorda",
+    "definition": "Persona que no oye o que oye muy poco.",
+    "variations": [
+      "sordo",
+      "sorda",
+      "sordos",
+      "sordas"
+    ],
+    "emoji": "👂🔇",
+    "id": "gl271"
+  },
+  "suma": {
+    "word": "suma",
+    "definition": "Cuenta que sirve para juntar cantidades.",
+    "variations": [
+      "suma",
+      "sumas"
+    ],
+    "emoji": "➕🔢",
+    "id": "gl272"
+  },
+  "taco": {
+    "word": "taco",
+    "definition": "Parte alta del zapato que va debajo del talón; también puede ser una comida enrollada.",
+    "variations": [
+      "taco",
+      "tacos"
+    ],
+    "emoji": "👠🌮",
+    "id": "gl273"
+  },
+  "talco": {
+    "word": "talco",
+    "definition": "Polvo suave que se usa en la piel para secar o perfumar.",
+    "variations": [
+      "talco",
+      "talcos"
+    ],
+    "emoji": "🧴🤍",
+    "id": "gl274"
+  },
+  "tango": {
+    "word": "tango",
+    "definition": "Música y baile tradicional del Río de la Plata.",
+    "variations": [
+      "tango",
+      "tangos"
+    ],
+    "emoji": "🎶💃",
+    "id": "gl275"
+  },
+  "tapa": {
+    "word": "tapa",
+    "definition": "Pieza que sirve para cerrar un frasco, caja o botella.",
+    "variations": [
+      "tapa",
+      "tapas"
+    ],
+    "emoji": "🫙",
+    "id": "gl276"
+  },
+  "tapado": {
+    "word": "tapado",
+    "definition": "Que está cubierto o cerrado.",
+    "variations": [
+      "tapado",
+      "tapada",
+      "tapados",
+      "tapadas"
+    ],
+    "emoji": "🧥🙈",
+    "id": "gl277"
+  },
+  "tarjeta": {
+    "word": "tarjeta",
+    "definition": "Pedazo de cartón o papel, a veces con una imagen o palabra.",
+    "variations": [
+      "tarjeta",
+      "tarjetas"
+    ],
+    "emoji": "🃏📇",
+    "id": "gl278"
+  },
+  "taza": {
+    "word": "taza",
+    "definition": "Recipiente con asa que se usa para tomar bebidas.",
+    "variations": [
+      "taza",
+      "tazas"
+    ],
+    "emoji": "☕",
+    "id": "gl279"
+  },
+  "tela": {
+    "word": "tela",
+    "definition": "Material flexible que se usa para hacer ropa y otras cosas.",
+    "variations": [
+      "tela",
+      "telas"
+    ],
+    "emoji": "🧵",
+    "id": "gl280"
+  },
+  "tele": {
+    "word": "tele",
+    "definition": "Aparato para ver programas, dibujos o películas.",
+    "variations": [
+      "tele",
+      "teles",
+      "televisión",
+      "televisiones"
+    ],
+    "emoji": "📺",
+    "id": "gl281"
+  },
+  "televisor": {
+    "word": "televisor",
+    "definition": "Aparato que muestra imágenes y sonidos para ver programas, películas o dibujos.",
+    "variations": [
+      "televisor",
+      "televisores"
+    ],
+    "emoji": "📺",
+    "id": "gl282"
+  },
+  "tenaza": {
+    "word": "tenaza",
+    "definition": "Herramienta con dos brazos que sirve para agarrar o cortar cosas.",
+    "variations": [
+      "tenaza",
+      "tenazas"
+    ],
+    "emoji": "🛠️✂️",
+    "id": "gl283"
+  },
+  "tenedor": {
+    "word": "tenedor",
+    "definition": "Cubierto con puntas que se usa para pinchar comida.",
+    "variations": [
+      "tenedor",
+      "tenedores"
+    ],
+    "emoji": "🍴",
+    "id": "gl284"
+  },
+  "termo": {
+    "word": "termo",
+    "definition": "Recipiente que mantiene el agua u otra bebida caliente o fría.",
+    "variations": [
+      "termo",
+      "termos"
+    ],
+    "emoji": "🧉☕",
+    "id": "gl285"
+  },
+  "tiburón": {
+    "word": "tiburón",
+    "definition": "Pez grande que vive en el mar y tiene dientes fuertes.",
+    "variations": [
+      "tiburón",
+      "tiburones"
+    ],
+    "emoji": "🦈🌊",
+    "id": "gl286"
+  },
+  "tijera": {
+    "word": "tijera",
+    "definition": "Herramienta con dos hojas que sirve para cortar.",
+    "variations": [
+      "tijera",
+      "tijeras"
+    ],
+    "emoji": "✂️",
+    "id": "gl287"
+  },
+  "tiza": {
+    "word": "tiza",
+    "definition": "Barrita que se usa para escribir en el pizarrón.",
+    "variations": [
+      "tiza",
+      "tizas"
+    ],
+    "emoji": "✏️⬛",
+    "id": "gl288"
+  },
+  "tomate": {
+    "word": "tomate",
+    "definition": "Fruto rojo que se usa mucho en comidas y ensaladas.",
+    "variations": [
+      "tomate",
+      "tomates"
+    ],
+    "emoji": "🍅",
+    "id": "gl289"
+  },
+  "tornillo": {
+    "word": "tornillo",
+    "definition": "Pieza de metal con rosca que sirve para unir o sujetar cosas.",
+    "variations": [
+      "tornillo",
+      "tornillos"
+    ],
+    "emoji": "🔩🪛",
+    "id": "gl290"
+  },
+  "torta": {
+    "word": "torta",
+    "definition": "Comida dulce que suele comerse en cumpleaños o celebraciones.",
+    "variations": [
+      "tortas"
+    ],
+    "emoji": "🎂",
+    "id": "gl291"
+  },
+  "tortuga": {
+    "word": "tortuga",
+    "definition": "Animal con caparazón que camina lento.",
+    "variations": [
+      "tortuga",
+      "tortugas"
+    ],
+    "emoji": "🐢",
+    "id": "gl292"
+  },
+  "tostada": {
+    "word": "tostada",
+    "definition": "Rebanada de pan dorada por el calor.",
+    "variations": [
+      "tostada",
+      "tostadas"
+    ],
+    "emoji": "🍞",
+    "id": "gl293"
+  },
+  "venda": {
+    "word": "venda",
+    "definition": "Tira de tela que se usa para cubrir o proteger una parte del cuerpo lastimada.",
+    "variations": [
+      "venda",
+      "vendas"
+    ],
+    "emoji": "🩹🤕",
+    "id": "gl294"
+  },
+  "ventana": {
+    "word": "ventana",
+    "definition": "Abertura con vidrio por donde entra luz y aire.",
+    "variations": [
+      "ventana",
+      "ventanas"
+    ],
+    "emoji": "🪟",
+    "id": "gl295"
+  },
+  "volcán": {
+    "word": "volcán",
+    "definition": "Montaña que puede expulsar lava, ceniza y gases desde su interior.",
+    "variations": [
+      "volcanes"
+    ],
+    "emoji": "🌋",
+    "id": "gl296"
+  },
+  "yacaré": {
+    "word": "yacaré",
+    "definition": "Reptil parecido al cocodrilo que vive en ríos y bañados.",
+    "variations": [
+      "yacaré",
+      "yacarés"
+    ],
+    "emoji": "🐊💧",
+    "id": "gl297"
+  },
+  "yuyo": {
+    "word": "yuyo",
+    "definition": "Planta pequeña que crece sola, muchas veces entre otras plantas.",
+    "variations": [
+      "yuyo",
+      "yuyos"
+    ],
+    "emoji": "🌿🌱",
+    "id": "gl298"
+  },
+  "zanja": {
+    "word": "zanja",
+    "definition": "Pozo largo y angosto que se hace en el suelo.",
+    "variations": [
+      "zanjas"
+    ],
+    "emoji": "🕳️",
+    "id": "gl299"
+  },
+  "zapatilla": {
+    "word": "zapatilla",
+    "definition": "Calzado cómodo, muchas veces usado para caminar o hacer deporte.",
+    "variations": [
+      "zapatilla",
+      "zapatillas"
+    ],
+    "emoji": "👟",
+    "id": "gl300"
+  },
+  "zapato": {
+    "word": "zapato",
+    "definition": "Calzado que cubre el pie.",
+    "variations": [
+      "zapato",
+      "zapatos"
+    ],
+    "emoji": "👞👟",
+    "id": "gl301"
+  },
+  "zoquete": {
+    "word": "zoquete",
+    "definition": "Media corta que cubre el pie y parte del tobillo.",
+    "variations": [
+      "zoquete",
+      "zoquetes"
+    ],
+    "emoji": "🧦👣",
+    "id": "gl302"
+  },
+  "zorro": {
+    "word": "zorro",
+    "definition": "Animal salvaje parecido a un perro, conocido por ser astuto.",
+    "variations": [
+      "zorro",
+      "zorros"
+    ],
+    "emoji": "🦊",
+    "id": "gl303"
+  }
+}
