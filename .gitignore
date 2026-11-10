@@ -1,15 +1,28 @@
-# Sistema operativo
+# Sistema
 Thumbs.db
-ehthumbs.db
-Desktop.ini
+desktop.ini
 .DS_Store
 
-# Editores
+# Entornos y dependencias (no forman parte del bundle)
+node_modules/
+venv/
+__pycache__/
+*.pyc
+
+# Carpetas de trabajo
+tmp/
+Export/
+voices test/
+
+# Backups y logs de herramientas
+tools/voice/*.orig
+tools/voice/*.log
+
+# Archivos de editor
 .vscode/
 .idea/
-*.swp
 
-# Logs y temporales
-*.log
-*.tmp
-tmp/
+# Temporales del generador por bloques
+tools/voice/_*
+
+tools/voice/bloques_reporte.json

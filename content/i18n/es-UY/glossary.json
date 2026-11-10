@@ -3025,5 +3025,321 @@
     ],
     "emoji": "🦊",
     "id": "gl303"
+  },
+  "acertar": {
+    "word": "acertar",
+    "definition": "Elegir la respuesta correcta.",
+    "variations": [
+      "acertar",
+      "acertaste",
+      "acierto"
+    ],
+    "emoji": "🎯",
+    "id": "gl304"
+  },
+  "actividad": {
+    "word": "actividad",
+    "definition": "Tarea o ejercicio que se hace para aprender o practicar.",
+    "variations": [
+      "actividad",
+      "actividades"
+    ],
+    "emoji": "📘",
+    "id": "gl305"
+  },
+  "ajo": {
+    "word": "ajo",
+    "definition": "Planta que se usa para dar sabor a la comida.",
+    "variations": [
+      "ajo",
+      "ajos"
+    ],
+    "emoji": "🧄",
+    "id": "gl306"
+  },
+  "ala": {
+    "word": "ala",
+    "definition": "Parte del cuerpo de un ave o insecto que le sirve para volar.",
+    "variations": [
+      "ala",
+      "alas"
+    ],
+    "emoji": "🪽",
+    "id": "gl307"
+  },
+  "arrastrar": {
+    "word": "arrastrar",
+    "definition": "Mover algo en la pantalla manteniéndolo apretado hasta otro lugar.",
+    "variations": [
+      "arrastrar",
+      "arrastrá",
+      "arrastrarla"
+    ],
+    "emoji": "🖱️",
+    "id": "gl308"
+  },
+  "auto": {
+    "word": "auto",
+    "definition": "Vehículo con ruedas que se usa para viajar por la calle.",
+    "variations": [
+      "auto",
+      "autos"
+    ],
+    "emoji": "🚗",
+    "id": "gl309"
+  },
+  "comparar": {
+    "word": "comparar",
+    "definition": "Mirar dos o más cosas para ver en qué se parecen o se diferencian.",
+    "variations": [
+      "comparar",
+      "compará"
+    ],
+    "emoji": "⚖️",
+    "id": "gl310"
+  },
+  "comprobar": {
+    "word": "comprobar",
+    "definition": "Revisar si algo está bien o si es correcto.",
+    "variations": [
+      "comprobar",
+      "comprobá",
+      "comprobaste"
+    ],
+    "emoji": "✅",
+    "id": "gl311"
+  },
+  "elefante": {
+    "word": "elefante",
+    "definition": "Animal muy grande, con trompa y orejas grandes.",
+    "variations": [
+      "elefante",
+      "elefantes"
+    ],
+    "emoji": "🐘",
+    "id": "gl312"
+  },
+  "grupo": {
+    "word": "grupo",
+    "definition": "Conjunto de cosas o personas que están juntas por algo que comparten.",
+    "variations": [
+      "grupo",
+      "grupos"
+    ],
+    "emoji": "👥",
+    "id": "gl313"
+  },
+  "inicial": {
+    "word": "inicial",
+    "definition": "Que está al principio. En una palabra, es el primer sonido o la primera letra.",
+    "variations": [
+      "inicial",
+      "iniciales"
+    ],
+    "emoji": "1️⃣",
+    "id": "gl314"
+  },
+  "lata": {
+    "word": "lata",
+    "definition": "Envase de metal que puede contener comida o bebida.",
+    "variations": [
+      "lata",
+      "latas"
+    ],
+    "emoji": "🥫",
+    "id": "gl315"
+  },
+  "mochila": {
+    "word": "mochila",
+    "definition": "Bolso que se lleva en la espalda para guardar cosas.",
+    "variations": [
+      "mochila",
+      "mochilas"
+    ],
+    "emoji": "🎒",
+    "id": "gl316"
+  },
+  "montaña": {
+    "word": "montaña",
+    "definition": "Elevación grande de tierra, más alta que un cerro pequeño.",
+    "variations": [
+      "montaña",
+      "montañas"
+    ],
+    "emoji": "⛰️",
+    "id": "gl317"
+  },
+  "muñeca": {
+    "word": "muñeca",
+    "definition": "Juguete con forma de persona. También puede ser la parte del cuerpo que une la mano con el brazo.",
+    "variations": [
+      "muñeca",
+      "muñecas"
+    ],
+    "emoji": "🪆",
+    "id": "gl318"
+  },
+  "ola": {
+    "word": "ola",
+    "definition": "Movimiento de agua que sube y baja en el mar o en un río grande.",
+    "variations": [
+      "ola",
+      "olas"
+    ],
+    "emoji": "🌊",
+    "id": "gl319"
+  },
+  "oso": {
+    "word": "oso",
+    "definition": "Animal grande con mucho pelo.",
+    "variations": [
+      "oso",
+      "osos",
+      "osa",
+      "osas"
+    ],
+    "emoji": "🐻",
+    "id": "gl320"
+  },
+  "pantalla": {
+    "word": "pantalla",
+    "definition": "Parte de la computadora, tablet o celular donde vemos imágenes y palabras.",
+    "variations": [
+      "pantalla",
+      "pantallas"
+    ],
+    "emoji": "💻",
+    "id": "gl321"
+  },
+  "pareja": {
+    "word": "pareja",
+    "definition": "Dos cosas que van juntas porque tienen algo en común.",
+    "variations": [
+      "pareja",
+      "parejas"
+    ],
+    "emoji": "👯",
+    "id": "gl322"
+  },
+  "rana": {
+    "word": "rana",
+    "definition": "Animal pequeño que salta, vive cerca del agua y hace croac.",
+    "variations": [
+      "rana",
+      "ranas"
+    ],
+    "emoji": "🐸",
+    "id": "gl323"
+  },
+  "regalo": {
+    "word": "regalo",
+    "definition": "Cosa que se da a alguien para alegrarlo o festejar algo.",
+    "variations": [
+      "regalo",
+      "regalos"
+    ],
+    "emoji": "🎁",
+    "id": "gl324"
+  },
+  "reja": {
+    "word": "reja",
+    "definition": "Conjunto de barras de metal que sirve para cerrar o proteger un lugar.",
+    "variations": [
+      "reja",
+      "rejas"
+    ],
+    "emoji": "🚧",
+    "id": "gl325"
+  },
+  "sartén": {
+    "word": "sartén",
+    "definition": "Utensilio de cocina que se usa para freír o cocinar alimentos.",
+    "variations": [
+      "sartén",
+      "sartenes"
+    ],
+    "emoji": "🍳",
+    "id": "gl326"
+  },
+  "seis": {
+    "word": "seis",
+    "definition": "Número que viene después del cinco y antes del siete.",
+    "variations": [
+      "seis"
+    ],
+    "emoji": "6️⃣",
+    "id": "gl327"
+  },
+  "seleccionar": {
+    "word": "seleccionar",
+    "definition": "Elegir algo, por ejemplo una imagen o una letra.",
+    "variations": [
+      "seleccionar",
+      "seleccioná",
+      "selecciona",
+      "seleccionarla"
+    ],
+    "emoji": "☝️",
+    "id": "gl328"
+  },
+  "semáforo": {
+    "word": "semáforo",
+    "definition": "Señal con luces de colores que ordena el tránsito.",
+    "variations": [
+      "semáforo",
+      "semáforos"
+    ],
+    "emoji": "🚦",
+    "id": "gl329"
+  },
+  "silla": {
+    "word": "silla",
+    "definition": "Mueble con respaldo que usamos para sentarnos.",
+    "variations": [
+      "silla",
+      "sillas"
+    ],
+    "emoji": "🪑",
+    "id": "gl330"
+  },
+  "trampa": {
+    "word": "trampa",
+    "definition": "En un juego, opción que puede confundir porque no corresponde con la respuesta correcta.",
+    "variations": [
+      "trampa",
+      "trampas"
+    ],
+    "emoji": "⚠️",
+    "id": "gl331"
+  },
+  "uno": {
+    "word": "uno",
+    "definition": "Número que representa una sola cosa.",
+    "variations": [
+      "uno",
+      "una"
+    ],
+    "emoji": "1️⃣",
+    "id": "gl332"
+  },
+  "uva": {
+    "word": "uva",
+    "definition": "Fruta pequeña y redonda que crece en racimos.",
+    "variations": [
+      "uva",
+      "uvas"
+    ],
+    "emoji": "🍇",
+    "id": "gl333"
+  },
+  "vocal": {
+    "word": "vocal",
+    "definition": "Letra que puede sonar sola, como A, E, I, O y U.",
+    "variations": [
+      "vocal",
+      "vocales"
+    ],
+    "emoji": "🔤",
+    "id": "gl334"
   }
 }

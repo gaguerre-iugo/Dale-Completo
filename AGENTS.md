@@ -1,14 +1,14 @@
-# Dale_-digital--2 — ADT Bundle Reference
+# Propuesta Dale!: Cuadernillo Juegos — ADT Bundle Reference
 
 This document describes the structure of this Accessible Digital Textbook (ADT) bundle. Use it to orient yourself when doing post-processing.
 
 ## About This Book
 
-**Dale_-digital--2** — Este cuadernillo de la Propuesta Dale! reúne juegos y actividades para la alfabetización inicial, centrados en reconocer sonidos, relacionarlos con letras, formar y escribir palabras, comparar palabras parecidas y trabajar memoria verbal. Está dirigido a niñas y niños de nivel inicial avanzado o primer ciclo de primaria, especialmente en etapas tempranas de lectura y escritura. El material está escrito en español rioplatense y parece provenir de Argentina, por referencias como “empanada del norte argentino”. Su enfoque es lúdico, guiado por una educadora, con énfasis en la conciencia fonológica y el aprendizaje progresivo del sistema de escritura.
+**Propuesta Dale!: Cuadernillo Juegos** — Este cuadernillo de la Propuesta Dale! reúne juegos y actividades para la alfabetización inicial, centrados en reconocer sonidos, relacionarlos con letras, formar y escribir palabras, comparar palabras parecidas y trabajar memoria verbal. Está dirigido a niñas y niños de nivel inicial avanzado o primer ciclo de primaria, especialmente en etapas tempranas de lectura y escritura. El material está escrito en español rioplatense y parece provenir de Argentina, por referencias como “empanada del norte argentino”. Su enfoque es lúdico, guiado por una educadora, con énfasis en la conciencia fonológica y el aprendizaje progresivo del sistema de escritura.
 
 - **Source language**: `es-UY`
 - **Available languages in this bundle**: `es-UY`
-- **Total pages**: 57
+- **Total pages**: 68
 - **Glossary**: yes
 
 ## Quick Overview
