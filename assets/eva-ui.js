@@ -881,7 +881,8 @@
 
 /* Lectura de tarjetas con palabras: al tocar una tarjeta de palabra,
    definicion, memoria o ronda se reproduce su audio (o speechSynthesis
-   como respaldo). */
+   como respaldo). Tambien se leen los pares de palabras y las consignas
+   "Forma: PALABRA" de las actividades de armar/cambiar palabras. */
 (function () {
   "use strict";
 
@@ -902,7 +903,10 @@
         if (window.__adtKit.playText(id)) return;
       } catch (e) {}
     }
-    var word = card.getAttribute("data-word") || "";
+    var word =
+      card.getAttribute("data-audio-label") ||
+      card.getAttribute("data-word") ||
+      "";
     if (!word) {
       var el = card.querySelector(".word");
       if (el) word = el.textContent || "";
@@ -910,13 +914,98 @@
     fallback(word.trim());
   }
 
+  /* Los pares muestran dos palabras (PATO -> PASTO). Se reproduce primero
+     la palabra base y, cuando termina, la palabra nueva. */
+  function playPair(el) {
+    var base = el.getAttribute("data-audio-id");
+    var target = el.getAttribute("data-audio-target-id");
+    var label = (el.getAttribute("data-audio-label") || el.textContent || "").trim();
+    if (!base || !target || !window.__adtKit || typeof window.__adtKit.playText !== "function") {
+      fallback(label);
+      return;
+    }
+    var started = false;
+    try {
+      started = window.__adtKit.playText(base);
+    } catch (e) {}
+    if (!started) {
+      fallback(label);
+      return;
+    }
+    var audio = window.__adtTextAudio;
+    if (!audio) {
+      fallback(label);
+      return;
+    }
+    var done = false;
+    var next = function () {
+      if (done) return;
+      done = true;
+      try {
+        audio.removeEventListener("ended", next);
+      } catch (e) {}
+      try {
+        window.__adtKit.playText(target);
+      } catch (e) {}
+    };
+    try {
+      audio.addEventListener("ended", next);
+    } catch (e) {}
+    var schedule = function () {
+      var d = 2.2;
+      try {
+        if (isFinite(audio.duration) && audio.duration > 0) d = audio.duration;
+      } catch (e) {}
+      window.setTimeout(next, Math.max(1400, d * 1000 + 350));
+    };
+    try {
+      if (audio.readyState >= 1) schedule();
+      else audio.addEventListener("loadedmetadata", schedule, { once: true });
+    } catch (e) {
+      window.setTimeout(next, 3000);
+    }
+    window.setTimeout(next, 6000);
+  }
+
   document.addEventListener(
     "click",
     function (event) {
-      var card = event.target && event.target.closest
-        ? event.target.closest(".word-card, .def-card, .wm-card, .round-card, .k-card")
-        : null;
-      if (card) play(card);
+      var t = event.target;
+      if (!t || !t.closest) return;
+
+      var pair = t.closest(".change-pair[data-audio-target-id]");
+      if (pair) {
+        playPair(pair);
+        return;
+      }
+
+      var label = t.closest(".order-word-label[data-audio-id]");
+      if (label) {
+        play(label);
+        return;
+      }
+
+      var card = t.closest(
+        ".word-card, .def-card, .wm-card, .round-card, .k-card, .me-card, .rm-card"
+      );
+      if (!card) return;
+      if (t.closest(".me-tile, .rm-tile")) return;
+      play(card);
+    },
+    true
+  );
+
+  document.addEventListener(
+    "keydown",
+    function (event) {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      var t = event.target;
+      if (!t || !t.closest) return;
+      var el = t.closest(".word-audio[data-audio-id]");
+      if (!el) return;
+      event.preventDefault();
+      if (el.classList.contains("change-pair")) playPair(el);
+      else play(el);
     },
     true
   );

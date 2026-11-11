@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=36" defer></script>
+    <script src="./assets/eva-ui.js?v=37" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
     <style>
       body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select { font-family: 'Atkinson Hyperlegible','Merriweather',sans-serif; }
-    </style>    <link href="./assets/voice-ui.css?v=2" rel="stylesheet">
+    </style>    <link href="./assets/voice-ui.css?v=3" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex items-center justify-center">
@@ -131,23 +131,23 @@
   </div>
 
   <div class="sound-grid grid grid-cols-2 md:grid-cols-3 gap-4">
-        <button type="button" data-sound-card data-activity-item="item-1" data-word="PAN" data-letter="P" class="sound-card" aria-pressed="false" aria-label="Pan. Tocar para seleccionar.">
+        <button type="button" data-sound-card data-activity-item="item-1" data-word="PAN" data-letter="P" class="sound-card" aria-pressed="false" aria-label="Pan. Tocar para seleccionar." data-audio-id="gl211">
           <span class="selection-indicator" aria-hidden="true"></span>
           <img data-id="pg051_im007" src="images/pg051_im007.png?v=3" alt="Pan.">
         </button>
-        <button type="button" data-sound-card data-activity-item="item-2" data-word="MIEL" data-letter="M" class="sound-card" aria-pressed="false" aria-label="Miel. Tocar para seleccionar.">
+        <button type="button" data-sound-card data-activity-item="item-2" data-word="MIEL" data-letter="M" class="sound-card" aria-pressed="false" aria-label="Miel. Tocar para seleccionar." data-audio-id="gl176">
           <span class="selection-indicator" aria-hidden="true"></span>
           <img data-id="pg051_im008" src="images/pg051_im008.png?v=3" alt="Frasco de miel con abejas y un palito mielero.">
         </button>
-        <button type="button" data-sound-card data-activity-item="item-3" data-word="GOL" data-letter="G" class="sound-card" aria-pressed="false" aria-label="Gol. Tocar para seleccionar.">
+        <button type="button" data-sound-card data-activity-item="item-3" data-word="GOL" data-letter="G" class="sound-card" aria-pressed="false" aria-label="Gol. Tocar para seleccionar." data-audio-id="gl122">
           <span class="selection-indicator" aria-hidden="true"></span>
           <img data-id="pg051_im004" src="images/pg051_im004.png?v=3" alt="Pelota de f&#xfa;tbol entrando en un arco: gol.">
         </button>
-        <button type="button" data-sound-card data-activity-item="item-4" data-word="MES" data-letter="M" class="sound-card" aria-pressed="false" aria-label="Mes. Tocar para seleccionar.">
+        <button type="button" data-sound-card data-activity-item="item-4" data-word="MES" data-letter="M" class="sound-card" aria-pressed="false" aria-label="Mes. Tocar para seleccionar." data-audio-id="gl174">
           <span class="selection-indicator" aria-hidden="true"></span>
           <img data-id="pg051_im003" src="images/pg051_im003.png?v=3" alt="Calendario del mes de marzo.">
         </button>
-        <button type="button" data-sound-card data-activity-item="item-5" data-word="PAZ" data-letter="P" class="sound-card" aria-pressed="false" aria-label="Paz. Tocar para seleccionar.">
+        <button type="button" data-sound-card data-activity-item="item-5" data-word="PAZ" data-letter="P" class="sound-card" aria-pressed="false" aria-label="Paz. Tocar para seleccionar." data-audio-id="gl222">
           <span class="selection-indicator" aria-hidden="true"></span>
           <img data-id="pg051_im006" src="images/pg051_im006.png?v=3" alt="S&#xed;mbolo de la paz.">
         </button>
@@ -318,9 +318,28 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=3"></script>
+    <script src="./assets/offline-preloader.js?v=4"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+<script>
+(function () {
+  var cards = document.querySelectorAll('#content .sound-card[data-audio-id], #content .pair-card[data-audio-id]');
+  Array.prototype.forEach.call(cards, function (card) {
+    card.addEventListener('click', function () {
+      var id = card.getAttribute('data-audio-id');
+      if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+      var word = card.getAttribute('data-word') || '';
+      if (!word || !('speechSynthesis' in window)) return;
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(word);
+        u.lang = 'es-UY';
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    });
+  });
+})();
+</script>
 </body>
 
 </html>

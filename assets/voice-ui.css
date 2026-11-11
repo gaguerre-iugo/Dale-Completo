@@ -186,3 +186,14 @@ body.reflow-book #reflow-tts-player .reflow-tts-fab {
 #content .adt-skin div:has(> [data-check-k]) {
   display: none !important;
 }
+
+/* Textos que se pueden tocar para escuchar la palabra. */
+#content .adt-skin .word-audio {
+  cursor: pointer;
+}
+
+#content .adt-skin .word-audio:focus-visible {
+  outline: 3px solid #00b87a;
+  outline-offset: 3px;
+  border-radius: 6px;
+}

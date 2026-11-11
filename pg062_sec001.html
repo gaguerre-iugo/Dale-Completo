@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=36" defer></script>
+    <script src="./assets/eva-ui.js?v=37" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
     <style>
       body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select { font-family: 'Atkinson Hyperlegible','Merriweather',sans-serif; }
-    </style>    <link href="./assets/voice-ui.css?v=2" rel="stylesheet">
+    </style>    <link href="./assets/voice-ui.css?v=3" rel="stylesheet">
 </head>
 
 <body class="min-h-screen flex items-center justify-center">
@@ -121,28 +121,28 @@
   </div>
 
   <div class="pair-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" role="list" aria-label="Im&#xe1;genes para formar parejas">
-        <button type="button" data-activity-item="item-1" data-word="PASTO" data-sound="p" class="pair-card" aria-pressed="false" aria-label="Pasto. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-1" data-word="PASTO" data-sound="p" class="pair-card" aria-pressed="false" aria-label="Pasto. Tocar para seleccionar." data-audio-id="gl217">
           <img data-id="pg062_im007" src="images/pg062_im007.png?v=3" alt="Pasto verde.">
         </button>
-        <button type="button" data-activity-item="item-2" data-word="PERCHA" data-sound="p" class="pair-card" aria-pressed="false" aria-label="Percha. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-2" data-word="PERCHA" data-sound="p" class="pair-card" aria-pressed="false" aria-label="Percha. Tocar para seleccionar." data-audio-id="gl226">
           <img data-id="pg062_im006" src="images/pg062_im006.png?v=3" alt="Percha de madera.">
         </button>
-        <button type="button" data-activity-item="item-3" data-word="MANGA" data-sound="m" class="pair-card" aria-pressed="false" aria-label="Manga. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-3" data-word="MANGA" data-sound="m" class="pair-card" aria-pressed="false" aria-label="Manga. Tocar para seleccionar." data-audio-id="gl163">
           <img data-id="pg062_im009" src="images/pg062_im009.png?v=3" alt="Manga verde de una prenda.">
         </button>
-        <button type="button" data-activity-item="item-4" data-word="TERMO" data-sound="t" class="pair-card" aria-pressed="false" aria-label="Termo. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-4" data-word="TERMO" data-sound="t" class="pair-card" aria-pressed="false" aria-label="Termo. Tocar para seleccionar." data-audio-id="gl285">
           <img data-id="pg062_im005" src="images/pg062_im005.png?v=3" alt="Termo verde.">
         </button>
-        <button type="button" data-activity-item="item-5" data-word="TOSTADA" data-sound="t" class="pair-card" aria-pressed="false" aria-label="Tostada. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-5" data-word="TOSTADA" data-sound="t" class="pair-card" aria-pressed="false" aria-label="Tostada. Tocar para seleccionar." data-audio-id="gl293">
           <img data-id="pg062_im004" src="images/pg062_im004.png?v=3" alt="Tostada.">
         </button>
-        <button type="button" data-activity-item="item-6" data-word="CORAZ&#xd3;N" data-sound="none" class="pair-card" aria-pressed="false" aria-label="Coraz&#xf3;n. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-6" data-word="CORAZ&#xd3;N" data-sound="none" class="pair-card" aria-pressed="false" aria-label="Coraz&#xf3;n. Tocar para seleccionar." data-audio-id="gl064">
           <img data-id="pg062_im011" src="images/pg062_im011.png?v=3" alt="Coraz&#xf3;n verde.">
         </button>
-        <button type="button" data-activity-item="item-7" data-word="MONJA" data-sound="m" class="pair-card" aria-pressed="false" aria-label="Monja. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-7" data-word="MONJA" data-sound="m" class="pair-card" aria-pressed="false" aria-label="Monja. Tocar para seleccionar." data-audio-id="gl180">
           <img data-id="pg062_im008" src="images/pg062_im008.png?v=3" alt="Monja con h&#xe1;bito marr&#xf3;n y blanco.">
         </button>
-        <button type="button" data-activity-item="item-8" data-word="JAB&#xd3;N" data-sound="none" class="pair-card" aria-pressed="false" aria-label="Jab&#xf3;n. Tocar para seleccionar.">
+        <button type="button" data-activity-item="item-8" data-word="JAB&#xd3;N" data-sound="none" class="pair-card" aria-pressed="false" aria-label="Jab&#xf3;n. Tocar para seleccionar." data-audio-id="gl138">
           <img data-id="pg062_im010" src="images/pg062_im010.png?v=3" alt="Jab&#xf3;n verde con espuma.">
         </button>
   </div>
@@ -272,9 +272,28 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=3"></script>
+    <script src="./assets/offline-preloader.js?v=4"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+<script>
+(function () {
+  var cards = document.querySelectorAll('#content .sound-card[data-audio-id], #content .pair-card[data-audio-id]');
+  Array.prototype.forEach.call(cards, function (card) {
+    card.addEventListener('click', function () {
+      var id = card.getAttribute('data-audio-id');
+      if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+      var word = card.getAttribute('data-word') || '';
+      if (!word || !('speechSynthesis' in window)) return;
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(word);
+        u.lang = 'es-UY';
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    });
+  });
+})();
+</script>
 </body>
 
 </html>
