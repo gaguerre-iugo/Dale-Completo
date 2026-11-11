@@ -168,3 +168,21 @@ body.reflow-book #reflow-tts-player .reflow-tts-fab {
   border-color: var(--ceibal-institutional-600) !important;
   color: #fff !important;
 }
+
+/* El dock de actividad ya tiene Enviar: ocultar los botones internos de
+   comprobacion para que no aparezcan dos acciones iguales. */
+#content .adt-skin [data-check-sound],
+#content .adt-skin [data-check-words],
+#content .adt-skin [data-check-round],
+#content .adt-skin [data-check-tf],
+#content .adt-skin [data-check-k] {
+  display: none !important;
+}
+
+#content .adt-skin div:has(> [data-check-sound]),
+#content .adt-skin div:has(> [data-check-words]),
+#content .adt-skin div:has(> [data-check-round]),
+#content .adt-skin div:has(> [data-check-tf]),
+#content .adt-skin div:has(> [data-check-k]) {
+  display: none !important;
+}

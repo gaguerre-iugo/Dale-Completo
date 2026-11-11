@@ -430,6 +430,14 @@
     "activity": true
   },
   {
+    "section_id": "pg064_sec002",
+    "href": "pg064_sec002.html",
+    "title": "15 Cambiar palabras: sacamos el sonido final",
+    "chapter_id": "pg064_n0040",
+    "level": 1,
+    "activity": true
+  },
+  {
     "section_id": "pg065_sec001",
     "href": "pg065_sec001.html",
     "title": "16 Sobre con letras",
@@ -498,6 +506,14 @@
     "href": "pg073_sec001.html",
     "title": "24 Cambiar palabras: sacamos el sonido final",
     "chapter_id": "pg073_n0004",
+    "level": 1,
+    "activity": true
+  },
+  {
+    "section_id": "pg073_sec002",
+    "href": "pg073_sec002.html",
+    "title": "25 Detective de sonidos",
+    "chapter_id": "pg073_n0025",
     "level": 1,
     "activity": true
   },

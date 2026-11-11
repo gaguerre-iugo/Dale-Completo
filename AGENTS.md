@@ -8,7 +8,7 @@ This document describes the structure of this Accessible Digital Textbook (ADT) 
 
 - **Source language**: `es-UY`
 - **Available languages in this bundle**: `es-UY`
-- **Total pages**: 68
+- **Total pages**: 70
 - **Glossary**: yes
 
 ## Quick Overview
