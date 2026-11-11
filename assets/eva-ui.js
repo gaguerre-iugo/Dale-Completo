@@ -878,3 +878,46 @@
   setInterval(tick, 400);
   programar();
 })();
+
+/* Lectura de tarjetas con palabras: al tocar una tarjeta de palabra,
+   definicion, memoria o ronda se reproduce su audio (o speechSynthesis
+   como respaldo). */
+(function () {
+  "use strict";
+
+  function fallback(text) {
+    if (!text || !("speechSynthesis" in window)) return;
+    try {
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = "es-UY";
+      window.speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function play(card) {
+    var id = card.getAttribute("data-audio-id");
+    if (id && window.__adtKit && typeof window.__adtKit.playText === "function") {
+      try {
+        if (window.__adtKit.playText(id)) return;
+      } catch (e) {}
+    }
+    var word = card.getAttribute("data-word") || "";
+    if (!word) {
+      var el = card.querySelector(".word");
+      if (el) word = el.textContent || "";
+    }
+    fallback(word.trim());
+  }
+
+  document.addEventListener(
+    "click",
+    function (event) {
+      var card = event.target && event.target.closest
+        ? event.target.closest(".word-card, .def-card, .wm-card, .round-card, .k-card")
+        : null;
+      if (card) play(card);
+    },
+    true
+  );
+})();
