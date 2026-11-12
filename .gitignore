@@ -17,6 +17,7 @@ voices test/
 # Backups y logs de herramientas
 tools/voice/*.orig
 tools/voice/*.log
+!tools/voice/generacion_audios.log
 
 # Archivos de editor
 .vscode/
