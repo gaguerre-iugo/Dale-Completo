@@ -88,6 +88,9 @@
     '#eva-shortcuts .eva-shortcuts-row dd{margin:0;flex:0 0 auto;width:auto!important}',
     '#eva-shortcuts .eva-shortcuts-row kbd{display:inline-block;min-width:5.5rem;padding:.35rem .7rem;border:1px solid #8d9aa1;border-radius:.4rem;background:#fff;font:inherit;font-size:.9375rem;font-weight:700;text-align:center;color:#1f2f36;box-shadow:0 1px 0 rgba(0,0,0,.08)}',
     'body.eva-shortcuts-open{overflow:hidden}',
+    '.eva-toc-part{position:sticky;top:0;z-index:2;background:var(--popover);padding-left:.5rem;padding-right:.5rem;}',
+    '.eva-toc-part-1{background:#ef3d36!important;color:#fff!important}',
+    '.eva-toc-part-2{background:#64bea3!important;color:#17313a!important}',
     '@media (max-width:30rem){#eva-shortcuts .eva-shortcuts-dialog{padding:1.25rem!important}#eva-shortcuts .eva-shortcuts-row{gap:1rem}#eva-shortcuts .eva-shortcuts-row kbd{min-width:4.5rem;padding:.3rem .5rem}}'
   ].join("\n");
 
@@ -239,6 +242,8 @@
       });
       dlg.appendChild(btn);
     }
+    enhanceTocTab(dlg);
+    enhancePagesTab(dlg);
   }
 
   var indexObserver = null;
@@ -475,6 +480,104 @@
     return tocEntries;
   }
 
+  var pagesEntries = null;
+
+  function loadPages() {
+    if (!pagesEntries) {
+      pagesEntries = fetch("./content/pages.json")
+        .then(function (res) { return res.ok ? res.json() : []; })
+        .catch(function () { return []; });
+    }
+    return pagesEntries;
+  }
+
+  function partOfSection(sectionId) {
+    var m = /^pg(\d{3})/.exec(sectionId || "");
+    if (!m) return 1;
+    return parseInt(m[1], 10) >= 49 ? 2 : 1;
+  }
+
+  function partHeading(text, part) {
+    var li = document.createElement("li");
+    li.className = "eva-toc-part eva-toc-part-" + part + " px-1 pt-3 pb-1 text-base font-semibold tracking-wide text-muted-foreground uppercase";
+    li.setAttribute("data-eva-level", "1");
+    li.style.setProperty("background", part === 1 ? "#ef3d36" : "#64bea3", "important");
+    li.style.setProperty("color", part === 1 ? "#ffffff" : "#17313a", "important");
+    li.textContent = text;
+    return li;
+  }
+
+  function removePartHeadings(root) {
+    Array.prototype.slice.call(root.children).forEach(function (li) {
+      if (li.classList.contains("eva-toc-part")) li.remove();
+    });
+  }
+
+  function tocSignature(ul) {
+    return Array.prototype.slice.call(ul.querySelectorAll("button"))
+      .map(function (btn) { return btn.getAttribute("title") || ""; })
+      .join("|");
+  }
+
+  function enhanceTocTab(dlg) {
+    var ul = dlg.querySelector('[role="tabpanel"] ul');
+    if (!ul) return;
+    var sig = tocSignature(ul);
+    if (ul.getAttribute("data-eva-hierarchy-sig") === sig) return;
+    loadToc().then(function (entries) {
+      if (!dlg.isConnected || !entries.length) return;
+      if (tocSignature(ul) !== sig) return;
+      removePartHeadings(ul);
+      var byTitle = {};
+      entries.forEach(function (entry) {
+        if (entry.title) byTitle[entry.title] = entry.section_id;
+      });
+      var lis = Array.prototype.slice.call(ul.children);
+      var lastPart = 0;
+      for (var i = 0; i < lis.length; i += 1) {
+        var btn = lis[i].querySelector("button");
+        var section = btn ? byTitle[btn.getAttribute("title")] : null;
+        var part = section ? partOfSection(section) : (lastPart || 1);
+        if (part !== lastPart) {
+          ul.insertBefore(partHeading(part === 1 ? "Primera parte" : "Segunda parte", part), lis[i]);
+          lastPart = part;
+        }
+      }
+      ul.setAttribute("data-eva-hierarchy-sig", sig);
+    });
+  }
+
+  function enhancePagesTab(dlg) {
+    var ol = dlg.querySelector('[role="tabpanel"] ol');
+    if (!ol || ol.getAttribute("data-eva-hierarchy") === "1") return;
+    loadPages().then(function (pages) {
+      if (!dlg.isConnected || !pages.length) return;
+      removePartHeadings(ol);
+      var lis = Array.prototype.slice.call(ol.children);
+      var pageIndex = 0;
+      var partForLi = [];
+      for (var i = 0; i < lis.length; i += 1) {
+        if (lis[i].querySelector("button")) {
+          var entry = pages[pageIndex] || {};
+          pageIndex += 1;
+          partForLi[i] = partOfSection(entry.section_id || entry.href || "");
+        } else {
+          partForLi[i] = null;
+        }
+      }
+      var firstPart2 = -1;
+      for (var j = 0; j < partForLi.length; j += 1) {
+        if (partForLi[j] === 2) { firstPart2 = j; break; }
+      }
+      if (firstPart2 > 0) {
+        while (firstPart2 > 0 && partForLi[firstPart2 - 1] === null) firstPart2 -= 1;
+        ol.insertBefore(partHeading("Segunda parte", 2), lis[firstPart2]);
+      }
+      ol.insertBefore(partHeading("Primera parte", 1), ol.firstChild);
+      ol.setAttribute("data-eva-hierarchy", "1");
+    });
+  }
+
   function decorateActivityEntry(btn, state) {
     var label = EVALUAR[state] || EVALUAR.pending;
     if (!btn.classList.contains("eva-toc-entry")) btn.classList.add("eva-toc-entry");
@@ -605,7 +708,7 @@
         '<p class="reflow-settings-block-title">Escuchar</p>' +
         switchRow("readAloud", "Activar lectura en voz alta", "Habilitá el modo. Usá Reproducir para comenzar.") +
         switchRow("autoplay", "Reproducción automática", "", true) +
-        segmented("voice", "Voz del narrador", VOICES.map(function (v) { return { value: v.key, label: v.label }; }), true) +
+        segmented("voice", "Voz del narrador", VOICES.map(function (v) { return { value: v.key, label: v.label }; }), false) +
         segmented("speed", "Velocidad", SPEEDS.map(function (s) { return { value: s.value, label: s.label }; }), true) +
         segmented("highlight", "Resaltado", [{ value: "word", label: "Palabra" }, { value: "sentence", label: "Oración" }], true) +
         '<p class="reflow-settings-block-title">Pantalla</p>' +

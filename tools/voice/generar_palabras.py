@@ -35,6 +35,8 @@ def main():
     ap.add_argument("--tempo", type=float, default=0.88)
     ap.add_argument("--sleep", type=float, default=7.0,
                     help="segundos entre pedidos (limite de la API)")
+    ap.add_argument("--intentos", type=int, default=6,
+                    help="reintentos de sintesis ante 429/errores")
     args = ap.parse_args()
 
     speech = json.loads((I18N / "speech_texts.json").read_text(encoding="utf-8"))
@@ -56,7 +58,7 @@ def main():
                 hablado += "."
             print(f"[{args.voice}] {tid}: {hablado!r}", flush=True)
             raw = tmp / f"{tid}.wav"
-            if not synth(hablado, VOICES[args.voice], raw, key, args.model):
+            if not synth(hablado, VOICES[args.voice], raw, key, args.model, intentos=args.intentos):
                 print("   fallo la sintesis")
                 continue
             norm = tmp / f"{tid}_norm.wav"

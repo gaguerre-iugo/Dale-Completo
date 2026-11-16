@@ -23,7 +23,10 @@ def main():
     for key, slug in VOICES.items():
         mapping = DATA["voices"][key]["audios"]
         voice_dir = I18N / "voices" / slug / "audio"
-        for tid in AUDIOS:
+        # Incluye IDs que existen como archivo de voz aunque no esten en
+        # audios.json (por ejemplo, palabras nuevas de una actividad).
+        ids = set(AUDIOS) | {p.stem for p in voice_dir.glob("*.mp3")}
+        for tid in sorted(ids):
             own = voice_dir / f"{tid}.mp3"
             if own.is_file():
                 new = f"../voices/{slug}/audio/{tid}.mp3"

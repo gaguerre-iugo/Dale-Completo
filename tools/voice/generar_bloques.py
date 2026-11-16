@@ -249,6 +249,8 @@ def main():
                     help="recorta silencio inicial/final de cada clip")
     ap.add_argument("--tempo", type=float, default=1.0,
                     help="atempo a aplicar despues del corte (0.88 = 12%% mas lento)")
+    ap.add_argument("--intentos", type=int, default=6,
+                    help="reintentos de sintesis ante 429/errores")
     ap.add_argument("--keep-tail", action="store_true",
                     help="no corta el final de la toma en el ultimo item (conserva sonidos finales)")
     args = ap.parse_args()
@@ -275,7 +277,7 @@ def main():
                 if args.sep.startswith(".") and not texto.endswith("."):
                     texto += "."
                 raw = tmp / f"{slug}_{bi}.wav"
-                if not synth(texto, voice, raw, key, args.model):
+                if not synth(texto, voice, raw, key, args.model, intentos=args.intentos):
                     print("   fallo la sintesis")
                     report.append({"voz": slug, "bloque": bi, "estado": "sintesis"})
                     continue
