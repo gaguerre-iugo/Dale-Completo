@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -130,7 +130,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg076_im007" src="images/pg076_im007.png?v=3" alt="Tibur&#xf3;n gris visto de costado.">
+                <img src="images/pg076_im007.png?v=3" alt="Tibur&#xf3;n gris visto de costado.">
               </span>
             </span>
           </button>
@@ -143,7 +143,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg076_im008" src="images/pg076_im008.png?v=3" alt="Pantera de cuerpo entero, parada y mirando hacia adelante.">
+                <img src="images/pg076_im008.png?v=3" alt="Pantera de cuerpo entero, parada y mirando hacia adelante.">
               </span>
             </span>
           </button>
@@ -156,7 +156,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg076_im006" src="images/pg076_im006.png?v=3" alt="Tornillo con cabeza ranurada y punta afilada.">
+                <img src="images/pg076_im006.png?v=3" alt="Tornillo con cabeza ranurada y punta afilada.">
               </span>
             </span>
           </button>
@@ -169,7 +169,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg076_im004" src="images/pg076_im004.png?v=3" alt="Castillo con torres, banderas verdes y port&#xf3;n de madera.">
+                <img src="images/pg076_im004.png?v=3" alt="Castillo con torres, banderas verdes y port&#xf3;n de madera.">
               </span>
             </span>
           </button>
@@ -182,7 +182,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg076_im003" src="images/pg076_im003.png?v=3" alt="Enchufe el&#xe9;ctrico de tres patas con cable.">
+                <img src="images/pg076_im003.png?v=3" alt="Enchufe el&#xe9;ctrico de tres patas con cable.">
               </span>
             </span>
           </button>
@@ -217,7 +217,13 @@
 
       const playCard = function (card) {
         const id = card.dataset.audioId || '';
-        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) {
+          // Palabra mas lenta al tocar la tarjeta, para escuchar bien los sonidos.
+          if (window.__adtTextAudio) {
+            try { window.__adtTextAudio.playbackRate = 0.7; } catch (e) {}
+          }
+          return;
+        }
         speakWord(card.dataset.word || '');
       };
 
@@ -341,7 +347,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

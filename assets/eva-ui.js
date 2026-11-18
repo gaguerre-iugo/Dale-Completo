@@ -1089,7 +1089,7 @@
       }
 
       var card = t.closest(
-        ".word-card, .def-card, .wm-card, .round-card, .k-card, .me-card, .rm-card"
+        ".word-card, .def-card, .def-image, .wm-card, .round-card, .k-card, .me-card, .rm-card"
       );
       if (!card) return;
       if (t.closest(".me-tile, .rm-tile")) return;

@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -94,13 +94,12 @@
       </div>
       <div class="grid grid-cols-1 gap-3">
           <p class="text-lg leading-relaxed text-gray-800" data-id="pg033_n0010">Toc&#xe1; cada tarjeta para descubrir la imagen y escuch&#xe1; su nombre.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg033_n0013">Escrib&#xed; la palabra completa en el espacio, prestando atenci&#xf3;n a la primera letra.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg033_n0015">Cuando termines, revis&#xe1; que todas las palabras est&#xe9;n bien escritas.</p>
+          <p class="text-lg leading-relaxed text-gray-800" data-id="pg033_n0013">Escrib&#xed; cada palabra en el espacio usando el teclado.</p>
       </div>
       <div class="sr-only">
-        <p data-id="pg033_n0017">Cuando se identifica la palabra, se escribe completa en el cuadernillo, atendiendo a la secuencia de sonidos.</p>
-        <p data-id="pg033_n0019">Se repite el procedimiento con todas las palabras.</p>
-        <p data-id="pg033_n0020">GALLETA, GOMA, JIRAFA, GALERA, JOYA, JINETE</p>
+        <p>Cuando se identifica la palabra, se escribe completa en el cuadernillo, atendiendo a la secuencia de sonidos.</p>
+        <p>Se repite el procedimiento con todas las palabras.</p>
+        <p>GALLETA, GOMA, JIRAFA, GALERA, JOYA, JINETE</p>
       </div>
     </div>
 
@@ -111,7 +110,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im006" src="images/pg033_im006.png?v=3" alt="Galleta con chispas de chocolate y un mordisco.">
+                <img src="images/pg033_im006.png?v=3" alt="Galleta con chispas de chocolate y un mordisco.">
               </span>
             </span>
           </button>
@@ -124,7 +123,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im005" src="images/pg033_im005.png?v=3" alt="Goma de borrar roja y blanca.">
+                <img src="images/pg033_im005.png?v=3" alt="Goma de borrar roja y blanca.">
               </span>
             </span>
           </button>
@@ -137,7 +136,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im015" src="images/pg033_im015.png?v=3" alt="Jirafa parada, con manchas marrones y cuello largo.">
+                <img src="images/pg033_im015.png?v=3" alt="Jirafa parada, con manchas marrones y cuello largo.">
               </span>
             </span>
           </button>
@@ -150,7 +149,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im007" src="images/pg033_im007.png?v=3" alt="Galera negra con una varita al lado.">
+                <img src="images/pg033_im007.png?v=3" alt="Galera negra con una varita al lado.">
               </span>
             </span>
           </button>
@@ -163,7 +162,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im014" src="images/pg033_im014.png?v=3" alt="Joyas con piedras rojas: collar, anillos y caravanas.">
+                <img src="images/pg033_im014.png?v=3" alt="Joyas con piedras rojas: collar, anillos y caravanas.">
               </span>
             </span>
           </button>
@@ -176,7 +175,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg033_im004" src="images/pg033_im004.png?v=3" alt="Jinete con casco naranja montado en un caballo blanco.">
+                <img src="images/pg033_im004.png?v=3" alt="Jinete con casco naranja montado en un caballo blanco.">
               </span>
             </span>
           </button>
@@ -211,7 +210,13 @@
 
       const playCard = function (card) {
         const id = card.dataset.audioId || '';
-        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) {
+          // Palabra mas lenta al tocar la tarjeta, para escuchar bien los sonidos.
+          if (window.__adtTextAudio) {
+            try { window.__adtTextAudio.playbackRate = 0.7; } catch (e) {}
+          }
+          return;
+        }
         speakWord(card.dataset.word || '');
       };
 
@@ -236,7 +241,8 @@
         const note = document.createElement('p');
         note.className = 'mt-2 text-base font-semibold ' + (ok ? 'text-green-700' : 'text-red-700');
         note.setAttribute('data-feedback-for', input.id);
-        note.textContent = ok ? '✓ Correcto' : '✗ Revisá esta palabra';
+        const vacio = normalize(input.value) === '';
+        note.textContent = ok ? '✓ Correcto' : (vacio ? '✗ Escribe esta palabra' : '✗ Revisá esta palabra');
         input.insertAdjacentElement('afterend', note);
       };
 
@@ -287,7 +293,7 @@
           if (status) {
             status.classList.remove('text-green-700', 'text-red-700');
             if (passed) {
-              status.textContent = 'Correcto. Escribiste todos los nombres.';
+              status.textContent = 'Correcto. Escribiste todas las palabras.';
               status.classList.add('text-green-700');
             } else if (!allFilled) {
               status.textContent = 'Completá todos los espacios y volvé a intentar.';
@@ -335,7 +341,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

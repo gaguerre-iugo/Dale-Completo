@@ -88,7 +88,7 @@
   {
     "section_id": "pg016_sec002",
     "href": "pg016_sec002.html",
-    "title": "10 J: Naipes",
+    "title": "10 J: Memory",
     "chapter_id": "text-pg016-26",
     "level": 1,
     "activity": true
@@ -120,7 +120,7 @@
   {
     "section_id": "pg020_sec001",
     "href": "pg020_sec001.html",
-    "title": "14 P: ¿Cuál es la inicial?",
+    "title": "14 P y T: ¿Cuál es el sonido inicial?",
     "chapter_id": "pg020_n0008",
     "level": 1,
     "activity": true
@@ -144,7 +144,7 @@
   {
     "section_id": "pg024_sec001",
     "href": "pg024_sec001.html",
-    "title": "17 G: Descarte",
+    "title": "17 G: Armar parejas",
     "chapter_id": "pg024_n0005",
     "level": 1,
     "activity": true
@@ -152,7 +152,7 @@
   {
     "section_id": "pg025_sec001",
     "href": "pg025_sec001.html",
-    "title": "18 L: Sobre con letras",
+    "title": "18 L y N: Ordenar letras",
     "chapter_id": "pg025_n0007",
     "level": 1,
     "activity": true
@@ -160,7 +160,7 @@
   {
     "section_id": "pg026_sec002",
     "href": "pg026_sec002.html",
-    "title": "19 P y T: Sacar dibujos",
+    "title": "19 P y T: ¿Qué voy a escribir?",
     "chapter_id": "text-pg026-25",
     "level": 1,
     "activity": true
@@ -192,7 +192,7 @@
   {
     "section_id": "pg030_sec001",
     "href": "pg030_sec001.html",
-    "title": "23 M: Sobre con letras",
+    "title": "23 M y N: Ordenar letras",
     "chapter_id": "pg030_n0007",
     "level": 1,
     "activity": true
@@ -200,7 +200,7 @@
   {
     "section_id": "pg031_sec001",
     "href": "pg031_sec001.html",
-    "title": "24 C: Sacar dibujos",
+    "title": "24 C y G: ¿Qué voy a escribir?",
     "chapter_id": "pg031_n0007",
     "level": 1,
     "activity": true
@@ -224,7 +224,7 @@
   {
     "section_id": "pg034_sec001",
     "href": "pg034_sec001.html",
-    "title": "27 CH y H: Sobre con letras",
+    "title": "27 CH y H: Ordenar letras",
     "chapter_id": "pg034_n0006",
     "level": 1,
     "activity": true
@@ -232,7 +232,7 @@
   {
     "section_id": "pg035_sec001",
     "href": "pg035_sec001.html",
-    "title": "28 N: Sobre con letras",
+    "title": "28 N y Ñ: Ordenar letras",
     "chapter_id": "pg035_n0007",
     "level": 1,
     "activity": true

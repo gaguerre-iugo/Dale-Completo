@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -100,13 +100,12 @@
       <div class="flex-1 min-w-0">
         <h2 id="activity-heading-pg028" class="adt-head-title" data-id="pg028_n0007">DETECTIVE DE SONIDOS</h2>
         <div class="mt-3 space-y-2">
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0009">Ronda B: seleccion&#xe1; todas las palabras que empiezan con /b/.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0012">Cuando est&#xe9;n todas, comprob&#xe1; la ronda y pas&#xe1;s a la letra D.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0014">Ronda D: seleccion&#xe1; todas las palabras que empiezan con /d/.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0016">Las palabras correctas de una ronda quedan marcadas y no se vuelven a usar.</p>
+          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0009">Mir&#xe1; con atenci&#xf3;n las palabras. Al seleccionarlas, pod&#xe9;s escuchar sus nombres.</p>
+          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0012">Seleccion&#xe1; la letra B, despu&#xe9;s seleccion&#xe1; las palabras que comienzan con el sonido /b/.</p>
+          <p class="text-lg leading-relaxed text-gray-800" data-id="pg028_n0014">Despu&#xe9;s, seleccion&#xe1; la letra D, despu&#233;s seleccion&#xe1; las palabras que comienzan con el sonido /d/.</p>
         </div>
         <div class="sr-only">
-          <p data-id="pg028_n0017">DAMA, DURO, DUNA, BOLLO, BANANA, BA&#xd1;O</p>
+          <p>DAMA, DURO, DUNA, BOLLO, BANANA, BA&#xd1;O</p>
         </div>
       </div>
     </div>
@@ -202,6 +201,33 @@
       if (!section || section.dataset.adtInitialized === 'true') return;
       section.dataset.adtInitialized = 'true';
 
+      /* Silencia el error.mp3 del runtime cuando la ronda se completa bien y el
+         juego sigue con la otra letra: el mensaje es de exito, no de error. */
+      (function () {
+        if (window.__adtDaleAudioPatched) return;
+        window.__adtDaleAudioPatched = true;
+        var Native = window.Audio;
+        if (typeof Native !== 'function') return;
+        function Patched(src) {
+          var el = new Native(src);
+          if (/(^|\/)error\.mp3(\?|$)/.test(String(src))) {
+            var nativePlay = el.play;
+            el.play = function () {
+              if (window.__adtDaleMuteError) return Promise.resolve();
+              return nativePlay.call(el);
+            };
+          }
+          return el;
+        }
+        Patched.prototype = Native.prototype;
+        window.Audio = Patched;
+      })();
+
+      const muteFrameworkError = function () {
+        window.__adtDaleMuteError = true;
+        setTimeout(function () { window.__adtDaleMuteError = false; }, 0);
+      };
+
       const grid = section.querySelector('.word-grid');
       const cards = Array.from(section.querySelectorAll('[data-activity-item]'));
       const chips = Array.from(section.querySelectorAll('[data-letter-chip]'));
@@ -209,7 +235,7 @@
       const status = section.querySelector('[data-activity-status]');
       const selected = new Set();
       const completed = new Set();
-      let round = 'B';
+      let round = null;
       let finished = false;
 
       const setStatus = function (message, ok) {
@@ -230,7 +256,14 @@
         arr.forEach(function (card) { grid.appendChild(card); });
       };
 
+      const nextLetter = function () {
+        if (!completed.has('B')) return 'B';
+        if (!completed.has('D')) return 'D';
+        return '';
+      };
+
       const updateChips = function () {
+        const next = nextLetter();
         chips.forEach(function (chip) {
           const letter = chip.dataset.letterChip;
           chip.classList.remove('is-active', 'is-done');
@@ -242,6 +275,9 @@
             chip.classList.add('is-active');
             chip.disabled = false;
             chip.setAttribute('aria-pressed', 'true');
+          } else if (letter === next) {
+            chip.disabled = false;
+            chip.setAttribute('aria-pressed', 'false');
           } else {
             chip.disabled = true;
             chip.setAttribute('aria-pressed', 'false');
@@ -269,6 +305,10 @@
       cards.forEach(function (card) {
         card.addEventListener('click', function () {
           if (finished || card.disabled || completed.has(card.dataset.letter)) return;
+          if (!round) {
+            setStatus('Primero seleccioná la letra ' + nextLetter() + ' para comenzar.', false);
+            return;
+          }
           card.classList.remove('is-wrong');
           if (selected.has(card)) {
             selected.delete(card);
@@ -288,6 +328,10 @@
 
       const validateRound = function () {
         if (finished) return true;
+        if (!round) {
+          setStatus('Primero seleccioná la letra ' + nextLetter() + ' para comenzar.', false);
+          return false;
+        }
         const roundCards = cards.filter(function (card) { return card.dataset.letter === round; });
         const wrong = Array.from(selected).filter(function (card) { return card.dataset.letter !== round; });
         const missing = roundCards.filter(function (card) { return !selected.has(card); });
@@ -322,10 +366,10 @@
 
         if (round === 'B') {
           completed.add('B');
+          round = null;
           updateChips();
-          round = 'D';
-          startRound('D');
-          setStatus('¡Bien! Ahora buscá las palabras que empiezan con /d/.', true);
+          setStatus('¡Bien! Ahora seleccioná la letra D.', true);
+          muteFrameworkError();
           return false;
         }
 
@@ -346,13 +390,16 @@
 
       chips.forEach(function (chip) {
         chip.addEventListener('click', function () {
-          if (chip.disabled || chip.dataset.letterChip !== round) return;
-          startRound(round);
+          if (chip.disabled) return;
+          if (chip.dataset.letterChip !== nextLetter()) return;
+          startRound(chip.dataset.letterChip);
         });
       });
 
       shuffle();
-      startRound('B');
+      round = null;
+      updateChips();
+      setStatus('', null);
 
       window.adtRegisterCustomActivity(section, {
         validate: function () { return validateRound(); },
@@ -374,7 +421,9 @@
             button.textContent = 'Comprobar ronda';
           }
           shuffle();
-          startRound('B');
+          round = null;
+          updateChips();
+          setStatus('', null);
         },
       });
     })();
@@ -391,7 +440,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

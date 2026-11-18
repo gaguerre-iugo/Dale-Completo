@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -97,10 +97,11 @@
       </div>
     </div>
 
-    <div class="py-6 text-xl leading-relaxed text-gray-800" data-id="text-pg014-126"><p class>Mir&#xe1; con atenci&#xf3;n las im&#xe1;genes. Al seleccionarlas, pod&#xe9;s escuchar sus nombres.</p>
-        <p class="mt-3">Clasific&#xe1; las im&#xe1;genes por su sonido inicial.</p>
-        <p class="mt-3">Busc&#xe1; y arrastr&#xe1; hacia la letra M todas las im&#xe1;genes que empiezan con el sonido /m/.</p>
-        <p class="mt-3">Despu&#xe9;s busc&#xe1; y arrastr&#xe1; hacia la letra N todas las im&#xe1;genes que empiezan con el sonido /n/.</p></div>
+    <div class="py-6 text-xl leading-relaxed text-gray-800" data-id="text-pg014-126"><p class>Mir&#xe1; con atenci&#xf3;n las im&#xe1;genes. Al tocarlas, pod&#xe9;s escuchar sus nombres.</p>
+        <p class="mt-3">Orden&#xe1; las im&#xe1;genes por su sonido inicial.</p>
+        <p class="mt-3">Busc&#xe1; y arrastr&#xe1; hacia la fila M todas las im&#xe1;genes que empiezan con el sonido /m/.</p>
+        <p class="mt-3">Despu&#xe9;s busc&#xe1; y arrastr&#xe1; hacia la fila N todas las im&#xe1;genes que empiezan con el sonido /n/.</p>
+        <p class="mt-3">Pueden sobrar im&#xe1;genes.</p></div>
   </div>
 
   <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -278,7 +279,10 @@
           item.classList.remove('opacity-50');
         });
 
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) {
+          // Evita que el clic llegue a la fila y vuelva a colocar la imagen:
+          // asi se puede seleccionar una imagen ya ubicada y devolverla a la pila.
+          e.stopPropagation();
           speakLabel(item);
           if (selectedItem === item) {
             clearSelected();
@@ -290,6 +294,7 @@
         item.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
+            e.stopPropagation();
             speakLabel(item);
             if (selectedItem === item) {
               clearSelected();
@@ -345,6 +350,31 @@
           }
         });
       });
+
+      // Devolver una imagen a la pila original: arrastrándola sobre la pila o
+      // tocando la pila con una imagen ya colocada en M o N.
+      if (itemsSource) {
+        itemsSource.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          itemsSource.classList.add('ring-4', 'ring-red-300');
+        });
+        itemsSource.addEventListener('dragleave', function () {
+          itemsSource.classList.remove('ring-4', 'ring-red-300');
+        });
+        itemsSource.addEventListener('drop', function (e) {
+          e.preventDefault();
+          itemsSource.classList.remove('ring-4', 'ring-red-300');
+          const id = e.dataTransfer.getData('text/plain');
+          const dragged = section.querySelector('[data-activity-item="' + id + '"]');
+          if (dragged) moveItemBack(dragged);
+        });
+        itemsSource.addEventListener('click', function (e) {
+          if (selectedItem && selectedItem.closest('[data-activity-target]')) {
+            e.stopPropagation();
+            moveItemBack(selectedItem);
+          }
+        }, true);
+      }
 
       shuffleItems();
 
@@ -414,7 +444,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

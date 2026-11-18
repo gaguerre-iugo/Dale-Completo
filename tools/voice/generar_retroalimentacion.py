@@ -33,6 +33,7 @@ PRETTY = {
     "done": "terminó",
     "next": "siguiente",
     "nextIndex": "siguiente índice",
+    "nextVowel": "vocal pendiente",
 }
 
 

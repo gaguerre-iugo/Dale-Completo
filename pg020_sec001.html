@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
       <h1 class="adt-head-num" data-id="pg020_n0003" data-adt-num>14</h1>
       <div class="space-y-2">
         <h2 class="adt-head-kicker"><span data-id="pg020_n0005">P</span> <span data-id="pg020_n0006">Y</span> <span data-id="pg020_n0007">T</span></h2>
-        <h2 id="activity-heading-pg020" class="adt-head-title" data-id="pg020_n0008">&#xbf;CU&#xc1;L ES LA INICIAL?</h2>
+        <h2 id="activity-heading-pg020" class="adt-head-title" data-id="pg020_n0008">&#xbf;Cu&#xe1;l es el sonido inicial?</h2>
       </div>
     </div>
 
@@ -105,8 +105,8 @@
     </div>
 
     <div class="sr-only">
-      <p data-id="pg020_n0019">Se repite el procedimiento con todas las tarjetas.</p>
-      <p data-id="pg020_n0021">TIJERA, PELOTA, TORTUGA, TAPA, TOSTADA, PAT&#xcd;N, POLLO, PALO, TAZA</p>
+      <p>Se repite el procedimiento con todas las tarjetas.</p>
+      <p>TIJERA, PELOTA, TORTUGA, TAPA, TOSTADA, PAT&#xcd;N, POLLO, PALO, TAZA</p>
     </div>
 
     <div class="mt-6 min-h-[1.5rem] text-lg font-semibold activity-status" data-activity-status role="status" aria-live="polite"></div>
@@ -267,7 +267,10 @@
           item.classList.remove('opacity-50');
         });
 
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) {
+          // Evita que el clic llegue a la fila y vuelva a colocar la imagen:
+          // asi se puede seleccionar una imagen ya ubicada y devolverla a la pila.
+          e.stopPropagation();
           speakLabel(item);
           if (selectedItem === item) {
             clearSelected();
@@ -279,6 +282,7 @@
         item.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
+            e.stopPropagation();
             speakLabel(item);
             if (selectedItem === item) {
               clearSelected();
@@ -335,6 +339,31 @@
         });
       });
 
+      // Devolver una imagen a la pila original: arrastrandola sobre la pila o
+      // tocando la pila con una imagen ya colocada en P, F o T.
+      if (itemsSource) {
+        itemsSource.addEventListener('dragover', function (e) {
+          e.preventDefault();
+          itemsSource.classList.add('ring-4', 'ring-red-300');
+        });
+        itemsSource.addEventListener('dragleave', function () {
+          itemsSource.classList.remove('ring-4', 'ring-red-300');
+        });
+        itemsSource.addEventListener('drop', function (e) {
+          e.preventDefault();
+          itemsSource.classList.remove('ring-4', 'ring-red-300');
+          const id = e.dataTransfer.getData('text/plain');
+          const dragged = section.querySelector('[data-activity-item="' + id + '"]');
+          if (dragged) moveItemBack(dragged);
+        });
+        itemsSource.addEventListener('click', function (e) {
+          if (selectedItem && selectedItem.closest('[data-activity-target]')) {
+            e.stopPropagation();
+            moveItemBack(selectedItem);
+          }
+        }, true);
+      }
+
       shuffleItems();
 
       window.adtRegisterCustomActivity(section, {
@@ -358,14 +387,14 @@
           });
 
           const remaining = itemsSource.querySelectorAll('[data-activity-item]').length;
-          const passed = placed > 0 && remaining === 2 && allCorrect;
+          const passed = placed > 0 && remaining === 0 && allCorrect;
 
           if (status) {
             status.classList.remove('text-green-700', 'text-red-700');
             if (passed) {
               status.textContent = 'Correcto. Clasificaste bien todas las imágenes.';
               status.classList.add('text-green-700');
-            } else if (remaining > 2) {
+            } else if (remaining > 0) {
               status.textContent = 'Todavía faltan imágenes por clasificar.';
               status.classList.add('text-red-700');
             } else {
@@ -403,7 +432,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

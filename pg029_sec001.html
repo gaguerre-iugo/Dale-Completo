@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -94,13 +94,12 @@
       </div>
       <div class="grid grid-cols-1 gap-3">
           <p class="text-lg leading-relaxed text-gray-800" data-id="pg029_n0009">Toc&#xe1; cada tarjeta para descubrir la imagen y escuch&#xe1; su nombre.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg029_n0012">Escrib&#xed; la palabra completa en el espacio, prestando atenci&#xf3;n a la primera letra.</p>
-          <p class="text-lg leading-relaxed text-gray-800" data-id="pg029_n0014">Cuando termines, revis&#xe1; que todas las palabras est&#xe9;n bien escritas.</p>
+          <p class="text-lg leading-relaxed text-gray-800" data-id="pg029_n0012">Escrib&#xed; cada palabra en el espacio usando el teclado.</p>
       </div>
       <div class="sr-only">
-        <p data-id="pg029_n0016">Cuando se identifica la palabra, se escribe completa en el cuadernillo, atendiendo a la secuencia de sonidos.</p>
-        <p data-id="pg029_n0018">Se repite el procedimiento con todas las palabras.</p>
-        <p data-id="pg029_n0019">PALETA, PINO, PUMA, BOTE, BOCA, BILLETE</p>
+        <p>Cuando se identifica la palabra, se escribe completa en el cuadernillo, atendiendo a la secuencia de sonidos.</p>
+        <p>Se repite el procedimiento con todas las palabras.</p>
+        <p>PALETA, PINO, PUMA, BOTE, BOCA, BILLETE</p>
       </div>
     </div>
 
@@ -111,7 +110,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im013" src="images/pg029_im013.png?v=3" alt="Paleta deportiva negra con perforaciones.">
+                <img src="images/pg029_im013.png?v=3" alt="Paleta deportiva negra con perforaciones.">
               </span>
             </span>
           </button>
@@ -124,7 +123,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im006" src="images/pg029_im006.png?v=3" alt="Pino con copa roja y tronco marr&#xf3;n.">
+                <img src="images/pg029_im006.png?v=3" alt="Pino con copa roja y tronco marr&#xf3;n.">
               </span>
             </span>
           </button>
@@ -137,7 +136,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im012" src="images/pg029_im012.png?v=3" alt="Puma gris de pie, visto de costado.">
+                <img src="images/pg029_im012.png?v=3" alt="Puma gris de pie, visto de costado.">
               </span>
             </span>
           </button>
@@ -150,7 +149,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im014" src="images/pg029_im014.png?v=3" alt="Bote de madera con remos.">
+                <img src="images/pg029_im014.png?v=3" alt="Bote de madera con remos.">
               </span>
             </span>
           </button>
@@ -163,7 +162,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im004" src="images/pg029_im004.png?v=3" alt="Boca con labios cerrados.">
+                <img src="images/pg029_im004.png?v=3" alt="Boca con labios cerrados.">
               </span>
             </span>
           </button>
@@ -176,7 +175,7 @@
             <span class="block relative h-64 rounded-2xl">
               <span data-card-front class="flip-face flex flex-col items-center justify-center p-6 text-center"></span>
               <span data-card-back class="flip-face hidden flex-col items-center justify-center p-3">
-                <img data-id="pg029_im005" src="images/pg029_im005.png?v=3" alt="Billete con el n&#xfa;mero 1 en el centro.">
+                <img src="images/pg029_im005.png?v=3" alt="Billete con el n&#xfa;mero 1 en el centro.">
               </span>
             </span>
           </button>
@@ -211,7 +210,13 @@
 
       const playCard = function (card) {
         const id = card.dataset.audioId || '';
-        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) {
+          // Palabra mas lenta al tocar la tarjeta, para escuchar bien los sonidos.
+          if (window.__adtTextAudio) {
+            try { window.__adtTextAudio.playbackRate = 0.7; } catch (e) {}
+          }
+          return;
+        }
         speakWord(card.dataset.word || '');
       };
 
@@ -335,7 +340,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

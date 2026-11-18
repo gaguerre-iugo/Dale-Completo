@@ -16,7 +16,7 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
     <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=42" defer></script>
+    <script src="./assets/eva-ui.js?v=43" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -91,11 +91,11 @@
         <p class="text-lg leading-relaxed text-gray-800" data-id="pg021_n0013">Segu&#xed; buscando hasta encontrar todas las im&#xe1;genes que empiezan con /d/.</p>
       </div>
       <div class="sr-only">
-      <p data-id="pg021_n0015">Cada elecci&#xf3;n se comprueba pronunciando la palabra y atendiendo a su sonido inicial.</p>
-      <p data-id="pg021_n0017">La actividad contin&#xfa;a hasta identificar todas las palabras que comienzan con /d/.</p>
-      <p data-id="pg021_n0019">DADO, DELANTAL, DUENDE, DELF&#xcd;N,</p>
-      <p data-id="pg021_n0020">DINO, FUEGO, OGRO, LENGUA,</p>
-      <p data-id="pg021_n0021">ESPINA, DEDO, DOS</p>
+      <p>Cada elecci&#xf3;n se comprueba pronunciando la palabra y atendiendo a su sonido inicial.</p>
+      <p>La actividad contin&#xfa;a hasta identificar todas las palabras que comienzan con /d/.</p>
+      <p>DADO, DELANTAL, DUENDE, DELF&#xcd;N,</p>
+      <p>DINOSAURIO, FUEGO, OGRO, LENGUA,</p>
+      <p>ESPINA, DEDO, DOS</p>
       </div>
     </div>
 
@@ -129,7 +129,7 @@
             </div>
             <span class="sr-only">Opci&#xf3;n</span>
           </button>
-          <button type="button" data-activity-item="item-5" data-word="Dino" data-correct="true" class="activity-card group relative flex w-full aspect-square items-center justify-center p-4 rounded-lg bg-white hover:bg-gray-50 border-2 border-transparent focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-300" aria-pressed="false" aria-label="Dino. Tocar para escuchar y seleccionar." data-audio-id="gl086">
+          <button type="button" data-activity-item="item-5" data-word="Dinosaurio" data-correct="true" class="activity-card group relative flex w-full aspect-square items-center justify-center p-4 rounded-lg bg-white hover:bg-gray-50 border-2 border-transparent focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-red-300" aria-pressed="false" aria-label="Dinosaurio. Tocar para escuchar y seleccionar." data-audio-id="pg021_word_dinosaurio">
             <span class="selection-indicator absolute top-2 right-2 text-xl font-bold text-gray-700" aria-hidden="true"></span>
             <div class="flex h-[58%] w-[58%] items-center justify-center">
               <img src="images/pg021_im018.png?v=3" alt="" class="h-full w-full object-contain rounded" draggable="false">
@@ -229,7 +229,23 @@
         card.classList.remove('border-transparent', 'bg-white', 'border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50', 'border-red-500', 'bg-red-50');
         if (selected) card.classList.add('border-blue-500', 'bg-blue-50');
         else card.classList.add('border-transparent', 'bg-white');
-        if (indicator) indicator.textContent = selected ? '✓' : '';
+        if (indicator) {
+          indicator.classList.remove('text-red-700');
+          indicator.classList.add('text-gray-700');
+          indicator.textContent = selected ? '✓' : '';
+        }
+      };
+
+      const markWrong = function (card) {
+        card.setAttribute('aria-pressed', 'false');
+        card.classList.remove('border-transparent', 'bg-white', 'border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50');
+        card.classList.add('border-red-500', 'bg-red-50');
+        const indicator = card.querySelector('.selection-indicator');
+        if (indicator) {
+          indicator.classList.remove('text-gray-700');
+          indicator.classList.add('text-red-700');
+          indicator.textContent = '✗';
+        }
       };
 
       cards.forEach(function (card) {
@@ -261,7 +277,7 @@
             const correct = card.dataset.correct === 'true';
             if (correct) correctTotal++;
             if (selected && correct) correctSelected++;
-            if (selected && !correct) wrongSelected++;
+            if (selected && !correct) { wrongSelected++; markWrong(card); }
           });
           const passed = correctSelected === correctTotal && wrongSelected === 0;
           if (status) {
@@ -303,7 +319,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=26"></script>
+    <script src="./assets/offline-preloader.js?v=38"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

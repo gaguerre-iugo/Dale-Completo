@@ -13,9 +13,9 @@ Cada actividad muestra un mensaje de estado al responder o al presionar **Enviar
 | Tipo | Mensajes únicos | Menciones |
 |---|---:|---:|
 | Actividades con retroalimentación propia | 66 | — |
-| Éxito | 44 | 98 |
-| Error | 52 | 118 |
-| Informativo | 13 | 19 |
+| Éxito | 46 | 99 |
+| Error | 54 | 117 |
+| Informativo | 15 | 21 |
 | Etiqueta accesible | 1 | 5 |
 
 ## Mensajes genéricos del runtime
@@ -51,25 +51,25 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 | Primera | 7 | `pg012_sec002.html` | ¿EN QUÉ FILA VAN? |
 | Primera | 8 | `pg013_sec004.html` | ¿QUÉ VOY A DECIR? |
 | Primera | 9 | `pg014_sec003.html` | ¿dónde va la imagen? |
-| Primera | 10 | `pg016_sec002.html` | NAIPES |
+| Primera | 10 | `pg016_sec002.html` | MEMORY |
 | Primera | 11 | `pg017_sec002.html` | ¿Qué voy a decir? |
 | Primera | 12 | `pg018_sec001.html` | AGRUPAR |
 | Primera | 13 | `pg019_sec001.html` | EL ENTROMETIDO |
-| Primera | 14 | `pg020_sec001.html` | ¿CUÁL ES LA INICIAL? |
+| Primera | 14 | `pg020_sec001.html` | ¿Cuál es el sonido inicial? |
 | Primera | 15 | `pg021_sec001.html` | ¿CUÁLES SON? |
 | Primera | 16 | `pg022_sec001.html` | DETECTIVE DE SONIDOS |
-| Primera | 17 | `pg024_sec001.html` | DESCARTE |
-| Primera | 18 | `pg025_sec001.html` | SOBRE CON LETRAS |
-| Primera | 19 | `pg026_sec002.html` | SACAR DIBUJOS |
+| Primera | 17 | `pg024_sec001.html` | ARMAR PAREJAS |
+| Primera | 18 | `pg025_sec001.html` | ORDENAR LETRAS |
+| Primera | 19 | `pg026_sec002.html` | ¿QUÉ VOY A ESCRIBIR? |
 | Primera | 20 | `pg027_sec002.html` | ¿CUÁNTAS RECORDÁS? |
 | Primera | 21 | `pg028_sec001.html` | DETECTIVE DE SONIDOS |
 | Primera | 22 | `pg029_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
-| Primera | 23 | `pg030_sec001.html` | SOBRE CON LETRAS |
-| Primera | 24 | `pg031_sec001.html` | SACAR DIBUJOS |
+| Primera | 23 | `pg030_sec001.html` | ORDENAR LETRAS |
+| Primera | 24 | `pg031_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
 | Primera | 25 | `pg032_sec001.html` | DEFINICIONES |
 | Primera | 26 | `pg033_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
-| Primera | 27 | `pg034_sec001.html` | SOBRE CON LETRAS |
-| Primera | 28 | `pg035_sec001.html` | SOBRE CON LETRAS |
+| Primera | 27 | `pg034_sec001.html` | ORDENAR LETRAS |
+| Primera | 28 | `pg035_sec001.html` | ORDENAR LETRAS |
 | Primera | 29 | `pg036_sec001.html` | PALABRAS DICTADAS |
 | Primera | 30 | `pg037_sec001.html` | PALABRAS DICTADAS |
 | Primera | 31 | `pg038_sec001.html` | CAMBIAR PALABRAS |
@@ -115,18 +115,18 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Correcto! Terminaste la vocal {letra actual}. Ahora sigue la vocal {siguiente letra}.
 - ¡Correcto! Terminaste todas las vocales.
+- ¡Correcto! Terminaste la vocal {letra actual}. Ahora sigue la vocal {siguiente letra}.
 
 **Error**
 
 - Seleccioná las imágenes de la vocal {letra actual} y probá otra vez.
 - Todavía no. Las opciones incorrectas se desmarcaron; las correctas quedan marcadas. Probá otra vez.
-- Todavía no. Las correctas quedan marcadas; seleccioná las que faltan y probá otra vez.
+- Todavía no. Seleccioná las que faltan y probá otra vez.
 
 **Informativo**
 
-- Primero seleccioná la vocal A para comenzar.
+- Primero seleccioná la vocal {vocal pendiente} para comenzar.
 
 ### Primera parte — Actividad 2 — pg007_sec002.html — ARMAR PAREJAS
 
@@ -178,6 +178,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Elegí una o más imágenes y luego probá de nuevo.
 - Todavía no. Revisá las imágenes marcadas con ✗ y seguí buscando las que empiezan con /m/.
+- Todavía no. Seguí buscando las que empiezan con /m/.
 
 ### Primera parte — Actividad 6 — pg011_sec002.html — ARMAR PAREJAS
 
@@ -243,17 +244,17 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - si ok: Correcto / si no: Incorrecto
 
-### Primera parte — Actividad 10 — pg016_sec002.html — NAIPES
+### Primera parte — Actividad 10 — pg016_sec002.html — MEMORY
 
 **Éxito**
 
 - ¡Muy bien! Las dos imágenes empiezan con el mismo sonido. ✓
-- ¡Juego completo! Encontraste todas las parejas por sonido inicial. ✓
+- ¡Correcto! Encontraste todas las parejas.
 
 **Error**
 
 - No empiezan con el mismo sonido. ✗ Se vuelven a dar vuelta.
-- Seguí jugando. Todavía faltan parejas por encontrar.
+- Sigue jugando. Encuentra todas las parejas para completar la actividad.
 
 **Informativo**
 
@@ -263,18 +264,18 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Correcto! Terminaste la letra {letra actual}. Ahora sigue la letra {siguiente letra}.
 - ¡Correcto! Terminaste todas las letras.
+- ¡Correcto! Terminaste la letra {letra actual}. Ahora sigue la letra {siguiente letra}.
 
 **Error**
 
 - Seleccioná las imágenes de la letra {letra actual} y probá otra vez.
-- Todavía no. Las opciones incorrectas se desmarcaron; las correctas quedan marcadas. Probá otra vez.
-- Todavía no. Las correctas quedan marcadas; seleccioná las que faltan y probá otra vez.
+- Todavía no. Seleccioná las que faltan y probá otra vez.
 
 **Informativo**
 
-- Primero seleccioná la letra {rounds[0].letter} para comenzar.
+- Primero seleccioná la letra {nextLetter} para comenzar.
+- Vuelve a revisar.
 
 ### Primera parte — Actividad 12 — pg018_sec001.html — AGRUPAR
 
@@ -295,14 +296,14 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- Correcto. Descubriste las tres imágenes diferentes.
+- Correcto. Descubriste los tres sonidos diferentes.
 
 **Error**
 
 - Elegí una imagen en cada grupo y probá de nuevo.
 - No del todo. Revisá las imágenes marcadas con ✗ y volvé a intentar.
 
-### Primera parte — Actividad 14 — pg020_sec001.html — ¿CUÁL ES LA INICIAL?
+### Primera parte — Actividad 14 — pg020_sec001.html — ¿Cuál es el sonido inicial?
 
 **Éxito**
 
@@ -339,7 +340,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 - Todavía no. Revisá las imágenes marcadas y volvé a intentar.
 - Seguí buscando: todavía faltan imágenes.
 
-### Primera parte — Actividad 17 — pg024_sec001.html — DESCARTE
+### Primera parte — Actividad 17 — pg024_sec001.html — ARMAR PAREJAS
 
 **Éxito**
 
@@ -350,7 +351,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 - Esas palabras no tienen el mismo sonido inicial. Escuchalas otra vez y probá de nuevo.
 - [si {completó}: Correcto. Encontraste las 8 parejas.] [si no: Todavía faltan parejas. Llevás {parejas encontradas} de 8. Seguí jugando.]
 
-### Primera parte — Actividad 18 — pg025_sec001.html — SOBRE CON LETRAS
+### Primera parte — Actividad 18 — pg025_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -360,16 +361,16 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Todavía no. Fijate el orden de las letras y probá otra vez.
 
-### Primera parte — Actividad 19 — pg026_sec002.html — SACAR DIBUJOS
+### Primera parte — Actividad 19 — pg026_sec002.html — ¿QUÉ VOY A ESCRIBIR?
 
 **Éxito**
 
 - Correcto. Escribiste todos los nombres.
+- Tenés {aciertos} de {espacios} correctas.
 
 **Error**
 
 - Completá todos los espacios y volvé a intentar.
-- No del todo. Tenés {aciertos} de {espacios} correctas.
 - [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
 
 ### Primera parte — Actividad 20 — pg027_sec002.html — ¿CUÁNTAS RECORDÁS?
@@ -394,13 +395,17 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Bien! Ahora buscá las palabras que empiezan con /d/.
+- ¡Bien! Ahora seleccioná la letra D.
 - ¡Listo! Encontraste las palabras de B y D.
 
 **Error**
 
 - Revisá las palabras marcadas: no empiezan con {letra de la ronda}.
 - Todavía faltan palabras que empiezan con {letra de la ronda}.
+
+**Informativo**
+
+- Primero seleccioná la letra {nextLetter()} para comenzar.
 
 ### Primera parte — Actividad 22 — pg029_sec001.html — ¿QUÉ VOY A ESCRIBIR?
 
@@ -414,7 +419,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 - No del todo. Tenés {aciertos} de {espacios} correctas.
 - [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
 
-### Primera parte — Actividad 23 — pg030_sec001.html — SOBRE CON LETRAS
+### Primera parte — Actividad 23 — pg030_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -424,11 +429,11 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Todavía no. Fijate el orden de las letras y probá otra vez.
 
-### Primera parte — Actividad 24 — pg031_sec001.html — SACAR DIBUJOS
+### Primera parte — Actividad 24 — pg031_sec001.html — ¿QUÉ VOY A ESCRIBIR?
 
 **Éxito**
 
-- Correcto. Escribiste todos los nombres.
+- Correcto. Escribiste todas las palabras.
 
 **Error**
 
@@ -451,15 +456,15 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- Correcto. Escribiste todos los nombres.
+- Correcto. Escribiste todas las palabras.
 
 **Error**
 
 - Completá todos los espacios y volvé a intentar.
 - No del todo. Tenés {aciertos} de {espacios} correctas.
-- [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
+- [si {correcto}: ✓ Correcto] [si no: [si {vacio}: ✗ Escribe esta palabra] [si no: ✗ Revisá esta palabra]]
 
-### Primera parte — Actividad 27 — pg034_sec001.html — SOBRE CON LETRAS
+### Primera parte — Actividad 27 — pg034_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -469,7 +474,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Todavía no. Fijate el orden de las letras y probá otra vez.
 
-### Primera parte — Actividad 28 — pg035_sec001.html — SOBRE CON LETRAS
+### Primera parte — Actividad 28 — pg035_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
