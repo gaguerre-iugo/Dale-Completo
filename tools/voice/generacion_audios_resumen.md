@@ -1,10 +1,10 @@
 # Resumen de generación de audios
 
 Repo: `Dale-Completo`  
-Eventos en el log: 5735  
-IDs únicos por voz: 2989  
+Eventos en el log: 5869  
+IDs únicos por voz: 3015  
 Desde: 2026-11-12T14:19:29+00:00  
-Hasta: 2026-11-17T17:39:45+00:00
+Hasta: 2026-11-18T12:27:53+00:00
 
 ## Última entrada por ID
 
@@ -12,10 +12,10 @@ Hasta: 2026-11-17T17:39:45+00:00
 |---|---|---|---:|
 | asesora | gemini-3.8-flash-tts | alias | 1 |
 | asesora | gemini-3.8-flash-tts | copied | 301 |
-| asesora | gemini-3.8-flash-tts | final | 1187 |
+| asesora | gemini-3.8-flash-tts | final | 1200 |
 | consultor | gemini-3.8-flash-lite-tts | alias | 1 |
 | consultor | gemini-3.8-flash-lite-tts | copied | 301 |
-| consultor | gemini-3.8-flash-lite-tts | final | 1166 |
+| consultor | gemini-3.8-flash-lite-tts | final | 1179 |
 | consultor | gemini-3.8-flash-lite-tts | ok | 32 |
 
 ## Cómo leer el log

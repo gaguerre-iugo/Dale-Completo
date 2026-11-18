@@ -112,9 +112,9 @@
         <p class="text-lg leading-relaxed text-gray-800" data-id="pg055_n0016">Segu&#xed; buscando hasta encontrar todas las im&#xe1;genes que contienen /r/.</p>
       </div>
       <div class="sr-only">
-      <p data-id="pg055_n0014">Si es necesario, repite la palabra lentamente para facilitar la identificaci&#xf3;n del sonido.</p>
-      <p data-id="pg055_n0018">BARCO, GOTA, CARTA, MEDIA,</p>
-      <p data-id="pg055_n0019">SOL, PUERTA, TORTA, MANO</p>
+      <p>Si es necesario, repite la palabra lentamente para facilitar la identificaci&#xf3;n del sonido.</p>
+      <p>BARCO, GOTA, CARTA, MEDIA,</p>
+      <p>SOL, PUERTA, TORTA, MANO</p>
       </div>
     </div>
 
@@ -227,7 +227,23 @@
         card.classList.remove('border-transparent', 'bg-white', 'border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50', 'border-red-500', 'bg-red-50');
         if (selected) card.classList.add('border-blue-500', 'bg-blue-50');
         else card.classList.add('border-transparent', 'bg-white');
-        if (indicator) indicator.textContent = selected ? '✓' : '';
+        if (indicator) {
+          indicator.classList.remove('text-red-700');
+          indicator.classList.add('text-gray-700');
+          indicator.textContent = selected ? '✓' : '';
+        }
+      };
+
+      const markWrong = function (card) {
+        card.setAttribute('aria-pressed', 'false');
+        card.classList.remove('border-transparent', 'bg-white', 'border-blue-500', 'bg-blue-50', 'border-green-500', 'bg-green-50');
+        card.classList.add('border-red-500', 'bg-red-50');
+        const indicator = card.querySelector('.selection-indicator');
+        if (indicator) {
+          indicator.classList.remove('text-gray-700');
+          indicator.classList.add('text-red-700');
+          indicator.textContent = '✗';
+        }
       };
 
       cards.forEach(function (card) {
@@ -259,7 +275,7 @@
             const correct = card.dataset.correct === 'true';
             if (correct) correctTotal++;
             if (selected && correct) correctSelected++;
-            if (selected && !correct) wrongSelected++;
+            if (selected && !correct) { wrongSelected++; markWrong(card); }
           });
           const passed = correctSelected === correctTotal && wrongSelected === 0;
           if (status) {
@@ -301,7 +317,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=38"></script>
+    <script src="./assets/offline-preloader.js?v=40"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>
