@@ -130,7 +130,6 @@
     <div class="grid grid-cols-1 gap-3">
       <p class="text-lg leading-relaxed text-gray-800" data-id="pg064_n0006">Escuch&#xe1; cada palabra y fijate si contiene el sonido /l/.</p>
       <p class="text-lg leading-relaxed text-gray-800" data-id="pg064_n0011">Marc&#xe1; S&#xed; o No en cada palabra.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg064_n0015">Cuando termines, comprob&#xe1; tus respuestas.</p>
     </div>
     <div class="sr-only">
       <p>La educadora lee o nombra cada palabra.</p>
@@ -281,7 +280,7 @@
         }
         tfDone = true;
         if (tfCheck) { tfCheck.disabled = true; tfCheck.textContent = '¡Listo!'; }
-        setStatus(tfStatus, '¡Muy bien! Marcaste todas las palabras.', true);
+        setStatus(tfStatus, '¡Muy bien! Marcaste todas las palabras que contienen el sonido /l/.', true);
         return true;
       };
 
@@ -385,7 +384,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

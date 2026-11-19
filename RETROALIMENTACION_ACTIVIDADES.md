@@ -13,9 +13,9 @@ Cada actividad muestra un mensaje de estado al responder o al presionar **Enviar
 | Tipo | Mensajes únicos | Menciones |
 |---|---:|---:|
 | Actividades con retroalimentación propia | 66 | — |
-| Éxito | 46 | 99 |
-| Error | 54 | 117 |
-| Informativo | 15 | 21 |
+| Éxito | 50 | 101 |
+| Error | 60 | 109 |
+| Informativo | 14 | 20 |
 | Etiqueta accesible | 1 | 5 |
 
 ## Mensajes genéricos del runtime
@@ -80,34 +80,34 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 | Primera | 36 | `pg043_sec001.html` | PALABRAS DICTADAS |
 | Primera | 37 | `pg044_sec001.html` | CAMBIAR PALABRAS |
 | Primera | 38 | `pg045_sec001.html` | PALABRAS DICTADAS |
-| Segunda | 1 | `pg050_sec001.html` | SACAR DIBUJOS |
+| Segunda | 1 | `pg050_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
 | Segunda | 2 | `pg051_sec001.html` | ¿QUÉ VOY A DECIR? |
-| Segunda | 3 | `pg053_sec001.html` | SOBRE CON LETRAS |
+| Segunda | 3 | `pg053_sec001.html` | ORDENAR LETRAS |
 | Segunda | 4 | `pg054_sec001.html` | ¡ME EQUIVOQUÉ! |
 | Segunda | 5 | `pg055_sec001.html` | DETECTIVE DE SONIDOS |
 | Segunda | 6 | `pg056_sec001.html` | ¿CUÁNTAS RECORDÁS? |
 | Segunda | 7 | `pg057_sec001.html` | DETECTIVE DE SONIDOS |
 | Segunda | 8 | `pg058_sec001.html` | DEFINICIONES |
 | Segunda | 9 | `pg059_sec001.html` | ¡ME EQUIVOQUÉ! |
-| Segunda | 10 | `pg060_sec001.html` | SOBRE CON LETRAS |
+| Segunda | 10 | `pg060_sec001.html` | ORDENAR LETRAS |
 | Segunda | 11 | `pg061_sec001.html` | DETECTIVE DE SONIDOS |
 | Segunda | 12 | `pg062_sec001.html` | ARMAR PAREJAS |
-| Segunda | 13 | `pg063_sec001.html` | SOBRE CON LETRAS |
+| Segunda | 13 | `pg063_sec001.html` | ORDENAR LETRAS |
 | Segunda | 14 | `pg064_sec001.html` | DETECTIVE DE SONIDOS |
-| Segunda | 15 | `pg064_sec002.html` | CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL |
-| Segunda | 16 | `pg065_sec001.html` | SOBRE CON LETRAS |
-| Segunda | 17 | `pg066_sec001.html` | CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL |
+| Segunda | 15 | `pg064_sec002.html` | Cambiar palabras |
+| Segunda | 16 | `pg065_sec001.html` | ORDENAR LETRAS |
+| Segunda | 17 | `pg066_sec001.html` | Cambiar palabras |
 | Segunda | 18 | `pg067_sec001.html` | DEFINICIONES |
-| Segunda | 19 | `pg068_sec001.html` | SACAR DIBUJOS |
+| Segunda | 19 | `pg068_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
 | Segunda | 20 | `pg069_sec001.html` | JUEGO DE LA MEMORIA |
 | Segunda | 21 | `pg070_sec001.html` | SOBRE CON LETRAS |
 | Segunda | 22 | `pg071_sec001.html` | DETECTIVE DE SONIDOS |
 | Segunda | 23 | `pg072_sec001.html` | ¿CUÁNTAS RECORDÁS? |
-| Segunda | 24 | `pg073_sec001.html` | CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL |
+| Segunda | 24 | `pg073_sec001.html` | Cambiar palabras |
 | Segunda | 25 | `pg073_sec002.html` | DETECTIVE DE SONIDOS |
 | Segunda | 26 | `pg074_sec001.html` | SOBRE CON LETRAS |
 | Segunda | 27 | `pg075_sec001.html` | ¡ME EQUIVOQUÉ! |
-| Segunda | 28 | `pg076_sec001.html` | SACAR DIBUJOS |
+| Segunda | 28 | `pg076_sec001.html` | ¿QUÉ VOY A ESCRIBIR? |
 
 ## Mensajes por actividad
 
@@ -587,17 +587,17 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Todavía no. Fijate el orden de las letras y probá otra vez.
 
-### Segunda parte — Actividad 1 — pg050_sec001.html — SACAR DIBUJOS
+### Segunda parte — Actividad 1 — pg050_sec001.html — ¿QUÉ VOY A ESCRIBIR?
 
 **Éxito**
 
-- Correcto. Escribiste todos los nombres.
+- Correcto. Escribiste todas las palabras.
+- Lograste {aciertos} de {espacios} correctas.
 
 **Error**
 
 - Completá todos los espacios y volvé a intentar.
-- No del todo. Tenés {aciertos} de {espacios} correctas.
-- [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
+- [si {correcto}: ✓ Correcto] [si no: [si {normalize(input.value) === ''}: ✗ Falta esta palabra] [si no: ✗ Revisá esta palabra]]
 
 ### Segunda parte — Actividad 2 — pg051_sec001.html — ¿QUÉ VOY A DECIR?
 
@@ -608,10 +608,10 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
-- Esas imágenes no empiezan con {letra de la ronda}. Revisá las marcadas.
-- Todavía faltan imágenes que empiezan con {letra de la ronda}.
+- Vuelve a revisar.
+- Todavía no. Seleccioná las que faltan y probá otra vez.
 
-### Segunda parte — Actividad 3 — pg053_sec001.html — SOBRE CON LETRAS
+### Segunda parte — Actividad 3 — pg053_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -652,7 +652,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
-- Todavía faltan palabras. Revisá las marcadas con ✗ y probá otra vez.
+- Todavía faltan palabras.
 - ✗ Intentá otra vez
 
 **Informativo**
@@ -669,7 +669,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
-- Revisá las palabras marcadas: no tienen el sonido /r/ suave.
+- Revisá las palabras en rojo.
 - Todavía faltan palabras con /r/ suave. Seguí buscando.
 
 ### Segunda parte — Actividad 8 — pg058_sec001.html — DEFINICIONES
@@ -681,7 +681,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
-- Esa no es la imagen. Volvé a intentarlo.
+- Esa no es la imagen correcta. Volvé a intentarlo.
 
 ### Segunda parte — Actividad 9 — pg059_sec001.html — ¡ME EQUIVOQUÉ!
 
@@ -694,7 +694,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Esas letras no son las que cambian. Probá otra vez.
 
-### Segunda parte — Actividad 10 — pg060_sec001.html — SOBRE CON LETRAS
+### Segunda parte — Actividad 10 — pg060_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -708,12 +708,12 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- Correcto. Encontraste todas las imágenes.
+- ¡Muy bien! Encontraste todas las palabras.
 
 **Error**
 
-- Todavía no. Revisá las imágenes marcadas y volvé a intentar.
-- Seguí buscando: todavía faltan imágenes.
+- Revisá las palabras en rojo.
+- Seguí buscando: todavía faltan palabras.
 
 ### Segunda parte — Actividad 12 — pg062_sec001.html — ARMAR PAREJAS
 
@@ -726,7 +726,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Esas imágenes no empiezan con el mismo sonido. Probá otra vez.
 
-### Segunda parte — Actividad 13 — pg063_sec001.html — SOBRE CON LETRAS
+### Segunda parte — Actividad 13 — pg063_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -740,7 +740,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Muy bien! Marcaste todas las palabras.
+- ¡Muy bien! Marcaste todas las palabras que contienen el sonido /l/.
 - ¡Listo! Formaste todas las palabras nuevas.
 - ¡Muy bien! Quedó {palabra resultante}.
 
@@ -751,22 +751,14 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 - Ese no es el último sonido. Probá otra vez.
 - Todavía faltan palabras por cambiar.
 
-### Segunda parte — Actividad 15 — pg064_sec002.html — CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL
+### Segunda parte — Actividad 15 — pg064_sec002.html — Cambiar palabras
 
 **Éxito**
 
-- ¡Muy bien! Marcaste todas las palabras.
 - ¡Listo! Formaste todas las palabras nuevas.
-- ¡Muy bien! Quedó {palabra resultante}.
+- ¡Muy bien! Quedó {card.dataset.answer}.
 
-**Error**
-
-- Marcá Sí o No en todas las palabras.
-- Revisá las palabras marcadas en rojo.
-- Ese no es el último sonido. Probá otra vez.
-- Todavía faltan palabras por cambiar.
-
-### Segunda parte — Actividad 16 — pg065_sec001.html — SOBRE CON LETRAS
+### Segunda parte — Actividad 16 — pg065_sec001.html — ORDENAR LETRAS
 
 **Éxito**
 
@@ -776,16 +768,12 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Todavía no. Fijate el orden de las letras y probá otra vez.
 
-### Segunda parte — Actividad 17 — pg066_sec001.html — CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL
+### Segunda parte — Actividad 17 — pg066_sec001.html — Cambiar palabras
 
 **Éxito**
 
 - ¡Listo! Formaste todas las palabras nuevas.
-- ¡Muy bien! Quedó {palabra resultante}.
-
-**Error**
-
-- Ese no es el último sonido. Probá otra vez.
+- ¡Muy bien! Quedó {card.dataset.answer}.
 
 ### Segunda parte — Actividad 18 — pg067_sec001.html — DEFINICIONES
 
@@ -798,17 +786,17 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Esa no es la imagen. Volvé a intentarlo.
 
-### Segunda parte — Actividad 19 — pg068_sec001.html — SACAR DIBUJOS
+### Segunda parte — Actividad 19 — pg068_sec001.html — ¿QUÉ VOY A ESCRIBIR?
 
 **Éxito**
 
-- Correcto. Escribiste todos los nombres.
+- Correcto. Escribiste todas las palabras.
+- Tenés {aciertos} de {espacios} correctas.
 
 **Error**
 
 - Completá todos los espacios y volvé a intentar.
-- No del todo. Tenés {aciertos} de {espacios} correctas.
-- [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
+- [si {correcto}: ✓ Correcto] [si no: [si {normalize(input.value) === ''}: ✗ Falta esta palabra] [si no: ✗ Revisá esta palabra]]
 
 ### Segunda parte — Actividad 20 — pg069_sec001.html — JUEGO DE LA MEMORIA
 
@@ -823,8 +811,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Informativo**
 
-- Ahora buscá las parejas. Tocá dos tarjetas por turno.
-- Mirá las palabras. En unos segundos se dan vuelta.
+- Tocá una tarjeta para dar vuelta y escuchar la palabra.
 
 ### Segunda parte — Actividad 21 — pg070_sec001.html — SOBRE CON LETRAS
 
@@ -857,7 +844,8 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
-- Todavía faltan palabras. Revisá las marcadas con ✗ y probá otra vez.
+- Revisá las marcadas con ✗ y probá otra vez.
+- Todavía faltan palabras.
 - ✗ Intentá otra vez
 
 **Informativo**
@@ -866,17 +854,16 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 - Escuchaste: {respuesta}.
 - Tocá cada tarjeta para escuchar su nombre.
 
-### Segunda parte — Actividad 24 — pg073_sec001.html — CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL
+### Segunda parte — Actividad 24 — pg073_sec001.html — Cambiar palabras
 
 **Éxito**
 
 - ¡Listo! Formaste todas las palabras nuevas.
-- ¡Muy bien! Quedó {palabra resultante}.
+- ¡Muy bien! Quedó {card.dataset.answer}.
 - ¡Listo! Encontraste las palabras con el sonido /k/.
 
 **Error**
 
-- Ese no es el último sonido. Probá otra vez.
 - Revisá las palabras marcadas: no tienen el sonido /k/.
 - Todavía faltan palabras con el sonido /k/.
 - Todavía faltan palabras por cambiar.
@@ -887,13 +874,13 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - ¡Listo! Formaste todas las palabras nuevas.
 - ¡Muy bien! Quedó {palabra resultante}.
-- ¡Listo! Encontraste las palabras con el sonido /k/.
+- ¡Listo! Encontraste las palabras con el sonido /c/.
 
 **Error**
 
 - Ese no es el último sonido. Probá otra vez.
-- Revisá las palabras marcadas: no tienen el sonido /k/.
-- Todavía faltan palabras con el sonido /k/.
+- Revisá las palabras marcadas: no tienen el sonido /c/.
+- Todavía faltan palabras con el sonido /c/.
 - Todavía faltan palabras por cambiar.
 
 ### Segunda parte — Actividad 26 — pg074_sec001.html — SOBRE CON LETRAS
@@ -917,15 +904,15 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 - Esas letras no son las que cambian. Probá otra vez.
 
-### Segunda parte — Actividad 28 — pg076_sec001.html — SACAR DIBUJOS
+### Segunda parte — Actividad 28 — pg076_sec001.html — ¿QUÉ VOY A ESCRIBIR?
 
 **Éxito**
 
-- Correcto. Escribiste todos los nombres.
+- Correcto. Escribiste todas las palabras.
+- Tenés {aciertos} de {espacios} correctas.
 
 **Error**
 
 - Completá todos los espacios y volvé a intentar.
-- No del todo. Tenés {aciertos} de {espacios} correctas.
-- [si {correcto}: ✓ Correcto] [si no: ✗ Revisá esta palabra]
+- [si {correcto}: ✓ Correcto] [si no: [si {normalize(input.value) === ''}: ✗ Falta esta palabra] [si no: ✗ Revisá esta palabra]]
 

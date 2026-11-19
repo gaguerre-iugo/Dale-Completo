@@ -116,8 +116,10 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0009">Mir&#xe1; las im&#xe1;genes y toc&#xe1; cada tarjeta para escuchar su nombre.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0015">Cuando hayas escuchado todas, las tarjetas se dan vuelta y escrib&#xed;s los nombres que recuerdes.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0009">Mir&#xe1; con atenci&#xf3;n las im&#xe1;genes. Al seleccionarlas, pod&#xe9;s escuchar sus nombres.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0019">Puedes escucharlas varias veces porque deber&#xe1;s recordarlas.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0021">Cuando hayas seleccionado todas las im&#xe1;genes, se dar&#xe1;n vuelta.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg056_n0015">Escrib&#xed; las palabras de las im&#225;genes que recuerdes.</p>
     </div>
   </div>
 
@@ -172,7 +174,7 @@
           </label>
     </div>
 
-    <p id="pg056_memory_hint" class="mt-4 text-base leading-relaxed text-gray-700" data-id="pg056_n0017">Si una palabra no es correcta, pod&#xe9;s intentar otra vez. Si la has olvidado, puedes volver a darla vuelta al seleccionarla.</p>
+    <p id="pg056_memory_hint" class="mt-4 text-base leading-relaxed text-gray-700" data-id="pg056_n0017">Si una palabra no es correcta, pod&#xe9;s intentar otra vez. Si la has olvidado, puedes volver a dar vuelta la imagen al seleccionarla.</p>
 
     <div class="mt-4 min-h-[1.5rem] text-lg font-semibold activity-status" data-activity-status role="status" aria-live="polite"></div>
   </div>
@@ -392,7 +394,7 @@
             setStatus('¡Correcto! Recordaste las seis palabras.', true);
             return true;
           }
-          setStatus('Todavía faltan palabras. Revisá las marcadas con ✗ y probá otra vez.', false);
+          setStatus('Todavía faltan palabras.', false);
           return false;
         },
         reset: function () {
@@ -431,7 +433,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

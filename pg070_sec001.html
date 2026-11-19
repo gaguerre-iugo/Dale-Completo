@@ -127,8 +127,9 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-3">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg070_n0007">Mir&#xe1; las im&#xe1;genes y orden&#xe1; las letras para escribir el nombre de cada una.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg070_n0014">Cuando completes una palabra, se marca en verde y pod&#xe9;s seguir con las dem&#xe1;s.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg070_n0007">Mir&#xe1; las im&#xe1;genes y seleccionalas para escuchar sus nombres.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg070_n0014">Orden&#xe1; las letras para escribir el nombre de cada una.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg070_n0016">Las letras est&#xe1;n mezcladas: toc&#xe1; cada letra en el orden correcto para formar la palabra.</p>
     </div>
     <div class="sr-only">
       <p>ESTANTE, FIDEOS, HORNO, LENGUA, MANZANA, MOSCA</p>
@@ -353,12 +354,17 @@
       const rounds = Array.from(section.querySelectorAll('[data-round]'));
       const status = section.querySelector('[data-activity-status]');
 
-      const LETTER_AUDIO = {
-        A: 'text-pg006-46', B: 'letter_b', C: 'letter_c', D: 'letter_d', E: 'text-pg006-47',
-        F: 'letter_f', G: 'letter_g', H: 'letter_h', I: 'letter_i', J: 'letter_j', K: 'letter_k',
-        L: 'letter_l', M: 'text-pg013-22', N: 'text-pg013-23', 'Ñ': 'letter_enie', O: 'text-pg006-48',
-        P: 'letter_p', Q: 'letter_q', R: 'letter_r', S: 'letter_s', T: 'letter_t', U: 'text-pg006-49',
-        V: 'letter_v', W: 'letter_w', X: 'letter_x', Y: 'letter_y', Z: 'letter_z',
+      /* Suena el fono de la letra, no su nombre: "fff" y no "efe". */
+      const FONO_AUDIO = {
+        A: 'fono_a', B: 'fono_b', C: 'fono_c', D: 'fono_d', E: 'fono_e', F: 'fono_f',
+        I: 'fono_i', J: 'fono_j', L: 'fono_l', M: 'fono_m', N: 'fono_n', O: 'fono_o',
+        P: 'fono_p', R: 'fono_r', S: 'fono_z', T: 'fono_t', U: 'text-pg006-49', V: 'fono_v',
+        Z: 'fono_z', LL: 'fono_ll', RR: 'fono_rr', CH: 'fono_ch', 'Ñ': 'fono_enie',
+      };
+      /* Si todavia no hay fono grabado para una letra, se usa su nombre. */
+      const NOMBRE_AUDIO = {
+        G: 'letter_g', H: 'letter_h', K: 'letter_k', Q: 'letter_q', W: 'letter_w',
+        X: 'letter_x', Y: 'letter_y',
       };
 
       const playAudio = function (id) {
@@ -377,7 +383,8 @@
 
       const playLetter = function (letter) {
         const key = (letter || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
-        if (playAudio(LETTER_AUDIO[key])) return;
+        if (playAudio(FONO_AUDIO[key])) return;
+        if (playAudio(NOMBRE_AUDIO[key])) return;
         speakFallback(letter);
       };
 
@@ -388,6 +395,13 @@
           const p = a.play();
           if (p && p.catch) p.catch(function () {});
         } catch (e) {}
+      };
+
+      const WORD_AUDIO = { 'ESTANTE': 'gl101', 'FIDEOS': 'gl106', 'HORNO': 'gl133', 'LENGUA': 'gl152', 'MANZANA': 'gl167', 'MOSCA': 'gl184' };
+
+      const playRoundWord = function (round) {
+        if (playAudio(WORD_AUDIO[round.dataset.word])) return;
+        speakFallback((round.dataset.word || '').toLowerCase());
       };
 
 
@@ -448,6 +462,16 @@
 
       rounds.forEach(function (round) {
         prepare(round, false);
+        const imageWrap = round.querySelector('.order-image');
+        if (imageWrap) {
+          imageWrap.setAttribute('role', 'button');
+          imageWrap.setAttribute('tabindex', '0');
+          imageWrap.setAttribute('aria-label', 'Escuchar ' + (round.dataset.word || '').toLowerCase());
+          imageWrap.addEventListener('click', function () { playRoundWord(round); });
+          imageWrap.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playRoundWord(round); }
+          });
+        }
         const slots = Array.from(round.querySelectorAll('.order-slot'));
         const tiles = Array.from(round.querySelectorAll('.order-tile'));
 
@@ -505,7 +529,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

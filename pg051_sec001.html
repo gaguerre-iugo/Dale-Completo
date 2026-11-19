@@ -116,9 +116,9 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-3">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0009">Mir&#xe1; las im&#xe1;genes y escuch&#xe1; el nombre de cada una.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0013">Seleccion&#xe1; las im&#xe1;genes que empiezan con el sonido de la letra indicada.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0015">Cuando est&#xe9;n todas, comprob&#xe1; la ronda y pas&#xe1; a la siguiente letra.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0009">Seleccion&#xe1; la letra P y las im&#xe1;genes que comienzan con el sonido /p/.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0013">Seleccion&#xe1; la letra M y las im&#xe1;genes que comienzan con el sonido /m/.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg051_n0015">Seleccion&#xe1; la letra G y las im&#xe1;genes que comienzan con el sonido /g/.</p>
     </div>
     <div class="sr-only">
       <p>PAN, MIEL, GOL, MES, PAZ</p>
@@ -164,6 +164,33 @@
       const section = document.currentScript.closest('section');
       if (!section || section.dataset.adtInitialized === 'true') return;
       section.dataset.adtInitialized = 'true';
+
+      /* Silencia el error.mp3 del runtime cuando la ronda se completa bien y el
+         juego sigue con la otra letra: el mensaje es de exito, no de error. */
+      (function () {
+        if (window.__adtDaleAudioPatched) return;
+        window.__adtDaleAudioPatched = true;
+        var Native = window.Audio;
+        if (typeof Native !== 'function') return;
+        function Patched(src) {
+          var el = new Native(src);
+          if (/(^|\/)error\.mp3(\?|$)/.test(String(src))) {
+            var nativePlay = el.play;
+            el.play = function () {
+              if (window.__adtDaleMuteError) return Promise.resolve();
+              return nativePlay.call(el);
+            };
+          }
+          return el;
+        }
+        Patched.prototype = Native.prototype;
+        window.Audio = Patched;
+      })();
+
+      const muteFrameworkError = function () {
+        window.__adtDaleMuteError = true;
+        setTimeout(function () { window.__adtDaleMuteError = false; }, 0);
+      };
 
       const cards = Array.from(section.querySelectorAll('[data-sound-card]'));
       const chips = Array.from(section.querySelectorAll('[data-letter-chip]'));
@@ -240,12 +267,12 @@
         const wrong = selected.filter(function (card) { return card.dataset.letter !== round; });
         if (wrong.length) {
           wrong.forEach(function (card) { card.classList.add('is-wrong'); });
-          setStatus('Esas imágenes no empiezan con ' + round + '. Revisá las marcadas.', false);
+          setStatus('Vuelve a revisar.', false);
           return false;
         }
         const missing = roundCards.filter(function (card) { return card.getAttribute('aria-pressed') !== 'true'; });
         if (missing.length) {
-          setStatus('Todavía faltan imágenes que empiezan con ' + round + '.', false);
+          setStatus('Todavía no. Seleccioná las que faltan y probá otra vez.', false);
           return false;
         }
         roundCards.forEach(function (card) {
@@ -269,6 +296,7 @@
         if (next) {
           startRound(next);
           setStatus('¡Muy bien! Ahora buscá las imágenes que empiezan con ' + next + '.', true);
+          muteFrameworkError();
           return false;
         }
         finished = true;
@@ -318,7 +346,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 <script>

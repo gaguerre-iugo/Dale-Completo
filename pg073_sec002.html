@@ -124,9 +124,8 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-3">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0030">Le&#xe9; las palabras y fijate si contienen el sonido /k/.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0032">Seleccion&#xe1; todas las palabras que tengan el sonido /k/.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0034">El sonido /k/ puede escribirse con C o con Qu.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0030">Seleccion&#xe1; las palabras y escuch&#xe1; c&#xf3;mo suenan.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0032">Seleccion&#xe1; todas las palabras que contienen el sonido /c/.</p>
     </div>
     <div class="sr-only">
       <p>PAQUETE, MANGUERA, COHETE,</p>
@@ -252,14 +251,14 @@
         const wrong = selected.filter(function (card) { return card.dataset.correct !== 'true'; });
         if (wrong.length) {
           wrong.forEach(function (card) { card.classList.add('is-wrong'); });
-          setStatus(kStatus, 'Revisá las palabras marcadas: no tienen el sonido /k/.', false);
+          setStatus(kStatus, 'Revisá las palabras marcadas: no tienen el sonido /c/.', false);
           return false;
         }
         const missing = kCards.filter(function (card) {
           return card.dataset.correct === 'true' && card.getAttribute('aria-pressed') !== 'true';
         });
         if (missing.length) {
-          setStatus(kStatus, 'Todavía faltan palabras con el sonido /k/.', false);
+          setStatus(kStatus, 'Todavía faltan palabras con el sonido /c/.', false);
           return false;
         }
         kDone = true;
@@ -281,7 +280,7 @@
           }
         });
         if (kCheck) { kCheck.disabled = true; kCheck.textContent = '¡Listo!'; }
-        setStatus(kStatus, '¡Listo! Encontraste las palabras con el sonido /k/.', true);
+        setStatus(kStatus, '¡Listo! Encontraste las palabras con el sonido /c/.', true);
         return true;
       };
       if (kCheck) kCheck.addEventListener('click', checkK);
@@ -363,7 +362,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

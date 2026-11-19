@@ -114,6 +114,14 @@
 #content .adt-skin .k-card .selection-indicator{position:absolute;top:.35rem;right:.5rem;font-size:1.2rem;font-weight:800;color:#1d4ed8}
 #content .adt-skin .k-check{border-radius:9999px;background:#00b87a;color:#fff;font-size:1.05rem;font-weight:800;padding:.7rem 1.9rem;border:0;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.1)}
 #content .adt-skin .k-check:disabled{background:#9ca3af;cursor:default;box-shadow:none}
+#content .adt-skin .rm-word{font-size:1.7rem;font-weight:800;letter-spacing:.06em;color:#1d1d1d;background:#f8f7ef;border:2px solid #ddd6c8;border-radius:.8rem;padding:.45rem 1.2rem;cursor:pointer}
+#content .adt-skin .rm-word:hover{background:#f1efe3}
+#content .adt-skin .rm-input{width:100%;max-width:17rem;min-height:3rem;border:2px solid #ddd6c8;border-radius:.7rem;background:#fff;padding:.4rem .7rem;font-size:1.35rem;font-weight:800;text-align:center;text-transform:uppercase;letter-spacing:.1em;color:#1d1d1d}
+#content .adt-skin .rm-input:focus{outline:none;border-color:#00b87a;box-shadow:0 0 0 3px rgba(0,184,122,.25)}
+#content .adt-skin .rm-card.is-correct .rm-input{border-color:#16a34a;background:#f0fdf4;color:#166534}
+#content .adt-skin .rm-card.is-wrong .rm-input{border-color:#dc2626;background:#fdecea;color:#b91c1c}
+#content .adt-skin .rm-feedback{min-height:1.3rem;margin:0;font-size:.98rem;font-weight:800;color:#b91c1c}
+#content .adt-skin .rm-feedback.is-ok{color:#2e6b47}
 @keyframes rm-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 @keyframes k-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
 </style><section data-section-type="activity_custom_remove_and_k" data-id="pg073_s2" aria-labelledby="activity-heading-pg073" class="adt-page-open container mx-auto max-w-5xl bg-white rounded-lg px-24 max-lg:px-12 max-sm:px-6 pt-12 pb-12">
@@ -121,13 +129,12 @@
     <div class="adt-head mb-4">
       <h1 class="adt-head-num" data-id="pg073_n0002" data-adt-num>24</h1>
       <div>
-        <h2 id="activity-heading-pg073" class="adt-head-title" data-id="pg073_n0004">CAMBIAR PALABRAS: SACAMOS EL SONIDO FINAL</h2>
+        <h2 id="activity-heading-pg073" class="adt-head-title" data-id="pg073_n0004">Cambiar palabras</h2>
       </div>
     </div>
     <div class="grid grid-cols-1 gap-3">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0009">Le&#xe9; la palabra y fijate en su &#xfa;ltimo sonido.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0011">Toc&#xe1; la &#xfa;ltima letra para quitarla y descubrir la palabra nueva.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0013">Si el lugar es correcto, la palabra se arma y se marca en verde.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0009">Seleccion&#xe1; cada una de las palabras y escuchalas, prestando mucha atenci&#xf3;n a su sonido final.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg073_n0011">Escrib&#xed; en los espacios c&#xf3;mo quedar&#xed;a cada una de las palabras si se le saca su sonido final.</p>
     </div>
     <div class="sr-only">
       <p>Finalmente se escriben en el cuadernillo las dos palabras de cada par.</p>
@@ -135,35 +142,35 @@
   </div>
 
   <div class="rm-grid grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div class="rm-card" data-rm data-activity-item="item-1" data-word="SALAR" data-result="SALA" data-last="4" data-audio-id="pg073_n0017">
-        <span class="sr-only" data-id="pg073_n0017">SALAR &#x2013; SALA;</span>
-        <p class="rm-caption">Quit&#xe1; el &#xfa;ltimo sonido</p>
-        <div class="rm-row"><button type="button" class="rm-tile" data-index="0" aria-label="Letra S">S</button><button type="button" class="rm-tile" data-index="1" aria-label="Letra A">A</button><button type="button" class="rm-tile" data-index="2" aria-label="Letra L">L</button><button type="button" class="rm-tile" data-index="3" aria-label="Letra A">A</button><button type="button" class="rm-tile" data-index="4" aria-label="Letra R">R</button></div>
-        <p class="rm-result">Queda: <strong>SALA</strong></p>
+            <div class="rm-card" data-rm data-activity-item="item-1" data-word="SALAR" data-answer="SALA" data-audio-word="gl259" data-audio-result="gl258">
+        <button type="button" class="rm-word" data-rm-play aria-label="Escuchar la palabra SALAR">SALAR</button>
+        <p class="rm-caption">Escrib&#xed; la palabra sin su &#xfa;ltimo sonido</p>
+        <input id="rm-input-1" type="text" class="rm-input" data-rm-input autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Escrib&#xed; SALAR sin su &#xfa;ltimo sonido">
+        <p class="rm-feedback" data-rm-feedback aria-live="polite"></p>
       </div>
-      <div class="rm-card" data-rm data-activity-item="item-2" data-word="JARR&#xd3;N" data-result="JARRO" data-last="5" data-audio-id="pg073_n0018">
-        <span class="sr-only" data-id="pg073_n0018">JARR&#xd3;N &#x2013; JARRO;</span>
-        <p class="rm-caption">Quit&#xe1; el &#xfa;ltimo sonido</p>
-        <div class="rm-row"><button type="button" class="rm-tile" data-index="0" aria-label="Letra J">J</button><button type="button" class="rm-tile" data-index="1" aria-label="Letra A">A</button><button type="button" class="rm-tile" data-index="2" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="3" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="4" aria-label="Letra &#xd3;">&#xd3;</button><button type="button" class="rm-tile" data-index="5" aria-label="Letra N">N</button></div>
-        <p class="rm-result">Queda: <strong>JARRO</strong></p>
+            <div class="rm-card" data-rm data-activity-item="item-2" data-word="JARR&#xd3;N" data-answer="JARRO" data-audio-word="gl142" data-audio-result="gl141">
+        <button type="button" class="rm-word" data-rm-play aria-label="Escuchar la palabra JARRÓN">JARR&#xd3;N</button>
+        <p class="rm-caption">Escrib&#xed; la palabra sin su &#xfa;ltimo sonido</p>
+        <input id="rm-input-2" type="text" class="rm-input" data-rm-input autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Escrib&#xed; JARRÓN sin su &#xfa;ltimo sonido">
+        <p class="rm-feedback" data-rm-feedback aria-live="polite"></p>
       </div>
-      <div class="rm-card" data-rm data-activity-item="item-3" data-word="LE&#xd3;N" data-result="LEO" data-last="3" data-audio-id="pg073_n0019">
-        <span class="sr-only" data-id="pg073_n0019">LE&#xd3;N &#x2013; LEO;</span>
-        <p class="rm-caption">Quit&#xe1; el &#xfa;ltimo sonido</p>
-        <div class="rm-row"><button type="button" class="rm-tile" data-index="0" aria-label="Letra L">L</button><button type="button" class="rm-tile" data-index="1" aria-label="Letra E">E</button><button type="button" class="rm-tile" data-index="2" aria-label="Letra &#xd3;">&#xd3;</button><button type="button" class="rm-tile" data-index="3" aria-label="Letra N">N</button></div>
-        <p class="rm-result">Queda: <strong>LEO</strong></p>
+            <div class="rm-card" data-rm data-activity-item="item-3" data-word="LE&#xd3;N" data-answer="LEO" data-audio-word="gl153" data-audio-result="pg073_word_leo">
+        <button type="button" class="rm-word" data-rm-play aria-label="Escuchar la palabra LEÓN">LE&#xd3;N</button>
+        <p class="rm-caption">Escrib&#xed; la palabra sin su &#xfa;ltimo sonido</p>
+        <input id="rm-input-3" type="text" class="rm-input" data-rm-input autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Escrib&#xed; LEÓN sin su &#xfa;ltimo sonido">
+        <p class="rm-feedback" data-rm-feedback aria-live="polite"></p>
       </div>
-      <div class="rm-card" data-rm data-activity-item="item-4" data-word="BARRIL" data-result="BARR&#xcd;" data-last="5" data-audio-id="pg073_n0020">
-        <span class="sr-only" data-id="pg073_n0020">BARRIL &#x2013; BARR&#xcd;;</span>
-        <p class="rm-caption">Quit&#xe1; el &#xfa;ltimo sonido</p>
-        <div class="rm-row"><button type="button" class="rm-tile" data-index="0" aria-label="Letra B">B</button><button type="button" class="rm-tile" data-index="1" aria-label="Letra A">A</button><button type="button" class="rm-tile" data-index="2" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="3" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="4" aria-label="Letra I">I</button><button type="button" class="rm-tile" data-index="5" aria-label="Letra L">L</button></div>
-        <p class="rm-result">Queda: <strong>BARR&#xcd;</strong></p>
+            <div class="rm-card" data-rm data-activity-item="item-4" data-word="BARRIL" data-answer="BARR&#xcd;" data-audio-word="gl013" data-audio-result="pg073_word_barri">
+        <button type="button" class="rm-word" data-rm-play aria-label="Escuchar la palabra BARRIL">BARRIL</button>
+        <p class="rm-caption">Escrib&#xed; la palabra sin su &#xfa;ltimo sonido</p>
+        <input id="rm-input-4" type="text" class="rm-input" data-rm-input autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Escrib&#xed; BARRIL sin su &#xfa;ltimo sonido">
+        <p class="rm-feedback" data-rm-feedback aria-live="polite"></p>
       </div>
-      <div class="rm-card" data-rm data-activity-item="item-5" data-word="CORREA" data-result="CORRE" data-last="5" data-audio-id="pg073_n0021">
-        <span class="sr-only" data-id="pg073_n0021">CORREA &#x2013; CORRE;</span>
-        <p class="rm-caption">Quit&#xe1; el &#xfa;ltimo sonido</p>
-        <div class="rm-row"><button type="button" class="rm-tile" data-index="0" aria-label="Letra C">C</button><button type="button" class="rm-tile" data-index="1" aria-label="Letra O">O</button><button type="button" class="rm-tile" data-index="2" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="3" aria-label="Letra R">R</button><button type="button" class="rm-tile" data-index="4" aria-label="Letra E">E</button><button type="button" class="rm-tile" data-index="5" aria-label="Letra A">A</button></div>
-        <p class="rm-result">Queda: <strong>CORRE</strong></p>
+            <div class="rm-card" data-rm data-activity-item="item-5" data-word="CORREA" data-answer="CORRE" data-audio-word="gl068" data-audio-result="pg073_word_corre">
+        <button type="button" class="rm-word" data-rm-play aria-label="Escuchar la palabra CORREA">CORREA</button>
+        <p class="rm-caption">Escrib&#xed; la palabra sin su &#xfa;ltimo sonido</p>
+        <input id="rm-input-5" type="text" class="rm-input" data-rm-input autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Escrib&#xed; CORREA sin su &#xfa;ltimo sonido">
+        <p class="rm-feedback" data-rm-feedback aria-live="polite"></p>
       </div>
   </div>
 
@@ -174,6 +181,13 @@
       const section = document.currentScript.closest('section');
       if (!section || section.dataset.adtInitialized === 'true') return;
       section.dataset.adtInitialized = 'true';
+
+      /* Al volver a la pagina, el navegador puede recordar lo escrito:
+         se limpian los campos para empezar el juego de nuevo. */
+      window.addEventListener('pageshow', function (e) {
+        if (!e.persisted) return;
+        section.querySelectorAll('input[type="text"]').forEach(function (i) { i.value = ''; });
+      });
 
       const rmCards = Array.from(section.querySelectorAll('[data-rm]'));
       const rmStatus = section.querySelector('[data-remove-status]');
@@ -191,31 +205,103 @@
         if (ok === false) el.classList.add('text-red-700');
       };
 
+      /* Conserva la enie: "espina" y "espiña" no son la misma palabra. */
+      const normalize = function (value) {
+        return (value || '')
+          .replace(/ñ/gi, '\u0001')
+          .toUpperCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/\u0001/g, 'Ñ')
+          .replace(/[^A-ZÑ]/g, '');
+      };
+
+      const playText = function (id) {
+        return Boolean(id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id));
+      };
+
+      const speak = function (text) {
+        if (!text || !('speechSynthesis' in window)) return;
+        try {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(text.toLowerCase());
+          u.lang = 'es-AR';
+          window.speechSynthesis.speak(u);
+        } catch (e) {}
+      };
+
+      const playWord = function (card) {
+        if (playText(card.dataset.audioWord)) return;
+        speak(card.dataset.word || '');
+      };
+
+      const playAnswer = function (card) {
+        if (playText(card.dataset.audioResult)) return;
+        speak(card.dataset.answer || '');
+      };
+
+      const setRmFeedback = function (card, text, ok) {
+        const el = card.querySelector('[data-rm-feedback]');
+        if (!el) return;
+        el.textContent = text || '';
+        el.classList.toggle('is-ok', ok === true);
+      };
+
+      const rmSolvedCount = function () {
+        return rmCards.filter(function (card) { return card.classList.contains('is-correct'); }).length;
+      };
+
+      /* Revisa una tarjeta. Devuelve true si la palabra escrita es la esperada. */
+      const checkRmCard = function (card, hablar) {
+        const input = card.querySelector('[data-rm-input]');
+        if (!input) return false;
+        const value = normalize(input.value);
+        if (!value) {
+          card.classList.remove('is-correct', 'is-wrong');
+          setRmFeedback(card, '', null);
+          return false;
+        }
+        if (value === normalize(card.dataset.answer)) {
+          const yaEstaba = card.classList.contains('is-correct');
+          card.classList.remove('is-wrong');
+          card.classList.add('is-correct');
+          setRmFeedback(card, '¡Correcto!', true);
+          if (hablar && !yaEstaba) {
+            playAnswer(card);
+            const hechas = rmSolvedCount();
+            if (hechas === rmCards.length) setStatus(rmStatus, '¡Listo! Formaste todas las palabras nuevas.', true);
+            else setStatus(rmStatus, '¡Muy bien! Quedó ' + card.dataset.answer + '.', true);
+          }
+          return true;
+        }
+        card.classList.remove('is-correct');
+        card.classList.add('is-wrong');
+        setRmFeedback(card, 'Revisá la palabra.', false);
+        return false;
+      };
+
       rmCards.forEach(function (card) {
-        const tiles = Array.from(card.querySelectorAll('.rm-tile'));
-        const last = Number(card.dataset.last);
-        tiles.forEach(function (tile) {
-          tile.addEventListener('click', function () {
-            if (card.classList.contains('is-correct')) return;
-            if (Number(tile.dataset.index) === last) {
-              const row = card.querySelector('.rm-row');
-              row.innerHTML = card.dataset.result.split('').map(function (ch) {
-                return '<span class="rm-tile is-good">' + ch + '</span>';
-              }).join('');
-              card.classList.add('is-correct');
-              rmSolved++;
-              if (rmSolved === rmCards.length) setStatus(rmStatus, '¡Listo! Formaste todas las palabras nuevas.', true);
-              else setStatus(rmStatus, '¡Muy bien! Quedó ' + card.dataset.result + '.', true);
-              return;
-            }
-            tile.classList.add('is-wrong');
-            card.classList.add('is-wrong');
-            setStatus(rmStatus, 'Ese no es el último sonido. Probá otra vez.', false);
-            window.setTimeout(function () {
-              tile.classList.remove('is-wrong');
-              card.classList.remove('is-wrong');
-            }, 650);
-          });
+        const input = card.querySelector('[data-rm-input]');
+        const word = card.querySelector('[data-rm-play]');
+        if (word) word.addEventListener('click', function () { playWord(card); });
+        if (!input) return;
+        let timer = null;
+        input.addEventListener('input', function () {
+          card.classList.remove('is-correct', 'is-wrong');
+          setRmFeedback(card, '', null);
+          setStatus(rmStatus, '', null);
+          if (timer) window.clearTimeout(timer);
+          /* Al terminar de escribir la palabra, se revisa y se escucha el resultado. */
+          if (normalize(input.value).length >= normalize(card.dataset.answer).length) {
+            timer = window.setTimeout(function () { checkRmCard(card, true); }, 500);
+          }
+        });
+        input.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (timer) window.clearTimeout(timer);
+            checkRmCard(card, true);
+          }
         });
       });
 
@@ -273,7 +359,8 @@
 
       window.adtRegisterCustomActivity(section, {
         validate: function () {
-          const rmOk = rmSolved === rmCards.length;
+          let rmOk = true;
+          rmCards.forEach(function (card) { if (!checkRmCard(card, false)) rmOk = false; });
           const kOk = kDone || checkK();
           if (!rmOk) setStatus(rmStatus, 'Todavía faltan palabras por cambiar.', false);
           return rmOk && kOk;
@@ -283,42 +370,9 @@
           kDone = false;
           rmCards.forEach(function (card) {
             card.classList.remove('is-correct', 'is-wrong');
-            const row = card.querySelector('.rm-row');
-            const tokens = card.dataset.word.split('');
-            row.innerHTML = tokens.map(function (ch, idx) {
-              return '<button type="button" class="rm-tile" data-index="' + idx + '" aria-label="Letra ' + ch + '">' + ch + '</button>';
-            }).join('');
-            card.querySelectorAll('.rm-tile').forEach(function (tile) {
-              tile.addEventListener('click', function () {});
-            });
-          });
-          // Rebuild remove interactions after reset by reloading the section listeners.
-          rmCards.forEach(function (card) {
-            const tiles = Array.from(card.querySelectorAll('.rm-tile'));
-            const last = Number(card.dataset.last);
-            tiles.forEach(function (tile) {
-              tile.addEventListener('click', function () {
-                if (card.classList.contains('is-correct')) return;
-                if (Number(tile.dataset.index) === last) {
-                  const row = card.querySelector('.rm-row');
-                  row.innerHTML = card.dataset.result.split('').map(function (ch) {
-                    return '<span class="rm-tile is-good">' + ch + '</span>';
-                  }).join('');
-                  card.classList.add('is-correct');
-                  rmSolved++;
-                  if (rmSolved === rmCards.length) setStatus(rmStatus, '¡Listo! Formaste todas las palabras nuevas.', true);
-                  else setStatus(rmStatus, '¡Muy bien! Quedó ' + card.dataset.result + '.', true);
-                  return;
-                }
-                tile.classList.add('is-wrong');
-                card.classList.add('is-wrong');
-                setStatus(rmStatus, 'Ese no es el último sonido. Probá otra vez.', false);
-                window.setTimeout(function () {
-                  tile.classList.remove('is-wrong');
-                  card.classList.remove('is-wrong');
-                }, 650);
-              });
-            });
+            const input = card.querySelector('[data-rm-input]');
+            if (input) input.value = '';
+            setRmFeedback(card, '', null);
           });
           kCards.forEach(function (card) {
             card.disabled = false;
@@ -348,7 +402,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

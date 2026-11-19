@@ -113,9 +113,9 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-3">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0010">Le&#xe9; las palabras y escuch&#xe1; c&#xf3;mo suenan.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0012">Seleccion&#xe1; las palabras que contienen el sonido /r/ suave.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0014">Cuando termines, comprob&#xe1; tus respuestas.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0010">Lee las palabras alargando sus sonidos. Al seleccionarlas, pod&#xe9;s escucharlas.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0012">Seleccion&#xe1; las palabras que contengan el sonido /r/ suave.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg057_n0014">Segu&#xed; buscando hasta encontrar todas las palabras que contienen el sonido /r/ suave.</p>
     </div>
   </div>
 
@@ -209,7 +209,7 @@
         const wrong = picked.filter(function (card) { return card.dataset.correct !== 'true'; });
         if (wrong.length) {
           wrong.forEach(function (card) { card.classList.add('is-wrong'); });
-          setStatus('Revisá las palabras marcadas: no tienen el sonido /r/ suave.', false);
+          setStatus('Revisá las palabras en rojo.', false);
           return false;
         }
         const missing = cards.filter(function (card) {
@@ -281,7 +281,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

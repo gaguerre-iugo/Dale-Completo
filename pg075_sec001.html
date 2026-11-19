@@ -117,8 +117,10 @@
     </div>
     <div class="grid grid-cols-1 gap-3">
       <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0007">Mir&#xe1; la imagen y las dos palabras.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0014">Toc&#xe1; las letras que cambian entre una y otra.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0016">Cuando encuentres el cambio, la tarjeta se marca en verde.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0014">Solo una de estas palabras representa lo que muestra la imagen.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0016">Las palabras son muy parecidas, solo tienen un sonido diferente.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0018">Compar&#xe1; las dos palabras &#xbf;Qu&#xe9; sonido tienen diferente?</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg075_n0020">Seleccion&#xe1; cu&#xe1;les son las letras que cambian entre una y otra palabra, para que suenen diferente.</p>
     </div>
     <div class="sr-only">
       <p>La educadora presenta las tarjetas con im&#xe1;genes y nombra cada una.</p>
@@ -184,10 +186,43 @@
         if (ok === false) status.classList.add('text-red-700');
       };
 
+      const FONO_AUDIO = {
+        A: 'fono_a', B: 'fono_b', C: 'fono_c', D: 'fono_d', E: 'fono_e', F: 'fono_f',
+        I: 'fono_i', J: 'fono_j', L: 'fono_l', M: 'fono_m', N: 'fono_n', O: 'fono_o',
+        P: 'fono_p', Q: 'fono_q', R: 'fono_r', S: 'fono_z', T: 'fono_t', U: 'text-pg006-49',
+        V: 'fono_v', Z: 'fono_z', LL: 'fono_ll', RR: 'fono_rr', CH: 'fono_ch', 'Ñ': 'fono_enie',
+      };
+      const NOMBRE_AUDIO = {
+        G: 'letter_g', H: 'letter_h', K: 'letter_k', W: 'letter_w', X: 'letter_x', Y: 'letter_y',
+      };
+
+      const playAudio = function (id) {
+        return Boolean(id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id));
+      };
+
+      const speakFallback = function (text) {
+        if (!text || !('speechSynthesis' in window)) return;
+        try {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(text);
+          u.lang = 'es-AR';
+          window.speechSynthesis.speak(u);
+        } catch (e) {}
+      };
+
+      const playLetter = function (letter) {
+        const key = (letter || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+        if (playAudio(FONO_AUDIO[key])) return;
+        if (playAudio(NOMBRE_AUDIO[key])) return;
+        speakFallback(letter);
+      };
+
+
       cards.forEach(function (card) {
         const picked = {};
         card.querySelectorAll('.me-tile').forEach(function (tile) {
           tile.addEventListener('click', function () {
+            playLetter(tile.textContent.trim());
             if (card.classList.contains('is-correct') || card.dataset.locked === 'true') return;
             const row = tile.dataset.row;
             card.querySelectorAll('.me-tile.is-wrong').forEach(function (t) { t.classList.remove('is-wrong'); });
@@ -278,7 +313,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

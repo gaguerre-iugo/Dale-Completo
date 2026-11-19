@@ -116,8 +116,11 @@
       </div>
     </div>
     <div class="grid grid-cols-1 gap-4">
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0009">Mir&#xe1; las im&#xe1;genes y toc&#xe1; cada tarjeta para escuchar su nombre.</p>
-      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0015">Cuando hayas escuchado todas, las tarjetas se dan vuelta y escrib&#xed;s los nombres que recuerdes.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0009">Mir&#xe1; las im&#xe1;genes y seleccion&#xe1; cada tarjeta para escuchar su nombre.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0015">Intent&#xe1; memorizarlas.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0017">Cuando hayas seleccionado todas, las tarjetas se dar&#xe1;n vuelta.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0019">Escrib&#xed; los nombres de cada una, usando el teclado.</p>
+      <p class="text-lg leading-relaxed text-gray-800" data-id="pg072_n0021">Si te equivocas en una palabra, pod&#xe9;s intentar otra vez. Si no record&#xe1;s alguna, pod&#xe9;s volver a tocar la tarjeta.</p>
     </div>
   </div>
 
@@ -148,31 +151,30 @@
     <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-4" role="group" aria-labelledby="activity-heading-pg072">
           <label class="block" for="pg056_memory_input_1">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 1</span>
-            <input id="pg072_memory_input_1" data-cell="recuerdo-1" data-activity-item="item-1" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_1" data-cell="recuerdo-1" data-activity-item="item-1" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
           <label class="block" for="pg056_memory_input_2">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 2</span>
-            <input id="pg072_memory_input_2" data-cell="recuerdo-2" data-activity-item="item-2" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_2" data-cell="recuerdo-2" data-activity-item="item-2" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
           <label class="block" for="pg056_memory_input_3">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 3</span>
-            <input id="pg072_memory_input_3" data-cell="recuerdo-3" data-activity-item="item-3" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_3" data-cell="recuerdo-3" data-activity-item="item-3" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
           <label class="block" for="pg056_memory_input_4">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 4</span>
-            <input id="pg072_memory_input_4" data-cell="recuerdo-4" data-activity-item="item-4" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_4" data-cell="recuerdo-4" data-activity-item="item-4" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
           <label class="block" for="pg056_memory_input_5">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 5</span>
-            <input id="pg072_memory_input_5" data-cell="recuerdo-5" data-activity-item="item-5" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_5" data-cell="recuerdo-5" data-activity-item="item-5" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
           <label class="block" for="pg056_memory_input_6">
             <span class="mb-2 block text-lg font-semibold text-gray-800">Palabra 6</span>
-            <input id="pg072_memory_input_6" data-cell="recuerdo-6" data-activity-item="item-6" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg" aria-describedby="pg072_memory_hint">
+            <input autocomplete="off" id="pg072_memory_input_6" data-cell="recuerdo-6" data-activity-item="item-6" type="text" class="memory-input min-h-11 w-full rounded-xl px-4 py-3 text-lg">
           </label>
     </div>
 
-    <p id="pg072_memory_hint" class="mt-4 text-base leading-relaxed text-gray-700" data-id="pg072_n0017">Si una palabra no es correcta, pod&#xe9;s intentar otra vez. Si la has olvidado, puedes volver a darla vuelta al seleccionarla.</p>
 
     <div class="mt-4 min-h-[1.5rem] text-lg font-semibold activity-status" data-activity-status role="status" aria-live="polite"></div>
   </div>
@@ -182,6 +184,13 @@
       const section = document.currentScript.closest('section');
       if (!section || section.dataset.adtInitialized === 'true') return;
       section.dataset.adtInitialized = 'true';
+
+      /* Al volver a la pagina, el navegador puede recordar lo escrito:
+         se limpian los campos para empezar el juego de nuevo. */
+      window.addEventListener('pageshow', function (e) {
+        if (!e.persisted) return;
+        section.querySelectorAll('input[type="text"]').forEach(function (i) { i.value = ''; });
+      });
 
       const cards = Array.from(section.querySelectorAll('[data-activity-card]'));
       const inputs = Array.from(section.querySelectorAll('.memory-input'));
@@ -385,14 +394,24 @@
 
       window.adtRegisterCustomActivity(section, {
         validate: function () {
+          let vacias = 0;
+          let malEscritas = 0;
           inputs.forEach(function (input) {
-            if (input.dataset.matched !== 'true') markWrong(input);
+            if (input.dataset.matched === 'true') return;
+            if (!normalize(input.value)) {
+              vacias++;
+              clearInputState(input);
+              return;
+            }
+            malEscritas++;
+            markWrong(input);
           });
           if (allMatched()) {
             setStatus('¡Correcto! Recordaste las seis palabras.', true);
             return true;
           }
-          setStatus('Todavía faltan palabras. Revisá las marcadas con ✗ y probá otra vez.', false);
+          if (malEscritas > 0) setStatus('Revisá las marcadas con ✗ y probá otra vez.', false);
+          else setStatus('Todavía faltan palabras.', false);
           return false;
         },
         reset: function () {
@@ -431,7 +450,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=40"></script>
+    <script src="./assets/offline-preloader.js?v=56"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>
