@@ -203,20 +203,38 @@
         });
       };
 
+      const FONO_CHIP = { r: 'fono_r', n: 'fono_n', l: 'fono_l' };
+
+      const playChipSound = function (chip) {
+        const id = FONO_CHIP[chip.dataset.letterChip];
+        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+        if (!('speechSynthesis' in window)) return;
+        try {
+          window.speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(chip.textContent.trim());
+          u.lang = 'es-AR';
+          window.speechSynthesis.speak(u);
+        } catch (e) {}
+      };
+
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () { playChipSound(chip); });
+      });
+
       const updateChips = function () {
         chips.forEach(function (chip) {
           const key = chip.dataset.letterChip;
           chip.classList.remove('is-active', 'is-done');
           if (completed.has(key)) {
             chip.classList.add('is-done');
-            chip.disabled = true;
+            chip.disabled = false;
             chip.setAttribute('aria-pressed', 'false');
           } else if (round === key) {
             chip.classList.add('is-active');
             chip.disabled = false;
             chip.setAttribute('aria-pressed', 'true');
           } else {
-            chip.disabled = true;
+            chip.disabled = false;
             chip.setAttribute('aria-pressed', 'false');
           }
         });
@@ -255,7 +273,7 @@
         const wrong = selected.filter(function (card) { return card.dataset[target] !== 'true'; });
         if (wrong.length) {
           wrong.forEach(function (card) { card.classList.add('is-wrong'); });
-          setStatus('Esas palabras no contienen el sonido /' + target + '/. Revisá las marcadas.', false);
+          setStatus('Esas palabras no contienen el sonido /' + target + '/. Revisá las marcadas en rojo.', false);
           return false;
         }
         const missing = roundCards.filter(function (card) { return card.getAttribute('aria-pressed') !== 'true'; });
@@ -268,7 +286,7 @@
         const next = order.find(function (k) { return !completed.has(k); });
         if (next) {
           startRound(next);
-          setStatus('¡Muy bien! Ahora buscá el sonido /' + next + '/.', true);
+          setStatus('¡Muy bien! Ahora buscá las palabras con el sonido /' + next + '/.', true);
           return false;
         }
         roundCards.forEach(function (card) {
@@ -288,7 +306,7 @@
           button.disabled = true;
           button.textContent = '¡Listo!';
         }
-        setStatus('¡Listo! Encontraste las palabras de los tres sonidos.', true);
+        setStatus('¡Listo! Encontraste todas las palabras.', true);
         return true;
       };
 
@@ -330,7 +348,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=57"></script>
+    <script src="./assets/offline-preloader.js?v=58"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>

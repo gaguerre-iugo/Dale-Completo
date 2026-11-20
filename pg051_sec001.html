@@ -268,7 +268,7 @@
         const wrong = selected.filter(function (card) { return card.dataset.letter !== round; });
         if (wrong.length) {
           wrong.forEach(function (card) { card.classList.add('is-wrong'); });
-          setStatus('Vuelve a revisar.', false);
+          setStatus('Volvé a revisar.', false);
           return false;
         }
         const missing = roundCards.filter(function (card) { return card.getAttribute('aria-pressed') !== 'true'; });
@@ -347,7 +347,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=57"></script>
+    <script src="./assets/offline-preloader.js?v=58"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 <script>

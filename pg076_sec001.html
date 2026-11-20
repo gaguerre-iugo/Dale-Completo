@@ -191,6 +191,13 @@
     </div>
 
     <div class="mt-6 min-h-[1.5rem] text-lg font-semibold activity-status" data-activity-status role="status" aria-live="polite"></div>
+
+    <div data-book-end hidden role="status" aria-live="polite"
+         style="margin-top:24px;padding:22px 26px;border:3px solid #16a34a;border-radius:18px;background:#eef7f0;color:#166534;text-align:center;font-size:1.25rem;font-weight:800;line-height:1.4">
+      <span style="display:block;font-size:2rem;margin-bottom:6px" aria-hidden="true">🎉</span>
+      ¡Terminaste el libro!<br>
+      <span style="display:block;font-size:1rem;font-weight:600;margin-top:6px">Llegaste al final del Cuadernillo de Juegos.</span>
+    </div>
   </div>
 
   <script>
@@ -308,8 +315,10 @@
           if (status) {
             status.classList.remove('text-green-700', 'text-red-700');
             if (passed) {
-              status.textContent = 'Correcto. Escribiste todas las palabras.';
+              status.textContent = 'Correcto. Escribiste todos los nombres.';
               status.classList.add('text-green-700');
+              const fin = section.querySelector('[data-book-end]');
+              if (fin) fin.hidden = false;
             } else if (!allFilled) {
               status.textContent = 'Completá todos los espacios y volvé a intentar.';
               status.classList.add('text-red-700');
@@ -337,6 +346,8 @@
             status.textContent = '';
             status.classList.remove('text-green-700', 'text-red-700');
           }
+          const fin = section.querySelector('[data-book-end]');
+          if (fin) fin.hidden = true;
           if (synth) {
             try { synth.cancel(); } catch (e) {}
           }
@@ -356,7 +367,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=57"></script>
+    <script src="./assets/offline-preloader.js?v=58"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>
