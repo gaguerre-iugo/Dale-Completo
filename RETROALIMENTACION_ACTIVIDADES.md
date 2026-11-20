@@ -14,7 +14,7 @@ Cada actividad muestra un mensaje de estado al responder o al presionar **Enviar
 |---|---:|---:|
 | Actividades con retroalimentación propia | 66 | — |
 | Éxito | 50 | 101 |
-| Error | 60 | 109 |
+| Error | 60 | 110 |
 | Informativo | 14 | 20 |
 | Etiqueta accesible | 1 | 5 |
 
@@ -202,11 +202,11 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- Correcto. Todas las imágenes están en la fila indicada.
+- Correcto. Todas las imágenes están en la fila correcta indicada.
 
 **Error**
 
-- Todavía faltan imágenes por ubicar. Llevás {aciertos} correctas de {ubicadas} ubicadas.
+- Todavía faltan imágenes por ubicar. Llevás {aciertos} de {ubicadas} correctamente ubicadas.
 - No del todo. Revisá las imágenes marcadas con ✗ y probá otra vez.
 
 **Etiqueta accesible**
@@ -249,12 +249,12 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 **Éxito**
 
 - ¡Muy bien! Las dos imágenes empiezan con el mismo sonido. ✓
-- ¡Correcto! Encontraste todas las parejas.
+- ¡Juego completo! Encontraste todas las parejas que comienzan con el mismo sonido inicial.
 
 **Error**
 
 - No empiezan con el mismo sonido. ✗ Se vuelven a dar vuelta.
-- Sigue jugando. Encuentra todas las parejas para completar la actividad.
+- Seguí jugando. Todavía faltan parejas por encontrar.
 
 **Informativo**
 
@@ -625,8 +625,8 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Listo! Encontraste todos los cambios.
-- ¡Muy bien! Encontraste el cambio.
+- ¡Listo! Encontraste todas las diferencias.
+- ¡Muy bien! Encontraste la diferencia.
 
 **Error**
 
@@ -652,6 +652,7 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Error**
 
+- Revisá las marcadas con ✗ y probá otra vez.
 - Todavía faltan palabras.
 - ✗ Intentá otra vez
 
@@ -687,8 +688,8 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Listo! Encontraste todos los cambios.
-- ¡Muy bien! Encontraste el cambio.
+- ¡Listo! Encontraste todas las diferencias.
+- ¡Muy bien! Encontraste la diferencia.
 
 **Error**
 
@@ -897,8 +898,8 @@ Si una actividad no define un mensaje propio, el runtime muestra uno de estos me
 
 **Éxito**
 
-- ¡Listo! Encontraste todos los cambios.
-- ¡Muy bien! Encontraste el cambio.
+- ¡Listo! Encontraste todas las diferencias.
+- ¡Muy bien! Encontraste la diferencia.
 
 **Error**
 

@@ -258,9 +258,9 @@
           if (change) change.textContent = 'Cambió ' + a.textContent + ' por ' + b.textContent;
           solved++;
           if (solved === cards.length) {
-            setStatus('¡Listo! Encontraste todos los cambios.', true);
+            setStatus('¡Listo! Encontraste todas las diferencias.', true);
           } else {
-            setStatus('¡Muy bien! Encontraste el cambio.', true);
+            setStatus('¡Muy bien! Encontraste la diferencia.', true);
           }
           return;
         }
@@ -284,7 +284,7 @@
       window.adtRegisterCustomActivity(section, {
         validate: function () {
           const done = solved === cards.length;
-          setStatus(done ? '¡Listo! Encontraste todos los cambios.' : 'Todavía faltan cambios por encontrar.', done);
+          setStatus(done ? '¡Listo! Encontraste todas las diferencias.' : 'Todavía faltan diferencias por encontrar.', done);
           return done;
         },
         reset: function () {
@@ -316,7 +316,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=56"></script>
+    <script src="./assets/offline-preloader.js?v=57"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
 </body>
