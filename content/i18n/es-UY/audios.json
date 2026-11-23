@@ -3020,5 +3020,8 @@
   "pg049_n0003": "../voices/asesora/audio/pg004005_n0003.mp3",
   "pg049_n0004": "../voices/asesora/audio/pg004005_n0004.mp3",
   "pg049_n0005": "../voices/asesora/audio/pg004005_n0005.mp3",
-  "pg049_n0006": "pg051_n0002--0929ff293f3c23328c10adf5906274d20354e089880ed78886de6014bd97fb2f.mp3"
+  "pg049_n0006": "pg051_n0002--0929ff293f3c23328c10adf5906274d20354e089880ed78886de6014bd97fb2f.mp3",
+  "pg014_n0001": "../voices/asesora/audio/pg014_n0001.mp3",
+  "pg014_n0002": "../voices/asesora/audio/pg014_n0002.mp3",
+  "pg014_n0003": "../voices/asesora/audio/pg014_n0003.mp3"
 }

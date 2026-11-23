@@ -1,6 +1,6 @@
 {
   "text-pg014-125": "M y N: ¿dónde va la imagen?",
-  "text-pg014-126": "Mirá con atención las imágenes. Al tocarlas, podés escuchar sus nombres.\n\nOrdená las imágenes por su sonido inicial.\n\nBuscá y arrastrá hacia la fila M todas las imágenes que empiezan con el sonido eme.\n\nDespués buscá y arrastrá hacia la fila N todas las imágenes que empiezan con el sonido ene.\n\nPueden sobrar imágenes.",
+  "text-pg014-126": "Mirá con atención las imágenes. Al tocarlas, podés escuchar sus nombres.\n\nOrdená las imágenes por su sonido inicial.\n\nBuscá y arrastrá hacia la fila M todas las imágenes que empiezan con el sonido mmm.\n\nDespués buscá y arrastrá hacia la fila N todas las imágenes que empiezan con el sonido nnn.\n\nPueden sobrar imágenes.",
   "pg014_im012": "Mapa de América del Sur.",
   "text-pg014-127": "Mapa",
   "pg014_im014": "Moto roja.",
@@ -3059,5 +3059,8 @@
   "pg030_n0099": "Las letras están mezcladas: tocá cada letra en el orden correcto para formar la palabra.",
   "pg034_n0099": "Las letras están mezcladas: tocá cada letra en el orden correcto para formar la palabra.",
   "pg035_n0099": "Las letras están mezcladas: tocá cada letra en el orden correcto para formar la palabra.",
-  "pg051_n0008": "Mirá con atención las imágenes. Al seleccionarlas, podés escuchar sus nombres."
+  "pg051_n0008": "Mirá con atención las imágenes. Al seleccionarlas, podés escuchar sus nombres.",
+  "pg014_n0001": "nueve",
+  "pg014_n0002": "eme y ene",
+  "pg014_n0003": "¿Dónde va la imagen?"
 }

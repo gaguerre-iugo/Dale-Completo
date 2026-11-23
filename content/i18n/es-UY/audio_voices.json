@@ -3106,7 +3106,10 @@
         "pg072_n0021": "../voices/asesora/audio/pg072_n0021.mp3",
         "pg073_word_barri": "../voices/asesora/audio/pg073_word_barri.mp3",
         "pg073_word_corre": "../voices/asesora/audio/pg073_word_corre.mp3",
-        "pg073_word_leo": "../voices/asesora/audio/pg073_word_leo.mp3"
+        "pg073_word_leo": "../voices/asesora/audio/pg073_word_leo.mp3",
+        "pg014_n0001": "../voices/asesora/audio/pg014_n0001.mp3",
+        "pg014_n0002": "../voices/asesora/audio/pg014_n0002.mp3",
+        "pg014_n0003": "../voices/asesora/audio/pg014_n0003.mp3"
       }
     },
     "secondary": {
@@ -6215,7 +6218,10 @@
         "pg030_n0099": "../voices/consultor/audio/pg030_n0099.mp3",
         "pg034_n0099": "../voices/consultor/audio/pg034_n0099.mp3",
         "pg035_n0099": "../voices/consultor/audio/pg035_n0099.mp3",
-        "pg051_n0008": "../voices/consultor/audio/pg051_n0008.mp3"
+        "pg051_n0008": "../voices/consultor/audio/pg051_n0008.mp3",
+        "pg014_n0001": "../voices/consultor/audio/pg014_n0001.mp3",
+        "pg014_n0002": "../voices/consultor/audio/pg014_n0002.mp3",
+        "pg014_n0003": "../voices/consultor/audio/pg014_n0003.mp3"
       }
     }
   }
