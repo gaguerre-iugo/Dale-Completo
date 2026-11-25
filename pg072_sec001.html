@@ -352,7 +352,7 @@
         input.classList.add('is-correct');
         const note = feedbackFor(input);
         note.className = 'input-feedback is-ok';
-        note.textContent = '✓ Correcto';
+        note.textContent = 'Correcto';
         showCardImage(entry);
         updateProgress();
       };
@@ -374,7 +374,7 @@
         input.classList.add('is-wrong');
         const note = feedbackFor(input);
         note.className = 'input-feedback is-bad';
-        note.textContent = '✗ Intentá otra vez';
+        note.textContent = 'Intentá otra vez';
       };
 
       inputs.forEach(function (input) {
@@ -456,7 +456,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=98"></script>
+    <script src="./assets/offline-preloader.js?v=100"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
         <script>

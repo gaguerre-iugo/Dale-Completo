@@ -404,13 +404,13 @@
           if (status) {
             status.classList.remove('text-green-700', 'text-red-700');
             if (passed) {
-              status.textContent = 'Correcto. Clasificaste bien las imágenes de M y N.';
+              status.textContent = 'Correcto. Clasificaste bien todas las imágenes.';
               status.classList.add('text-green-700');
             } else if (remaining > 2) {
               status.textContent = 'Todavía faltan imágenes por clasificar. Recordá dejar afuera las que no empiezan con M ni con N.';
               status.classList.add('text-red-700');
             } else {
-              status.textContent = 'No está del todo bien. Revisá las imágenes en M y N y volvé a intentar.';
+              status.textContent = 'No está del todo bien. Revisá las imágenes clasificadas y volvé a intentar.';
               status.classList.add('text-red-700');
             }
           }
@@ -444,7 +444,7 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=98"></script>
+    <script src="./assets/offline-preloader.js?v=100"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
         <script>
