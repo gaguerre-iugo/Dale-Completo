@@ -16,8 +16,8 @@
     <link href="./content/tailwind_output.css?v=2" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=43" defer></script>
+    <link href="./assets/eva.css?v=46" rel="stylesheet">
+    <script src="./assets/eva-ui.js?v=50" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -86,8 +86,8 @@
 
 <div class="space-y-2 mt-2">
 <p class="leading-relaxed" data-id="text-pg013-25">Mir&#xe1; con atenci&#xf3;n las im&#xe1;genes. Al seleccionarlas, pod&#xe9;s escuchar sus nombres.</p>
-<p class="leading-relaxed" data-id="text-pg013-26">Seleccion&#xe1; la letra m y todas las im&#xe1;genes que comienzan con el sonido /m/.</p>
-<p class="leading-relaxed" data-id="text-pg013-27">Seleccion&#xe1; la letra n y todas las im&#xe1;genes que comienzan con el sonido /n/.</p>
+<p class="leading-relaxed" data-id="text-pg013-26">Seleccion&#xe1; la letra M y todas las im&#xe1;genes que comienzan con el sonido /m/.</p>
+<p class="leading-relaxed" data-id="text-pg013-27">Seleccion&#xe1; la letra N y todas las im&#xe1;genes que comienzan con el sonido /n/.</p>
 
 </div>
 <div class="flex gap-2 mt-4" role="list" aria-label="Letras de la actividad"><button type="button" class="letter-chip min-h-11 min-w-11 rounded-full border-2 border-red-300 bg-white px-3 py-2 text-xl font-bold text-gray-800 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300" data-letter="M" data-id="text-pg013-22" aria-pressed="false" data-audio-id="text-pg013-22">M</button><button type="button" class="letter-chip min-h-11 min-w-11 rounded-full border-2 border-gray-300 bg-gray-100 px-3 py-2 text-xl font-bold text-gray-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300" data-letter="N" data-id="text-pg013-23" aria-pressed="false" disabled data-audio-id="text-pg013-23">N</button></div>
@@ -129,9 +129,25 @@ const clearTileFeedback = function (tile) { tile.classList.remove('is-selected',
 
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=65"></script>
+    <script src="./assets/offline-preloader.js?v=98"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+        <script>
+    (function () {
+      var SEL = '#nav-container > div[aria-label="dock-label"]';
+      var attempts = 0, stable = 0, last = '';
+      var timer = setInterval(function () {
+        var d = document.querySelector(SEL);
+        if (!d) { if (++attempts > 70) clearInterval(timer); return; }
+        d.style.transition = 'none';
+        d.style.opacity = '0';
+        var r = d.getBoundingClientRect();
+        var key = Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width);
+        if (key === last) stable++; else { stable = 0; last = key; }
+        if (stable >= 3 || ++attempts > 70) { d.style.opacity = '1'; clearInterval(timer); }
+      }, 30);
+    })();
+    </script>
 </body>
 
 </html>

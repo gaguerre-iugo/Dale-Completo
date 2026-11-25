@@ -1161,6 +1161,7 @@ display: inline-flex;
   line-height: 1.15;
   white-space: nowrap;
   cursor: pointer;
+  touch-action: manipulation;
   box-shadow: none;
 }
 
@@ -2053,6 +2054,18 @@ width: min(18.75rem, 100vw) !important;
   animation-duration: 1ms !important;
   animation-delay: 0ms !important;
   transition: none !important;
+}
+
+/* El panel de Herramientas se abre pegado al borde derecho, no centrado
+   sobre el boton que lo dispara. El runtime lo posiciona con un wrapper
+   flotante que trae transform inline; se neutraliza solo en escritorio. */
+@media (min-width: 48rem) {
+  body.reflow-book div:has(> [data-eva-tools="1"]) {
+    left: auto !important;
+    right: .5rem !important;
+    top: 2.5rem !important;
+    transform: none !important;
+  }
 }
 
 body.reflow-book .reflow-panel-control-header {
@@ -3871,3 +3884,13 @@ body.reflow-book .reflow-reader-panel.reflow-accessibility-panel :is(.reflow-tts
 #nav-container [aria-label="dock-label"] > div {
   padding: 0 !important;
 }
+
+/* Evita la animacion de entrada del dock al cambiar de pagina */
+#nav-container > div[aria-label="dock-label"] {
+  transition: none !important;
+  width: fit-content !important;
+  max-width: calc(100vw - 1rem) !important;
+}
+
+/* Barra de navegacion: siempre centrada, sin deslizamiento de entrada */
+#reflow-pagination { transition: opacity 0.2s ease !important; transform: translateX(-50%) !important; }

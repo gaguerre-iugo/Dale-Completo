@@ -15,8 +15,8 @@
     <link href="./content/tailwind_output.css?v=2" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=43" defer></script>
+    <link href="./assets/eva.css?v=46" rel="stylesheet">
+    <script src="./assets/eva-ui.js?v=50" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -188,12 +188,12 @@
 
       const FONO_AUDIO = {
         A: 'fono_a', B: 'fono_b', C: 'fono_c', D: 'fono_d', E: 'fono_e', F: 'fono_f',
-        I: 'fono_i', J: 'fono_j', L: 'fono_l', M: 'fono_m', N: 'fono_n', O: 'fono_o',
+        G: 'fono_g', I: 'fono_i', J: 'fono_j', L: 'fono_l', M: 'fono_m', N: 'fono_n', O: 'fono_o',
         P: 'fono_p', Q: 'fono_q', R: 'fono_r', S: 'fono_z', T: 'fono_t', U: 'text-pg006-49',
         V: 'fono_v', Z: 'fono_z', LL: 'fono_ll', RR: 'fono_rr', CH: 'fono_ch', 'Ñ': 'fono_enie',
       };
       const NOMBRE_AUDIO = {
-        G: 'letter_g', H: 'letter_h', K: 'letter_k', W: 'letter_w', X: 'letter_x', Y: 'letter_y',
+        H: 'letter_h', K: 'letter_k', W: 'letter_w', X: 'letter_x', Y: 'letter_y',
       };
 
       const playAudio = function (id) {
@@ -313,9 +313,25 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=65"></script>
+    <script src="./assets/offline-preloader.js?v=98"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+        <script>
+    (function () {
+      var SEL = '#nav-container > div[aria-label="dock-label"]';
+      var attempts = 0, stable = 0, last = '';
+      var timer = setInterval(function () {
+        var d = document.querySelector(SEL);
+        if (!d) { if (++attempts > 70) clearInterval(timer); return; }
+        d.style.transition = 'none';
+        d.style.opacity = '0';
+        var r = d.getBoundingClientRect();
+        var key = Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width);
+        if (key === last) stable++; else { stable = 0; last = key; }
+        if (stable >= 3 || ++attempts > 70) { d.style.opacity = '1'; clearInterval(timer); }
+      }, 30);
+    })();
+    </script>
 </body>
 
 </html>

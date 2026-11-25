@@ -38,8 +38,10 @@ STYLE_GOLPE = ("Modo conciencia fonologica: articula el sonido de la letra con u
 # En rioplatense la Z suena como S, y la C de ca-co-cu suena como K.
 SPEC = {
     "a": ["a"], "b": ["b"], "c": ["k", "c"], "d": ["d"], "e": ["e"], "f": ["fff", "f"],
-    "i": ["i"], "j": ["jjj", "j"], "l": ["lll", "l"], "m": ["mmm", "m"], "n": ["nnn", "n"],
-    "o": ["o"], "p": ["p"], "r": ["r"], "t": ["t"], "v": ["vvv", "v"], "z": ["s", "zzz"],
+    "g": ["g", "gh"], "i": ["i"], "j": ["jjj", "j"], "l": ["lll", "l"], "m": ["mmm", "m"],
+    "n": ["nnn", "n"],
+    "o": ["o"], "p": ["p"], "r": ["r"], "s": ["sss", "s"], "t": ["t"], "v": ["vvv", "v"],
+    "z": ["s", "zzz"],
 }
 ESTILO = {"t": STYLE_GOLPE}
 
@@ -47,8 +49,10 @@ ESTILO = {"t": STYLE_GOLPE}
 TOPE = {"vocal": 0.60, "continuo": 0.85, "oclusiva": 0.45}
 TIPO = {"a": "vocal", "e": "vocal", "i": "vocal", "o": "vocal",
         "f": "continuo", "j": "continuo", "l": "continuo", "m": "continuo",
-        "n": "continuo", "r": "continuo", "v": "continuo", "z": "continuo",
-        "b": "oclusiva", "c": "oclusiva", "d": "oclusiva", "p": "oclusiva", "t": "oclusiva"}
+        "n": "continuo", "r": "continuo", "s": "continuo", "v": "continuo",
+        "z": "continuo",
+        "b": "oclusiva", "c": "oclusiva", "d": "oclusiva", "g": "oclusiva",
+        "p": "oclusiva", "t": "oclusiva"}
 
 VERIF_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
 VERIF_PROMPT = ("Escucha este audio corto de una voz que ensena a leer. "
@@ -60,8 +64,8 @@ VERIF_PROMPT = ("Escucha este audio corto de una voz que ensena a leer. "
 # Segunda opinion: eleccion forzada entre fonos. Las oclusivas duran menos de
 # 0,2 s y el modelo a veces no las reconoce, por eso alcanza un solo voto.
 FONEMA = {"a": "A", "e": "E", "i": "I", "o": "O", "b": "B", "c": "K", "d": "D",
-          "f": "F", "j": "J", "l": "L", "m": "M", "n": "N", "p": "P", "r": "R",
-          "t": "T", "v": "V", "z": "S"}
+          "f": "F", "g": "G", "j": "J", "l": "L", "m": "M", "n": "N", "p": "P", "r": "R",
+          "s": "S", "t": "T", "v": "V", "z": "S"}
 VERIF_FONO = ("Escucha este audio: es el sonido aislado de una letra del espanol. "
               "Elegi que fono se escucha entre estas opciones: A, E, I, O, U (vocales), "
               "M (nasal de mama), N (nasal de nene), S (sibilante de sopa), "

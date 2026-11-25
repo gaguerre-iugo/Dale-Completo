@@ -15,8 +15,8 @@
     <link href="./content/tailwind_output.css?v=2" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=43" defer></script>
+    <link href="./assets/eva.css?v=46" rel="stylesheet">
+    <script src="./assets/eva-ui.js?v=50" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -104,6 +104,7 @@
 #content .adt-skin .letter-chip.is-active{border-color:#00b87a!important;color:#0a7d5c!important;background:#f0fbf7!important}
 #content .adt-skin .letter-chip.is-done{border-color:#00b87a!important;background:#00b87a!important;color:#fff!important;cursor:default}
 #content .adt-skin .letter-chip:disabled{border-color:#d9e8e1;background:#f4f4f0;color:#8a8a80;cursor:default}
+#content .adt-skin .letter-chip.is-locked{border-color:#d9e8e1!important;background:#f4f4f0!important;color:#8a8a80!important;cursor:pointer}
 #content .adt-skin .check-round{border-radius:9999px;background:#00b87a;color:#fff;font-size:1.1rem;font-weight:800;padding:.75rem 2rem;border:0;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.1)}
 #content .adt-skin .check-round:disabled{background:#9ca3af;cursor:default;box-shadow:none}
 @keyframes sound-shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
@@ -125,9 +126,9 @@
       <p>PAN, MIEL, GOL, MES, PAZ</p>
     </div>
     <div class="mt-4 flex items-center gap-2" role="group" aria-label="Letras de la actividad">
-          <button type="button" data-letter-chip="P" class="letter-chip is-active" aria-pressed="true">P</button>
-          <button type="button" data-letter-chip="M" class="letter-chip" aria-pressed="false" disabled>M</button>
-          <button type="button" data-letter-chip="G" class="letter-chip" aria-pressed="false" disabled>G</button>
+          <button type="button" data-letter-chip="P" data-audio-id="letter_p" class="letter-chip is-active" aria-pressed="true">P</button>
+          <button type="button" data-letter-chip="M" data-audio-id="letter_m" class="letter-chip" aria-pressed="false" disabled>M</button>
+          <button type="button" data-letter-chip="G" data-audio-id="letter_g" class="letter-chip" aria-pressed="false" disabled>G</button>
     </div>
   </div>
 
@@ -195,6 +196,14 @@
 
       const cards = Array.from(section.querySelectorAll('[data-sound-card]'));
       const chips = Array.from(section.querySelectorAll('[data-letter-chip]'));
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          const id = 'letter_' + (chip.dataset.letterChip || '').toLowerCase();
+          if (id && window.__adtKit && typeof window.__adtKit.playText === 'function') {
+            window.__adtKit.playText(id);
+          }
+        });
+      });
       const button = section.querySelector('[data-check-sound]');
       const status = section.querySelector('[data-activity-status]');
       const letters = ['P', 'M', 'G'];
@@ -222,7 +231,8 @@
       const updateChips = function () {
         chips.forEach(function (chip) {
           const l = chip.dataset.letterChip;
-          chip.classList.remove('is-active', 'is-done');
+          chip.classList.remove('is-active', 'is-done', 'is-locked');
+          chip.removeAttribute('aria-disabled');
           if (completed.has(l)) {
             chip.classList.add('is-done');
             chip.disabled = true;
@@ -232,7 +242,9 @@
             chip.disabled = false;
             chip.setAttribute('aria-pressed', 'true');
           } else {
-            chip.disabled = true;
+            chip.classList.add('is-locked');
+            chip.disabled = false;
+            chip.setAttribute('aria-disabled', 'true');
             chip.setAttribute('aria-pressed', 'false');
           }
         });
@@ -347,9 +359,25 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=65"></script>
+    <script src="./assets/offline-preloader.js?v=98"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+        <script>
+    (function () {
+      var SEL = '#nav-container > div[aria-label="dock-label"]';
+      var attempts = 0, stable = 0, last = '';
+      var timer = setInterval(function () {
+        var d = document.querySelector(SEL);
+        if (!d) { if (++attempts > 70) clearInterval(timer); return; }
+        d.style.transition = 'none';
+        d.style.opacity = '0';
+        var r = d.getBoundingClientRect();
+        var key = Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width);
+        if (key === last) stable++; else { stable = 0; last = key; }
+        if (stable >= 3 || ++attempts > 70) { d.style.opacity = '1'; clearInterval(timer); }
+      }, 30);
+    })();
+    </script>
 <script>
 (function () {
   var cards = document.querySelectorAll('#content .sound-card[data-audio-id], #content .pair-card[data-audio-id]');

@@ -7,6 +7,19 @@
      · transporte -> botones del runtime por nombre accesible
    No reescribe el runtime ni el contenido.
    ========================================================================== */
+/* Regla del libro: las únicas voces son Lucía y Mateo. La voz del navegador
+   queda bloqueada para que nunca se superponga con los audios de Gemini. */
+(function () {
+  "use strict";
+  try {
+    if (!window.speechSynthesis) return;
+    var noop = function () {};
+    window.speechSynthesis.speak = noop;
+    window.speechSynthesis.cancel = noop;
+    window.speechSynthesis.pause = noop;
+    window.speechSynthesis.resume = noop;
+  } catch (e) {}
+})();
 (function () {
   "use strict";
 
@@ -825,8 +838,74 @@
       /* Se usa el reproductor real del runtime, no un clic por etiqueta: asi el
          boton no se puede desincronizar ni clickear a si mismo. */
       var k = kit();
-      if (k && k.togglePlay && k.hasItems && k.hasItems()) { k.togglePlay(); return; }
+      var extra = window.__adtTextAudio;
+      var mainPlaying = k && k.playingReal ? k.playingReal() : false;
+      var extraPlaying = !!(extra && extra.src && !extra.paused && !extra.ended);
+      if (window.__evaPausedExtraPage && window.__evaPausedExtraPage !== location.pathname) {
+        window.__evaPausedExtra = null;
+        window.__evaPausedExtraPage = null;
+      }
+
+      /* Si esta sonando el audio de una tarjeta o palabra, el boton pausa ese
+         audio y no arranca la lectura de la pagina. */
+      if (!mainPlaying && extraPlaying) {
+        try { extra.pause(); } catch (e) {}
+        window.__evaPausedExtra = extra;
+        window.__evaPausedExtraPage = location.pathname;
+        window.__evaToggleHoldUntil = Date.now() + 500;
+        paintToggle(false);
+        window.setTimeout(syncPlayer, 120);
+        return;
+      }
+      /* Segundo toque: reanuda la palabra pausada. */
+      if (!mainPlaying && window.__evaPausedExtra) {
+        var previo = window.__evaPausedExtra;
+        window.__evaPausedExtra = null;
+        window.__evaPausedExtraPage = null;
+        if (previo && previo.src && previo.paused && !previo.ended && previo.currentTime > 0) {
+          try {
+            var pp = previo.play();
+            if (pp && pp.catch) pp.catch(function () {});
+          } catch (e) {}
+          window.__evaToggleHoldUntil = Date.now() + 650;
+          paintToggle(true);
+          window.setTimeout(syncPlayer, 150);
+          return;
+        }
+      }
+
+      if (k && k.togglePlay && k.hasItems && k.hasItems()) {
+        var estabaSonando = mainPlaying;
+        var token = (window.__evaToggleToken || 0) + 1;
+        window.__evaToggleToken = token;
+        if (!estabaSonando) {
+          window.__evaPausedExtra = null;
+          window.__evaPausedExtraPage = null;
+        }
+        window.__evaToggleHoldUntil = Date.now() + 650;
+        k.togglePlay();
+        /* Pintar el estado pedido ya mismo: playingReal puede tardar uno o dos
+           frames en reflejar el pause()/play(). */
+        paintToggle(!estabaSonando);
+        window.setTimeout(syncPlayer, 120);
+        if (estabaSonando) {
+          /* Si habia un play() en vuelo, la pausa puede llegar antes de que el
+             audio arranque. Se refuerza la pausa dos veces, salvo que el usuario
+             ya haya vuelto a tocar el boton. */
+          var reforzar = function () {
+            if (window.__evaToggleToken !== token) return;
+            if (k.playingReal && k.playingReal()) k.pause();
+            syncPlayer();
+          };
+          window.setTimeout(reforzar, 150);
+          window.setTimeout(reforzar, 450);
+          window.setTimeout(reforzar, 900);
+          window.setTimeout(reforzar, 1500);
+        }
+        return;
+      }
       if (!clickRuntime(["Pausa"])) clickRuntime(["Reproducir"]);
+      window.setTimeout(syncPlayer, 150);
     });
     s.querySelector("#reflow-tts-stop").addEventListener("click", function () {
       /* Cerrar la lectura detiene el audio pero conserva el texto y el punto de
@@ -860,6 +939,29 @@
     });
   }
 
+  function paintToggle(playing) {
+    var s = document.getElementById("reflow-tts-player");
+    var toggle = s && s.querySelector("#reflow-tts-toggle");
+    if (!toggle) return;
+    var label = playing ? "Pausa" : "Reproducir";
+    if (toggle.getAttribute("aria-pressed") !== String(playing)) {
+      toggle.setAttribute("aria-pressed", String(playing));
+    }
+    if (toggle.getAttribute("aria-label") !== label) {
+      toggle.setAttribute("aria-label", label);
+    }
+    var txt = toggle.querySelector(".reflow-tts-player-label");
+    if (txt && txt.textContent !== label) txt.textContent = label;
+    var icon = toggle.querySelector(".reflow-tts-player-icon");
+    if (icon) {
+      var want = playing ? "pause" : "play";
+      if (icon.getAttribute("data-icon") !== want) {
+        icon.setAttribute("data-icon", want);
+        icon.innerHTML = playing ? ICONS.pause : ICONS.play;
+      }
+    }
+  }
+
   function syncPlayer() {
     var s = document.getElementById("reflow-tts-player");
     var st = state();
@@ -868,6 +970,9 @@
     if (!st.readAloud) {
       /* Al cerrar, el boton queda listo para la proxima sesion: no debe seguir
          mostrando "Pausa" mientras el reproductor esta oculto. */
+      window.__evaPausedExtra = null;
+      window.__evaPausedExtraPage = null;
+      window.__evaToggleHoldUntil = 0;
       var offToggle = s.querySelector("#reflow-tts-toggle");
       if (offToggle) {
         offToggle.setAttribute("aria-pressed", "false");
@@ -880,11 +985,12 @@
     }
     var toggle = s.querySelector("#reflow-tts-toggle");
     var k = kit();
-    var playing = k && k.playingReal ? k.playingReal() : Boolean(st.playing);
-    toggle.setAttribute("aria-pressed", String(playing));
-    toggle.setAttribute("aria-label", playing ? "Pausa" : "Reproducir");
-    toggle.querySelector(".reflow-tts-player-label").textContent = playing ? "Pausa" : "Reproducir";
-    toggle.querySelector(".reflow-tts-player-icon").innerHTML = playing ? ICONS.pause : ICONS.play;
+    var extra = window.__adtTextAudio;
+    var extraPlaying = !!(extra && extra.src && !extra.paused && !extra.ended);
+    var playing = (k && k.playingReal ? k.playingReal() : Boolean(st.playing)) || extraPlaying;
+    if (!window.__evaToggleHoldUntil || Date.now() >= window.__evaToggleHoldUntil) {
+      paintToggle(playing);
+    }
     /* Sin textos con audio el boton no tiene nada que hacer: se deshabilita en
        lugar de fallar en silencio. */
     toggle.disabled = k && k.hasItems ? !k.hasItems() : false;
@@ -1000,7 +1106,7 @@
   }
 
   function play(card) {
-    var id = card.getAttribute("data-audio-id");
+    var id = card.getAttribute("data-audio-id") || card.getAttribute("data-audio-word");
     if (id && window.__adtKit && typeof window.__adtKit.playText === "function") {
       try {
         if (window.__adtKit.playText(id)) return;
@@ -1075,6 +1181,11 @@
     function (event) {
       var t = event.target;
       if (!t || !t.closest) return;
+
+      /* La palabra de las tarjetas "cambiar palabras" tiene su propio
+         reproductor en la pagina: evitar que se sume otra voz. Tampoco
+         conviene hablar al tocar el campo donde se escribe. */
+      if (t.closest("[data-rm-play], input, textarea, select")) return;
 
       var pair = t.closest(".change-pair[data-audio-target-id]");
       if (pair) {

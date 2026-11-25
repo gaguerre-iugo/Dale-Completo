@@ -15,8 +15,8 @@
     <link href="./content/tailwind_output.css?v=2" rel="stylesheet">
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
-    <link href="./assets/eva.css?v=40" rel="stylesheet">
-    <script src="./assets/eva-ui.js?v=43" defer></script>
+    <link href="./assets/eva.css?v=46" rel="stylesheet">
+    <script src="./assets/eva-ui.js?v=50" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&amp;display=swap" rel="stylesheet">
@@ -89,9 +89,9 @@
 </style><section data-section-type="activity_custom_memory_cards" data-id="pg027_s2" aria-labelledby="activity-heading-pg027" class="adt-page-open container mx-auto max-w-5xl bg-white rounded-lg px-24 max-lg:px-12 max-sm:px-6 pt-12 pb-12">
   <div class="adt-notepad" style="margin-bottom:36px">
     <div class="adt-head mb-4">
-      <h1 class="adt-head-num" data-adt-num>20</h1>
+      <h1 class="adt-head-num" data-id="pg027_n0001" data-adt-num>20</h1>
       <div>
-        <h2 class="adt-head-kicker">F Y S</h2>
+        <h2 class="adt-head-kicker" data-id="pg027_n0002">F Y S</h2>
         <h2 id="activity-heading-pg027" class="adt-head-title" data-id="text-pg027-30">&#xbf;CU&#xc1;NTAS RECORD&#xc1;S?</h2>
       </div>
     </div>
@@ -105,19 +105,19 @@
   </div>
 
   <div class="memory-grid grid grid-cols-2 md:grid-cols-5 gap-4">
-        <button type="button" data-activity-card="item-1" data-answer="ficha" class="memory-card" aria-label="Tarjeta 1. Tocar para escuchar el nombre de la imagen.">
+        <button type="button" data-activity-card="item-1" data-audio-id="pg027_sec002_ans_cell-1" data-answer="ficha" class="memory-card" aria-label="Tarjeta 1. Tocar para escuchar el nombre de la imagen.">
           <img data-id="pg027_im004" src="images/pg027_im004.png?v=3" alt="Dos fichas rojas apiladas.">
         </button>
-        <button type="button" data-activity-card="item-2" data-answer="fila" class="memory-card" aria-label="Tarjeta 2. Tocar para escuchar el nombre de la imagen.">
+        <button type="button" data-activity-card="item-2" data-audio-id="pg027_sec002_ans_cell-2" data-answer="fila" class="memory-card" aria-label="Tarjeta 2. Tocar para escuchar el nombre de la imagen.">
           <img data-id="pg027_im012" src="images/pg027_im012.png?v=3" alt="Cinco ni&#xf1;as y ni&#xf1;os parados en fila.">
         </button>
-        <button type="button" data-activity-card="item-3" data-answer="seis" class="memory-card" aria-label="Tarjeta 3. Tocar para escuchar el nombre de la imagen.">
+        <button type="button" data-activity-card="item-3" data-audio-id="pg027_sec002_ans_cell-3" data-answer="seis" class="memory-card" aria-label="Tarjeta 3. Tocar para escuchar el nombre de la imagen.">
           <img data-id="pg027_im015" src="images/pg027_im015.png?v=3" alt="N&#xfa;mero seis en rojo.">
         </button>
-        <button type="button" data-activity-card="item-4" data-answer="saco" class="memory-card" aria-label="Tarjeta 4. Tocar para escuchar el nombre de la imagen.">
+        <button type="button" data-activity-card="item-4" data-audio-id="pg027_word_saco" data-answer="saco" class="memory-card" aria-label="Tarjeta 4. Tocar para escuchar el nombre de la imagen.">
           <img data-id="pg027_im011" src="images/pg027_im011.png?v=3" alt="Saco marr&#xf3;n con botones y bolsillos.">
         </button>
-        <button type="button" data-activity-card="item-5" data-answer="sapo" class="memory-card" aria-label="Tarjeta 5. Tocar para escuchar el nombre de la imagen.">
+        <button type="button" data-activity-card="item-5" data-audio-id="pg027_sec002_ans_cell-5" data-answer="sapo" class="memory-card" aria-label="Tarjeta 5. Tocar para escuchar el nombre de la imagen.">
           <img data-id="pg027_im010" src="images/pg027_im010.png?v=3" alt="Sapo marr&#xf3;n con manchas oscuras.">
         </button>
   </div>
@@ -207,6 +207,12 @@
         } catch (e) {}
       };
 
+      const speakEntry = function (entry) {
+        const id = entry.card.dataset.audioId || '';
+        if (id && window.__adtKit && typeof window.__adtKit.playText === 'function' && window.__adtKit.playText(id)) return;
+        speak(entry.answer);
+      };
+
       const updateProgress = function () {
         const matched = entries.filter(function (entry) { return entry.matched; }).length;
         if (foundCount) foundCount.textContent = String(matched);
@@ -236,7 +242,7 @@
         entry.card.classList.add('is-peeking');
         entry.card.innerHTML = entry.frontHtml;
         entry.card.setAttribute('aria-label', 'Vista rápida de la tarjeta.');
-        speak(entry.answer);
+        speakEntry(entry);
         entry.peekTimer = window.setTimeout(function () {
           if (!entry.matched) hideCard(entry);
         }, 2000);
@@ -276,14 +282,14 @@
             return;
           }
           if (entry.heard) {
-            speak(entry.answer);
+            speakEntry(entry);
             return;
           }
           entry.heard = true;
           heardCount += 1;
           entry.card.classList.add('is-heard');
           addCheck(entry.card);
-          speak(entry.answer);
+          speakEntry(entry);
           setStatus('Escuchaste: ' + entry.answer + '.', null);
           if (heardCount === entries.length) window.setTimeout(flipAll, 900);
         });
@@ -406,9 +412,25 @@
     </script>
     <div class="relative z-50" id="interface-container"></div>
     <div class="relative z-50" id="nav-container"></div>
-    <script src="./assets/offline-preloader.js?v=65"></script>
+    <script src="./assets/offline-preloader.js?v=98"></script>
     <script src="./assets/scorm.js"></script>
     <script src="./assets/base.bundle.local.js?v=32"></script>
+        <script>
+    (function () {
+      var SEL = '#nav-container > div[aria-label="dock-label"]';
+      var attempts = 0, stable = 0, last = '';
+      var timer = setInterval(function () {
+        var d = document.querySelector(SEL);
+        if (!d) { if (++attempts > 70) clearInterval(timer); return; }
+        d.style.transition = 'none';
+        d.style.opacity = '0';
+        var r = d.getBoundingClientRect();
+        var key = Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width);
+        if (key === last) stable++; else { stable = 0; last = key; }
+        if (stable >= 3 || ++attempts > 70) { d.style.opacity = '1'; clearInterval(timer); }
+      }, 30);
+    })();
+    </script>
 </body>
 
 </html>
