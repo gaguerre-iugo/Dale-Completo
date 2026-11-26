@@ -1,7 +1,7 @@
 # Audios pendientes de regenerar (TTS)
 
 Fecha de registro: 2026-11-24
-Actualizado: 2026-11-26 (títulos, actividades 9, 10, 12, 13 y 25; pendiente “coyote” de Mateo)
+Actualizado: 2026-11-26 (títulos, actividades 9, 10, 12, 13, 25 y 37; pendientes de pronunciación de Mateo: “coyote” y “ovejas”)
 
 Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-flash-lite-tts`**. No mezclar modelos por voz.
 
@@ -67,6 +67,18 @@ En Mateo la palabra **COYOTE** suena “co-ió-te” (COIOTE) y debería sonar �
 
 - Corrección: regenerar con grafía fonética “coshote” (como se hizo con “Shusho”) o empalmar el fragmento; después verificar por transcripción que no diga “coyote/coiote”.
 - Lucía fue revisada y no presenta el mismo problema; no tocar sus clips.
+
+### Pronunciación — Mateo: “ovejas”
+
+En la actividad **18, parte 2** (`pg067_sec001.html`) Mateo lee la definición “Persona que cría cabras u ovejas” y dice “**persona que queria cabras u ovecas**”: cambia “ovejas” por “ovecas” y “cría” por “quería”.
+
+| ID | Texto | Archivo |
+|---|---|---|
+| `pg067_n0024` | `Persona que cría cabras u ovejas.` | `voices/consultor/audio/pg067_n0024.mp3` |
+
+- Esperado: “ovejas” con j suave (no “ovecas”) y “cría” bien acentuado.
+- La lectura fácil `pg067_s2_easy_read` incluye la misma definición y todavía no tiene clip propio de Mateo; al generarlo, verificar que diga “ovejas”.
+- Regenerar el clip y confirmar por transcripción antes de darlo por cerrado.
 
 Nota: el libro usa **252** clips de lectura fácil.
 

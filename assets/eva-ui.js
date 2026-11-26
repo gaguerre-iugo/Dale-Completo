@@ -774,26 +774,32 @@
     var st = state();
     if (!st || !shell) return;
     shell.querySelectorAll("[data-switch]").forEach(function (btn) {
-      var key = btn.getAttribute("data-switch");
-      btn.setAttribute("aria-checked", String(Boolean(st[key])));
+      var valor = String(Boolean(st[btn.getAttribute("data-switch")]));
+      if (btn.getAttribute("aria-checked") !== valor) btn.setAttribute("aria-checked", valor);
     });
     shell.querySelectorAll("[data-voice]").forEach(function (btn) {
-      btn.setAttribute("aria-checked", String(st.voice === btn.getAttribute("data-voice")));
+      var valor = String(st.voice === btn.getAttribute("data-voice"));
+      if (btn.getAttribute("aria-checked") !== valor) btn.setAttribute("aria-checked", valor);
     });
     shell.querySelectorAll("[data-speed]").forEach(function (btn) {
-      btn.setAttribute("aria-checked", String(Number(st.speed) === Number(btn.getAttribute("data-speed"))));
+      var valor = String(Number(st.speed) === Number(btn.getAttribute("data-speed")));
+      if (btn.getAttribute("aria-checked") !== valor) btn.setAttribute("aria-checked", valor);
     });
     shell.querySelectorAll("[data-highlight]").forEach(function (btn) {
-      btn.setAttribute("aria-checked", String(Boolean(st.highlight) === (btn.getAttribute("data-highlight") === "word")));
+      var valor = String(Boolean(st.highlight) === (btn.getAttribute("data-highlight") === "word"));
+      if (btn.getAttribute("aria-checked") !== valor) btn.setAttribute("aria-checked", valor);
     });
     var step = storedFontSize();
     shell.querySelectorAll("[data-font-size]").forEach(function (btn) {
-      var on = String(step) === btn.getAttribute("data-font-size");
-      btn.setAttribute("aria-checked", String(on));
-      btn.setAttribute("aria-pressed", String(on));
+      var valor = String(String(step) === btn.getAttribute("data-font-size"));
+      if (btn.getAttribute("aria-checked") !== valor) btn.setAttribute("aria-checked", valor);
+      if (btn.getAttribute("aria-pressed") !== valor) btn.setAttribute("aria-pressed", valor);
     });
     shell.querySelectorAll("[data-tts-only]").forEach(function (row) {
-      row.classList.toggle("reflow-setting-tts-hidden", !st.readAloud);
+      var oculto = row.classList.contains("reflow-setting-tts-hidden");
+      if (oculto !== !st.readAloud) {
+        row.classList.toggle("reflow-setting-tts-hidden", !st.readAloud);
+      }
     });
   }
 
@@ -966,7 +972,7 @@
     var s = document.getElementById("reflow-tts-player");
     var st = state();
     if (!s || !st) return;
-    s.hidden = !st.readAloud;
+    if (s.hidden !== !st.readAloud) s.hidden = !st.readAloud;
     if (!st.readAloud) {
       /* Al cerrar, el boton queda listo para la proxima sesion: no debe seguir
          mostrando "Pausa" mientras el reproductor esta oculto. */
@@ -975,10 +981,21 @@
       window.__evaToggleHoldUntil = 0;
       var offToggle = s.querySelector("#reflow-tts-toggle");
       if (offToggle) {
-        offToggle.setAttribute("aria-pressed", "false");
-        offToggle.setAttribute("aria-label", "Reproducir");
-        offToggle.querySelector(".reflow-tts-player-label").textContent = "Reproducir";
-        offToggle.querySelector(".reflow-tts-player-icon").innerHTML = ICONS.play;
+        if (offToggle.getAttribute("aria-pressed") !== "false") {
+          offToggle.setAttribute("aria-pressed", "false");
+        }
+        if (offToggle.getAttribute("aria-label") !== "Reproducir") {
+          offToggle.setAttribute("aria-label", "Reproducir");
+        }
+        var offLabel = offToggle.querySelector(".reflow-tts-player-label");
+        if (offLabel && offLabel.textContent !== "Reproducir") {
+          offLabel.textContent = "Reproducir";
+        }
+        var offIcon = offToggle.querySelector(".reflow-tts-player-icon");
+        if (offIcon && offIcon.getAttribute("data-icon") !== "play") {
+          offIcon.setAttribute("data-icon", "play");
+          offIcon.innerHTML = ICONS.play;
+        }
       }
       s.classList.remove("reflow-tts-player-minimized");
       return;
@@ -993,17 +1010,25 @@
     }
     /* Sin textos con audio el boton no tiene nada que hacer: se deshabilita en
        lugar de fallar en silencio. */
-    toggle.disabled = k && k.hasItems ? !k.hasItems() : false;
-    s.querySelector("#reflow-tts-previous").disabled = isDisabled("previous-audio");
-    s.querySelector("#reflow-tts-next").disabled = isDisabled("next-audio");
+    var sinAudio = k && k.hasItems ? !k.hasItems() : false;
+    if (toggle.disabled !== sinAudio) toggle.disabled = sinAudio;
+    var prevBtn = s.querySelector("#reflow-tts-previous");
+    var nextBtn = s.querySelector("#reflow-tts-next");
+    var prevOff = isDisabled("previous-audio");
+    var nextOff = isDisabled("next-audio");
+    if (prevBtn && prevBtn.disabled !== prevOff) prevBtn.disabled = prevOff;
+    if (nextBtn && nextBtn.disabled !== nextOff) nextBtn.disabled = nextOff;
     s.querySelectorAll("[data-voice]").forEach(function (b) {
-      b.setAttribute("aria-checked", String(st.voice === b.getAttribute("data-voice")));
+      var valor = String(st.voice === b.getAttribute("data-voice"));
+      if (b.getAttribute("aria-checked") !== valor) b.setAttribute("aria-checked", valor);
     });
     s.querySelectorAll("[data-speed]").forEach(function (b) {
-      b.setAttribute("aria-checked", String(Number(st.speed) === Number(b.getAttribute("data-speed"))));
+      var valor = String(Number(st.speed) === Number(b.getAttribute("data-speed")));
+      if (b.getAttribute("aria-checked") !== valor) b.setAttribute("aria-checked", valor);
     });
     s.querySelectorAll("[data-highlight]").forEach(function (b) {
-      b.setAttribute("aria-checked", String(Boolean(st.highlight) === (b.getAttribute("data-highlight") === "word")));
+      var valor = String(Boolean(st.highlight) === (b.getAttribute("data-highlight") === "word"));
+      if (b.getAttribute("aria-checked") !== valor) b.setAttribute("aria-checked", valor);
     });
   }
 
@@ -1054,26 +1079,39 @@
   /* ── Arranque ──────────────────────────────────────────────────────────── */
   var pendiente = false;
 
+  var enTick = false;
+
   function tick() {
-    document.body.classList.add("reflow-book");
-    ensureStyles();
-    if (!window.__evaFontApplied) { window.__evaFontApplied = true; applyFontSize(storedFontSize()); }
-    mountToolbar();
-    initIndexPanel();
-    mountPlayer();
-    loadTotalPages();
-    var dlg = findSettingsDialog();
-    if (dlg) renderTools(dlg);
-    syncToolbar();
-    syncPlayer();
-    syncActivityCompletion();
-    refreshActivityStatus();
-    var shell = document.querySelector(".eva-tools-shell");
-    if (shell) syncTools(shell);
+    /* classList.add reescribe el atributo aunque la clase ya esté: eso dispara
+       el observer y vuelve a llamar a tick en un ciclo de ~60 fps. */
+    if (!document.body.classList.contains("reflow-book")) {
+      document.body.classList.add("reflow-book");
+    }
+    enTick = true;
+    try {
+      ensureStyles();
+      if (!window.__evaFontApplied) { window.__evaFontApplied = true; applyFontSize(storedFontSize()); }
+      mountToolbar();
+      initIndexPanel();
+      mountPlayer();
+      loadTotalPages();
+      var dlg = findSettingsDialog();
+      if (dlg) renderTools(dlg);
+      syncToolbar();
+      syncPlayer();
+      syncActivityCompletion();
+      refreshActivityStatus();
+      var shell = document.querySelector(".eva-tools-shell");
+      if (shell) syncTools(shell);
+    } finally {
+      /* Los MutationObserver entregan sus registros en microtarea: cuando llegan,
+         enTick sigue en true y no se reprograma el ciclo. */
+      window.setTimeout(function () { enTick = false; }, 0);
+    }
   }
 
   function programar() {
-    if (pendiente) return;
+    if (pendiente || enTick) return;
     pendiente = true;
     requestAnimationFrame(function () {
       pendiente = false;
@@ -1081,7 +1119,9 @@
     });
   }
 
-  new MutationObserver(programar).observe(document.body, {
+  new MutationObserver(function () {
+    if (!enTick) programar();
+  }).observe(document.body, {
     childList: true, subtree: true, characterData: true
   });
   setInterval(tick, 400);
@@ -1220,6 +1260,276 @@
       event.preventDefault();
       if (el.classList.contains("change-pair")) playPair(el);
       else play(el);
+    },
+    true
+  );
+
+  /* ── Glosario: “Mostrar en la página” ───────────────────────────────────
+     El runtime busca el término en el HTML crudo de cada página y se confunde
+     con el CSS o las clases (por ejemplo “auto” dentro de margin:0 auto), así
+     que puede saltar a una página cualquiera. Acá resolvemos el destino con el
+     texto real del libro (texts.json) y navegamos a esa sección. */
+  var GLOSARIO_INDICE = null;
+  var GLOSARIO_REGEX = {};
+
+  function glosarioNormalizar(texto) {
+    return String(texto || "")
+      .toLocaleLowerCase("es")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
+  }
+
+  function glosarioPatron(termino) {
+    if (!GLOSARIO_REGEX[termino]) {
+      var seguro = termino.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      GLOSARIO_REGEX[termino] = new RegExp(
+        "(^|[^\\p{L}\\p{N}])" + seguro + "($|[^\\p{L}\\p{N}])",
+        "u"
+      );
+    }
+    return GLOSARIO_REGEX[termino];
+  }
+
+  function glosarioIndice() {
+    if (GLOSARIO_INDICE) return GLOSARIO_INDICE;
+    GLOSARIO_INDICE = Promise.all([
+      fetch("content/pages.json").then(function (r) { return r.json(); }),
+      fetch("content/i18n/es-UY/texts.json").then(function (r) { return r.json(); }),
+      fetch("content/i18n/es-UY/glossary.json").then(function (r) { return r.json(); })
+    ])
+      .then(function (datos) {
+        var paginas = datos[0] || [];
+        var textos = datos[1] || {};
+        var glosario = datos[2] || {};
+        var secciones = {};
+        var porPrefijo = {};
+        var variaciones = {};
+        paginas.forEach(function (pagina) {
+          var m = /^(pg\d{3})/i.exec(pagina.section_id || "");
+          if (!m) return;
+          var clave = m[1].toLowerCase();
+          if (!secciones[clave]) secciones[clave] = [];
+          secciones[clave].push(pagina);
+        });
+        Object.keys(textos).forEach(function (id) {
+          if (typeof textos[id] !== "string") return;
+          var m = /^(?:text-)?(pg\d{3})/i.exec(id);
+          if (!m) return;
+          var clave = m[1].toLowerCase();
+          if (!porPrefijo[clave]) porPrefijo[clave] = [];
+          porPrefijo[clave].push({ id: id, texto: glosarioNormalizar(textos[id]) });
+        });
+        Object.keys(glosario).forEach(function (clave) {
+          var entrada = glosario[clave] || {};
+          var palabra = entrada.word || clave;
+          variaciones[glosarioNormalizar(palabra)] = [palabra]
+            .concat(entrada.variations || [])
+            .map(glosarioNormalizar)
+            .filter(function (t, i, lista) { return t && lista.indexOf(t) === i; });
+        });
+        return {
+          paginas: paginas,
+          secciones: secciones,
+          porPrefijo: porPrefijo,
+          variaciones: variaciones
+        };
+      })
+      .catch(function () { return null; });
+    return GLOSARIO_INDICE;
+  }
+
+  function glosarioCoincide(texto, terminos) {
+    for (var i = 0; i < terminos.length; i += 1) {
+      if (glosarioPatron(terminos[i]).test(texto)) return true;
+    }
+    return false;
+  }
+
+  function glosarioDestino(palabra, variaciones) {
+    return glosarioIndice().then(function (indice) {
+      if (!indice) return null;
+      var terminos = [palabra].concat(variaciones || [])
+        .map(glosarioNormalizar)
+        .filter(function (t, i, lista) { return t && lista.indexOf(t) === i; });
+      if (!terminos.length) return null;
+
+      /* Preferimos texto visible: las descripciones de imágenes y la lectura
+         fácil no se ven en el modo normal, así que quedan como último recurso. */
+      var candidatos = [];
+      /* Si el término ya se ve en la página actual, nos quedamos acá. */
+      var contenido = document.getElementById("content");
+      if (contenido &&
+          glosarioCoincide(glosarioNormalizar(contenido.innerText || ""), terminos)) {
+        return location.href.split("#")[0];
+      }
+      for (var i = 0; i < indice.paginas.length; i += 1) {
+        var pagina = indice.paginas[i];
+        var m = /^(pg\d{3})/i.exec(pagina.section_id || "");
+        if (!m) continue;
+        var clave = m[1].toLowerCase();
+        var entradas = indice.porPrefijo[clave] || [];
+        for (var j = 0; j < entradas.length; j += 1) {
+          if (!glosarioCoincide(entradas[j].texto, terminos)) continue;
+          var soloAlterno = /_im\d|_easy_read$/i.test(entradas[j].id);
+          candidatos.push({
+            pagina: pagina,
+            clave: clave,
+            entrada: entradas[j],
+            prioridad: soloAlterno ? 2 : 1
+          });
+        }
+      }
+      if (!candidatos.length) return null;
+      var mejor = 2;
+      candidatos.forEach(function (c) {
+        if (c.prioridad < mejor) mejor = c.prioridad;
+      });
+      var promesas = candidatos
+        .filter(function (c) { return c.prioridad === mejor; })
+        .map(function (c) {
+          var hermanas = indice.secciones[c.clave] || [c.pagina];
+          if (hermanas.length === 1) return Promise.resolve(c.pagina.href);
+          return Promise.all(
+            hermanas.map(function (seccion) {
+              return fetch(seccion.href)
+                .then(function (r) { return r.text(); })
+                .then(function (html) {
+                  return html.indexOf('data-id="' + c.entrada.id + '"') === -1
+                    ? null
+                    : seccion.href;
+                })
+                .catch(function () { return null; });
+            })
+          ).then(function (hrefs) {
+            var encontrado = hrefs.filter(Boolean)[0];
+            return encontrado || c.pagina.href;
+          });
+        });
+      return Promise.all(promesas).then(function (hrefs) {
+        return hrefs.filter(Boolean)[0] || null;
+      });
+    }).catch(function () { return null; });
+  }
+
+  /* ── Glosario: pestaña “En esta página” ─────────────────────────────────
+     El runtime arma la lista con coincidencias parciales sobre todo el
+     textContent (incluidos scripts), así que muestra términos que no están en
+     la página. Ocultamos los que no aparecen como palabra completa en el texto
+     visible. */
+  var GLOSARIO_FILTRO_TIMER = null;
+
+  function glosarioDialogo() {
+    var ds = document.querySelectorAll("#interface-container [role='dialog']");
+    for (var i = 0; i < ds.length; i += 1) {
+      var h = ds[i].querySelector("h4");
+      if (h && h.textContent.trim() === "Glosario") return ds[i];
+    }
+    return null;
+  }
+
+  function filtrarGlosarioPagina() {
+    var dlg = glosarioDialogo();
+    if (!dlg) return;
+    var tabs = Array.prototype.slice.call(dlg.querySelectorAll("[role='tab']"));
+    var tabPagina = null;
+    for (var i = 0; i < tabs.length; i += 1) {
+      if ((tabs[i].textContent || "").trim() === "En esta página") {
+        tabPagina = tabs[i];
+        break;
+      }
+    }
+    if (!tabPagina || tabPagina.getAttribute("aria-selected") !== "true") return;
+    var panel = dlg.querySelector("[role='tabpanel']");
+    if (!panel) return;
+    var contenido = document.getElementById("content");
+    var visible = glosarioNormalizar(contenido ? contenido.innerText || "" : "");
+    if (!visible) return;
+    var items = panel.querySelectorAll("li");
+    if (!items.length) return;
+    glosarioIndice().then(function (indice) {
+      if (!indice) return;
+      var quedan = 0;
+      Array.prototype.forEach.call(items, function (li) {
+        var el = li.querySelector(".capitalize");
+        if (!el) return;
+        var palabra = glosarioNormalizar(el.textContent);
+        if (!palabra) return;
+        var formas = indice.variaciones[palabra] || [palabra];
+        if (glosarioCoincide(visible, formas)) {
+          quedan += 1;
+          if (li.dataset.evaOculto === "1") {
+            li.hidden = false;
+            delete li.dataset.evaOculto;
+          }
+        } else if (li.dataset.evaOculto !== "1") {
+          li.hidden = true;
+          li.dataset.evaOculto = "1";
+        }
+      });
+      var vacio = panel.querySelector("[data-eva-glosario-vacio]");
+      if (!quedan) {
+        if (!vacio) {
+          vacio = document.createElement("p");
+          vacio.setAttribute("data-eva-glosario-vacio", "1");
+          vacio.className = "px-4 py-8 text-sm text-muted-foreground text-center";
+          vacio.textContent = "No existen términos en esta página.";
+          panel.appendChild(vacio);
+        }
+        vacio.hidden = false;
+      } else if (vacio) {
+        vacio.hidden = true;
+      }
+    });
+  }
+
+  function programarFiltroGlosario() {
+    if (GLOSARIO_FILTRO_TIMER) window.clearTimeout(GLOSARIO_FILTRO_TIMER);
+    GLOSARIO_FILTRO_TIMER = window.setTimeout(function () {
+      GLOSARIO_FILTRO_TIMER = null;
+      filtrarGlosarioPagina();
+    }, 80);
+  }
+
+  (function observarGlosario() {
+    var host = document.getElementById("interface-container");
+    if (!host || !window.MutationObserver) return;
+    new MutationObserver(function () {
+      programarFiltroGlosario();
+    }).observe(host, { childList: true, subtree: true });
+    programarFiltroGlosario();
+  })();
+
+  document.addEventListener(
+    "click",
+    function (event) {
+      var t = event.target;
+      if (!t || !t.closest) return;
+      var boton = t.closest("[aria-label='glossary-term-details'] button");
+      if (!boton || !boton.querySelector(".lucide-locate")) return;
+      if (boton.dataset.evaLocateFallback === "1") return;
+      var panel = boton.closest("[aria-label='glossary-term-details']");
+      var titulo = panel && panel.querySelector("h4");
+      var palabra = titulo ? titulo.textContent.trim() : "";
+      if (!palabra) return;
+      var variaciones = [];
+      var variacionesEl = panel.querySelector("p.italic");
+      if (variacionesEl) {
+        variaciones = variacionesEl.textContent.split(",")
+          .map(function (v) { return v.trim(); })
+          .filter(Boolean);
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      glosarioDestino(palabra, variaciones).then(function (href) {
+        if (!href) {
+          boton.dataset.evaLocateFallback = "1";
+          boton.click();
+          delete boton.dataset.evaLocateFallback;
+          return;
+        }
+        window.location.href = href + "#glossary=" + encodeURIComponent(palabra);
+      });
     },
     true
   );
