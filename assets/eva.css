@@ -3894,3 +3894,32 @@ body.reflow-book .reflow-reader-panel.reflow-accessibility-panel :is(.reflow-tts
 
 /* Barra de navegacion: siempre centrada, sin deslizamiento de entrada */
 #reflow-pagination { transition: opacity 0.2s ease !important; transform: translateX(-50%) !important; }
+
+/* Manito en todas las tarjetas y opciones seleccionables de las actividades */
+body.reflow-book #content :is(button, div, span, li)[data-activity-item]:not(:disabled):not([aria-disabled="true"]),
+body.reflow-book #content [data-activity-card]:not(:disabled),
+body.reflow-book #content [data-round-card]:not(:disabled),
+body.reflow-book #content [data-word-card]:not(:disabled),
+body.reflow-book #content .activity-card:not(:disabled),
+body.reflow-book #content .memory-card:not(:disabled),
+body.reflow-book #content .pair-card:not(:disabled),
+body.reflow-book #content .round-card:not(:disabled),
+body.reflow-book #content .word-card:not(:disabled),
+body.reflow-book #content .sound-card:not(:disabled),
+body.reflow-book #content .def-card:not(:disabled),
+body.reflow-book #content .wm-card:not(:disabled),
+body.reflow-book #content .k-card:not(:disabled),
+body.reflow-book #content .me-card,
+body.reflow-book #content .rm-card,
+body.reflow-book #content .change-card,
+body.reflow-book #content .tf-card,
+body.reflow-book #content .order-round {
+  cursor: pointer !important;
+}
+
+/* Los campos donde se escribe conservan el cursor de texto */
+body.reflow-book #content input,
+body.reflow-book #content textarea {
+  cursor: text !important;
+}
+

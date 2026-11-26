@@ -45,103 +45,66 @@ Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-fla
 - Auditoría de audio interactivo: todos los `data-audio-id`, `data-audio-word` y `data-audio-result` tienen archivo propio por voz.
 - Actividad 27: la letra G de MANGA ahora suena con el fonema /g/ (`fono_g`), no con el nombre “ge”.
 - Reproductor: el botón de pausa ahora también pausa y reanuda el audio de tarjetas/palabras; ya no arranca la lectura de la página al pausar una tarjeta. El icono se pinta al instante y se agregó un refuerzo de pausa por si el `play()` estaba en vuelo.
+- Actividad 25: la consigna del sonido /c/ ahora termina con el fonema /k/ en Lucía y Mateo.
 
 ## Pendiente
 
-Nota: el libro usa **252** clips de lectura fácil. Los conteos anteriores hablaban de 187 porque solo miraban los que estaban compartidos entre voces.
+Nota: el libro usa **252** clips de lectura fácil.
 
 ### Otras consignas
 
-- `pg073_n0032` — Actividad 25: “Seleccioná todas las palabras que contienen el sonido /c/.” Lee “ka” (nombre de la K) en vez del fonema /k/. **Pendiente de regenerar en Lucía y Mateo.**
 - `text-pg017-22` — Consigna de la letra C: revisar el mismo caso del sonido /c/.
+- `pg073_n0032` — **Resuelto**: la consigna de la actividad 25 ya dice el fonema /k/, no “ka”.
 
-### Lectura fácil — Mateo (144)
+### Lectura fácil — Mateo (53)
 
-Faltan estos clips. Los otros 108 del total de 252 ya tienen archivo propio de Mateo.
-
-```
-pg031_n0012_easy_read, pg034_n0005_easy_read, pg034_n0008_easy_read, pg034_n0011_easy_read, pg034_s2_easy_read
-pg035_n0009_easy_read, pg035_n0012_easy_read, pg035_s2_easy_read, pg036_n0007_easy_read, pg036_n0010_easy_read
-pg036_s2_easy_read, pg037_n0006_easy_read, pg037_n0009_easy_read, pg037_s2_easy_read, pg038_n0006_easy_read
-pg038_n0009_easy_read, pg038_s2_easy_read, pg039_n0006_easy_read, pg039_n0009_easy_read, pg039_s2_easy_read
-pg040_n0007_easy_read, pg040_n0010_easy_read, pg040_s2_easy_read, pg041_n0007_easy_read, pg041_n0010_easy_read
-pg041_s2_easy_read, pg042_n0007_easy_read, pg042_n0010_easy_read, pg042_s2_easy_read, pg043_n0007_easy_read
-pg043_n0010_easy_read, pg043_s2_easy_read, pg044_n0007_easy_read, pg044_n0010_easy_read, pg044_s2_easy_read
-pg045_n0008_easy_read, pg045_n0011_easy_read, pg045_s2_easy_read, pg050_n0009_easy_read, pg050_n0010_easy_read
-pg050_s2_easy_read, pg051_n0009_easy_read, pg051_n0013_easy_read, pg051_n0015_easy_read, pg051_s2_easy_read
-pg053_n0010_easy_read, pg053_n0014_easy_read, pg053_n0016_easy_read, pg053_s2_easy_read, pg054_n0007_easy_read
-pg054_n0014_easy_read, pg054_s2_easy_read, pg055_n0010_easy_read, pg055_n0012_easy_read, pg055_n0016_easy_read
-pg055_s2_easy_read, pg056_n0009_easy_read, pg056_n0015_easy_read, pg056_n0017_easy_read, pg056_s2_easy_read
-pg057_n0010_easy_read, pg057_n0012_easy_read, pg057_n0014_easy_read, pg057_s2_easy_read, pg058_n0010_easy_read
-pg058_n0012_easy_read, pg058_s2_easy_read, pg059_n0007_easy_read, pg059_n0014_easy_read, pg059_s2_easy_read
-pg060_n0007_easy_read, pg060_n0012_easy_read, pg060_n0014_easy_read, pg060_s2_easy_read, pg061_n0008_easy_read
-pg061_n0010_easy_read, pg061_n0012_easy_read, pg061_s2_easy_read, pg062_n0009_easy_read, pg062_n0013_easy_read
-pg062_n0015_easy_read, pg062_n0017_easy_read, pg062_s2_easy_read, pg063_n0007_easy_read, pg063_n0012_easy_read
-pg063_n0014_easy_read, pg063_s2_easy_read, pg064_n0006_easy_read, pg064_n0011_easy_read, pg064_n0045_easy_read
-pg064_n0047_easy_read, pg064_s2_easy_read, pg065_n0007_easy_read, pg065_n0012_easy_read, pg065_n0014_easy_read
-pg065_s2_easy_read, pg066_n0010_easy_read, pg066_n0012_easy_read, pg066_s2_easy_read, pg067_n0009_easy_read
-pg067_n0011_easy_read, pg067_s2_easy_read, pg068_n0010_easy_read, pg068_n0012_easy_read, pg068_s2_easy_read
-pg069_n0009_easy_read, pg069_n0011_easy_read, pg069_n0013_easy_read, pg069_s2_easy_read, pg070_n0007_easy_read
-pg070_n0014_easy_read, pg070_s2_easy_read, pg071_n0007_easy_read, pg071_n0010_easy_read, pg071_n0012_easy_read
-pg071_n0014_easy_read, pg071_s2_easy_read, pg072_n0009_easy_read, pg072_n0015_easy_read, pg072_n0017_easy_read
-pg072_s2_easy_read, pg073_n0009_easy_read, pg073_n0011_easy_read, pg073_n0030_easy_read, pg073_n0032_easy_read
-pg073_s2_easy_read, pg074_n0007_easy_read, pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read
-pg075_n0014_easy_read, pg075_n0016_easy_read, pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read
-pg076_s2_easy_read, pg078_n0002_easy_read, pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read
-text-pg017-22_easy_read, text-pg026-26_easy_read, text-pg027-31_easy_read, text-pg027-32_easy_read
-```
-
-### Lectura fácil — Lucía (194)
-
-Faltan estos clips. Los otros 58 del total de 252 ya tienen archivo propio de Lucía.
+Faltan estos clips. Los otros 199 del total de 252 ya tienen archivo propio de Mateo.
 
 ```
-pg014_s4_easy_read, pg017_s2_easy_read, pg018_n0009_easy_read, pg018_n0012_easy_read, pg018_n0014_easy_read
-pg018_n0016_easy_read, pg018_s2_easy_read, pg019_n0008_easy_read, pg019_n0011_easy_read, pg019_n0013_easy_read
-pg019_s2_easy_read, pg020_n0010_easy_read, pg020_n0013_easy_read, pg020_n0015_easy_read, pg020_n0017_easy_read
-pg020_s2_easy_read, pg021_n0008_easy_read, pg021_n0011_easy_read, pg021_n0013_easy_read, pg021_s2_easy_read
-pg022_n0010_easy_read, pg022_n0012_easy_read, pg022_s2_easy_read, pg024_n0007_easy_read, pg024_n0010_easy_read
-pg024_n0012_easy_read, pg024_s2_easy_read, pg025_n0009_easy_read, pg025_n0012_easy_read, pg025_s2_easy_read
-pg026_s2_easy_read, pg027_s2_easy_read, pg028_n0009_easy_read, pg028_n0012_easy_read, pg028_n0014_easy_read
-pg028_s2_easy_read, pg029_n0009_easy_read, pg029_n0012_easy_read, pg029_s2_easy_read, pg030_n0009_easy_read
-pg030_n0012_easy_read, pg030_s2_easy_read, pg031_n0009_easy_read, pg031_n0012_easy_read, pg031_s2_easy_read
-pg032_n0010_easy_read, pg032_n0013_easy_read, pg032_s2_easy_read, pg033_n0010_easy_read, pg033_n0013_easy_read
-pg033_s2_easy_read, pg034_n0005_easy_read, pg034_n0008_easy_read, pg034_n0011_easy_read, pg034_s2_easy_read
-pg035_n0009_easy_read, pg035_n0012_easy_read, pg035_s2_easy_read, pg036_n0007_easy_read, pg036_n0010_easy_read
-pg036_s2_easy_read, pg037_n0006_easy_read, pg037_n0009_easy_read, pg037_s2_easy_read, pg038_n0006_easy_read
-pg038_n0009_easy_read, pg038_s2_easy_read, pg039_n0006_easy_read, pg039_n0009_easy_read, pg039_s2_easy_read
-pg040_n0007_easy_read, pg040_n0010_easy_read, pg040_s2_easy_read, pg041_n0007_easy_read, pg041_n0010_easy_read
-pg041_s2_easy_read, pg042_n0007_easy_read, pg042_n0010_easy_read, pg042_s2_easy_read, pg043_n0007_easy_read
-pg043_n0010_easy_read, pg043_s2_easy_read, pg044_n0007_easy_read, pg044_n0010_easy_read, pg044_s2_easy_read
-pg045_n0008_easy_read, pg045_n0011_easy_read, pg045_s2_easy_read, pg050_n0009_easy_read, pg050_n0010_easy_read
-pg050_s2_easy_read, pg051_n0009_easy_read, pg051_n0013_easy_read, pg051_n0015_easy_read, pg051_s2_easy_read
-pg053_n0010_easy_read, pg053_n0014_easy_read, pg053_n0016_easy_read, pg053_s2_easy_read, pg054_n0007_easy_read
-pg054_n0014_easy_read, pg054_s2_easy_read, pg055_n0010_easy_read, pg055_n0012_easy_read, pg055_n0016_easy_read
-pg055_s2_easy_read, pg056_n0009_easy_read, pg056_n0015_easy_read, pg056_n0017_easy_read, pg056_s2_easy_read
-pg057_n0010_easy_read, pg057_n0012_easy_read, pg057_n0014_easy_read, pg057_s2_easy_read, pg058_n0010_easy_read
-pg058_n0012_easy_read, pg058_s2_easy_read, pg059_n0007_easy_read, pg059_n0014_easy_read, pg059_s2_easy_read
-pg060_n0007_easy_read, pg060_n0012_easy_read, pg060_n0014_easy_read, pg060_s2_easy_read, pg061_n0008_easy_read
-pg061_n0010_easy_read, pg061_n0012_easy_read, pg061_s2_easy_read, pg062_n0009_easy_read, pg062_n0013_easy_read
-pg062_n0015_easy_read, pg062_n0017_easy_read, pg062_s2_easy_read, pg063_n0007_easy_read, pg063_n0012_easy_read
-pg063_n0014_easy_read, pg063_s2_easy_read, pg064_n0006_easy_read, pg064_n0011_easy_read, pg064_n0045_easy_read
-pg064_n0047_easy_read, pg064_s2_easy_read, pg065_n0007_easy_read, pg065_n0012_easy_read, pg065_n0014_easy_read
-pg065_s2_easy_read, pg066_n0010_easy_read, pg066_n0012_easy_read, pg066_s2_easy_read, pg067_n0009_easy_read
-pg067_n0011_easy_read, pg067_s2_easy_read, pg068_n0010_easy_read, pg068_n0012_easy_read, pg068_s2_easy_read
-pg069_n0009_easy_read, pg069_n0011_easy_read, pg069_n0013_easy_read, pg069_s2_easy_read, pg070_n0007_easy_read
-pg070_n0014_easy_read, pg070_s2_easy_read, pg071_n0007_easy_read, pg071_n0010_easy_read, pg071_n0012_easy_read
-pg071_n0014_easy_read, pg071_s2_easy_read, pg072_n0009_easy_read, pg072_n0015_easy_read, pg072_n0017_easy_read
-pg072_s2_easy_read, pg073_n0009_easy_read, pg073_n0011_easy_read, pg073_n0030_easy_read, pg073_n0032_easy_read
-pg073_s2_easy_read, pg074_n0007_easy_read, pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read
-pg075_n0014_easy_read, pg075_n0016_easy_read, pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read
-pg076_s2_easy_read, pg078_n0002_easy_read, pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read
-text-pg017-22_easy_read, text-pg026-26_easy_read, text-pg027-31_easy_read, text-pg027-32_easy_read
+pg062_s2_easy_read, pg063_n0007_easy_read, pg063_n0012_easy_read, pg063_n0014_easy_read, pg063_s2_easy_read
+pg064_n0006_easy_read, pg064_n0011_easy_read, pg064_n0045_easy_read, pg064_n0047_easy_read, pg064_s2_easy_read
+pg065_n0007_easy_read, pg065_n0012_easy_read, pg065_n0014_easy_read, pg065_s2_easy_read, pg066_n0010_easy_read
+pg066_n0012_easy_read, pg066_s2_easy_read, pg067_n0009_easy_read, pg067_n0011_easy_read, pg067_s2_easy_read
+pg068_n0010_easy_read, pg068_n0012_easy_read, pg068_s2_easy_read, pg069_n0009_easy_read, pg069_n0011_easy_read
+pg069_n0013_easy_read, pg069_s2_easy_read, pg070_n0007_easy_read, pg070_n0014_easy_read, pg070_s2_easy_read
+pg071_n0007_easy_read, pg071_n0010_easy_read, pg071_n0012_easy_read, pg071_n0014_easy_read, pg071_s2_easy_read
+pg074_n0007_easy_read, pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read, pg075_n0014_easy_read
+pg075_n0016_easy_read, pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read, pg076_s2_easy_read
+pg078_n0002_easy_read, pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read, text-pg017-22_easy_read
+text-pg026-26_easy_read, text-pg027-31_easy_read, text-pg027-32_easy_read
+```
+
+### Lectura fácil — Lucía (97)
+
+Faltan estos clips. Los otros 155 del total de 252 ya tienen archivo propio de Lucía.
+
+```
+pg050_n0009_easy_read, pg050_n0010_easy_read, pg050_s2_easy_read, pg051_n0009_easy_read, pg051_n0013_easy_read
+pg051_n0015_easy_read, pg051_s2_easy_read, pg053_n0010_easy_read, pg053_n0014_easy_read, pg053_n0016_easy_read
+pg053_s2_easy_read, pg054_n0007_easy_read, pg054_n0014_easy_read, pg054_s2_easy_read, pg055_n0010_easy_read
+pg055_n0012_easy_read, pg055_n0016_easy_read, pg055_s2_easy_read, pg056_n0009_easy_read, pg056_n0015_easy_read
+pg056_n0017_easy_read, pg056_s2_easy_read, pg057_n0010_easy_read, pg057_n0012_easy_read, pg057_n0014_easy_read
+pg057_s2_easy_read, pg058_n0010_easy_read, pg058_n0012_easy_read, pg058_s2_easy_read, pg059_n0007_easy_read
+pg059_n0014_easy_read, pg059_s2_easy_read, pg060_n0007_easy_read, pg060_n0012_easy_read, pg060_n0014_easy_read
+pg060_s2_easy_read, pg061_n0008_easy_read, pg061_n0010_easy_read, pg061_n0012_easy_read, pg061_s2_easy_read
+pg062_n0009_easy_read, pg062_n0013_easy_read, pg062_n0015_easy_read, pg062_n0017_easy_read, pg062_s2_easy_read
+pg063_n0007_easy_read, pg063_n0012_easy_read, pg063_n0014_easy_read, pg063_s2_easy_read, pg064_n0006_easy_read
+pg064_n0011_easy_read, pg064_n0045_easy_read, pg064_n0047_easy_read, pg064_s2_easy_read, pg065_n0007_easy_read
+pg065_n0012_easy_read, pg065_n0014_easy_read, pg065_s2_easy_read, pg066_n0010_easy_read, pg066_n0012_easy_read
+pg066_s2_easy_read, pg067_n0009_easy_read, pg067_n0011_easy_read, pg067_s2_easy_read, pg068_n0010_easy_read
+pg068_n0012_easy_read, pg068_s2_easy_read, pg069_n0009_easy_read, pg069_n0011_easy_read, pg069_n0013_easy_read
+pg069_s2_easy_read, pg070_n0007_easy_read, pg070_n0014_easy_read, pg070_s2_easy_read, pg071_n0007_easy_read
+pg071_n0010_easy_read, pg071_n0012_easy_read, pg071_n0014_easy_read, pg071_s2_easy_read, pg074_n0007_easy_read
+pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read, pg075_n0014_easy_read, pg075_n0016_easy_read
+pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read, pg076_s2_easy_read, pg078_n0002_easy_read
+pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read, text-pg017-22_easy_read, text-pg026-26_easy_read
+text-pg027-31_easy_read, text-pg027-32_easy_read
 ```
 
 - La lista completa también está en `pendientes_easy_read.json`.
-- Prioridad para la próxima tanda: `pg072_s2_easy_read`, `pg072_n0009_easy_read`, `pg072_n0015_easy_read`, `pg072_n0017_easy_read` (actividad 23).
-- `gemini-3.8-flash-lite-tts` (Mateo) tiene un límite de 100 solicitudes por día: necesita 2 días (100 + 44).
-- `gemini-3.8-flash-tts` (Lucía) tiene el mismo límite: necesita 2 días (100 + 94).
-- Mientras tanto, la lectura normal, las tarjetas y las consignas usan siempre Lucía o Mateo.
+- Hoy se generaron **91 clips de Mateo** y **97 de Lucía**. Mateo llegó al límite diario de la API.
+- Quedan **53 de Mateo** y **97 de Lucía** para la próxima tanda.
+- La lectura normal, las tarjetas y las consignas usan siempre Lucía o Mateo.
 
 ## Verificación
 
