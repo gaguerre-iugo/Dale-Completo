@@ -1,7 +1,7 @@
 # Audios pendientes de regenerar (TTS)
 
 Fecha de registro: 2026-11-24
-Actualizado: 2026-11-25 (actividad 23 corregida; lectura fácil con pendientes por cuota diaria)
+Actualizado: 2026-11-26 (títulos, actividades 9, 10, 12, 13 y 25; pendiente “coyote” de Mateo)
 
 Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-flash-lite-tts`**. No mezclar modelos por voz.
 
@@ -46,8 +46,27 @@ Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-fla
 - Actividad 27: la letra G de MANGA ahora suena con el fonema /g/ (`fono_g`), no con el nombre “ge”.
 - Reproductor: el botón de pausa ahora también pausa y reanuda el audio de tarjetas/palabras; ya no arranca la lectura de la página al pausar una tarjeta. El icono se pinta al instante y se agregó un refuerzo de pausa por si el `play()` estaba en vuelo.
 - Actividad 25: la consigna del sonido /c/ ahora termina con el fonema /k/ en Lucía y Mateo.
+- Títulos: se quitó “Letra” de los audios de las letras S y R; las letras F, T, B y G usan clips de nombre de letra verificados.
+- Actividad 9: la consigna de /m/ ahora termina con el fonema /m/ audible en Lucía y Mateo.
+- Actividad 10: el feedback ya no usa un recuadro con borde y fondo; queda como texto rojo/verde, igual que el resto de las actividades.
+- Actividad 12: la consigna de /f/ de Mateo ahora termina con el fonema /f/ audible; Lucía ya lo tenía. Auditoría de las 27 consignas con “sonido /x/” al final: sin otros faltantes.
 
 ## Pendiente
+
+### Pronunciación — Mateo: “coyote”
+
+En Mateo la palabra **COYOTE** suena “co-ió-te” (COIOTE) y debería sonar “co-shó-te” (COSHOTE, con la ye rioplatense). Afecta a las actividades **30** y **33**, que comparten audios.
+
+| ID | Dónde aparece | Archivo |
+|---|---|---|
+| `pg037_sec001_ans_item-8` | Tarjeta COYOTE (la usan también `pg040_sec001_ans_item-4` en la 33) | `voices/consultor/audio/pg037_sec001_ans_item-8.mp3` |
+| `pg037_n0016` | Lista “GALERA, GANADO, CADENA, COYOTE” (también `pg040_n0013`) | `voices/consultor/audio/pg037_n0016.mp3` |
+| `gl072` | Glosario: “coyote” | `voices/consultor/audio/gl072.mp3` |
+| `pg037_s2_easy_read` | Lectura fácil de la actividad 30 (dice COYOTE dos veces) | `voices/consultor/audio/pg037_s2_easy_read.mp3` |
+| `pg040_s2_easy_read` | Lectura fácil de la actividad 33 (dice COYOTE dos veces) | `voices/consultor/audio/pg040_s2_easy_read.mp3` |
+
+- Corrección: regenerar con grafía fonética “coshote” (como se hizo con “Shusho”) o empalmar el fragmento; después verificar por transcripción que no diga “coyote/coiote”.
+- Lucía fue revisada y no presenta el mismo problema; no tocar sus clips.
 
 Nota: el libro usa **252** clips de lectura fácil.
 
