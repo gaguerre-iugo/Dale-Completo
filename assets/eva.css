@@ -3885,9 +3885,11 @@ body.reflow-book .reflow-reader-panel.reflow-accessibility-panel :is(.reflow-tts
   padding: 0 !important;
 }
 
-/* Evita la animacion de entrada del dock al cambiar de pagina */
+/* Evita la animacion de entrada del dock al cambiar de pagina: el runtime lo
+   remonta con opacidad 0 durante ~100 ms y se veia como un parpadeo. */
 #nav-container > div[aria-label="dock-label"] {
   transition: none !important;
+  opacity: 1 !important;
   width: fit-content !important;
   max-width: calc(100vw - 1rem) !important;
 }

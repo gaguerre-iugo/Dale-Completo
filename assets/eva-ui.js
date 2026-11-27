@@ -1080,6 +1080,49 @@
   var pendiente = false;
 
   var enTick = false;
+  var prefetchSeccion = "";
+  var prefetchTimer = 0;
+
+  /* Deja listo el tramo siguiente (HTML e imágenes) para que el cambio de
+     página no espere a la red ni muestre las imágenes apareciendo. */
+  function prefetchVecinos() {
+    var meta = document.querySelector('meta[name="page-section-id"]');
+    var actual = meta ? meta.getAttribute("content") || "" : "";
+    if (!actual || actual === prefetchSeccion) return;
+    prefetchSeccion = actual;
+    if (prefetchTimer) window.clearTimeout(prefetchTimer);
+    prefetchTimer = window.setTimeout(function () {
+      prefetchTimer = 0;
+      var con = navigator.connection;
+      if (con && (con.saveData || /(^|-)2g/.test(con.effectiveType || ""))) return;
+      loadPages().then(function (lista) {
+        if (!Array.isArray(lista)) return;
+        var siguiente = lista[Number(actual)];
+        if (!siguiente || !siguiente.href) return;
+        var enlace = document.createElement("link");
+        enlace.rel = "prefetch";
+        enlace.as = "document";
+        enlace.href = siguiente.href;
+        document.head.appendChild(enlace);
+        fetch(siguiente.href)
+          .then(function (r) { return r.ok ? r.text() : ""; })
+          .then(function (html) {
+            if (!html) return;
+            var doc = new DOMParser().parseFromString(html, "text/html");
+            var vistos = {};
+            Array.prototype.forEach.call(doc.images, function (img) {
+              var src = img.getAttribute("src");
+              if (!src || vistos[src]) return;
+              vistos[src] = 1;
+              var im = new Image();
+              im.decoding = "async";
+              im.src = src;
+            });
+          })
+          .catch(function () {});
+      }).catch(function () {});
+    }, 1200);
+  }
 
   function tick() {
     /* classList.add reescribe el atributo aunque la clase ya esté: eso dispara
@@ -1095,6 +1138,7 @@
       initIndexPanel();
       mountPlayer();
       loadTotalPages();
+      prefetchVecinos();
       var dlg = findSettingsDialog();
       if (dlg) renderTools(dlg);
       syncToolbar();
@@ -1124,6 +1168,16 @@
   }).observe(document.body, {
     childList: true, subtree: true, characterData: true
   });
+
+  /* El runtime reescribe la clase del body en cada cambio de página y se lleva
+     "reflow-book": durante ~60 ms se caen los estilos EVA y la barra inferior
+     salta de tamaño. La reponemos en la microtarea siguiente. */
+  new MutationObserver(function () {
+    if (!document.body.classList.contains("reflow-book")) {
+      document.body.classList.add("reflow-book");
+    }
+  }).observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
   setInterval(tick, 400);
   programar();
 })();

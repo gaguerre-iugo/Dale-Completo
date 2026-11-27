@@ -37,6 +37,10 @@
   font-weight: 300 800;
   font-style: normal;
   font-display: swap;
+  /* Solo texto latino: sin flechas ni símbolos, que usan la fuente del sistema.
+     Así no se descargan 2,3 MB solo para dibujar una flecha. */
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+    U+2100-214F, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
@@ -45,6 +49,8 @@
   font-weight: 300 800;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+0000-024F, U+1E00-1EFF, U+2000-206F, U+20A0-20CF,
+    U+2100-214F, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* Apply the font globally.
