@@ -118,6 +118,24 @@
   function kit() { return window.__adtKit || null; }
   function state() { var k = kit(); return k ? k.get() : null; }
 
+  /* Métricas de accesibilidad. metrics.js ignora las restauraciones que
+     ocurren antes de que el lector esté listo. */
+  function metricsA11y(feature, action, value, via, extra) {
+    try {
+      if (window.ADTMetrics && typeof window.ADTMetrics.a11y === "function") {
+        window.ADTMetrics.a11y(feature, action, value, via, extra);
+      }
+    } catch (e) {}
+  }
+
+  function metricsSwitch(key, activo) {
+    var accion = activo ? "enable" : "disable";
+    var valor = activo ? "on" : "off";
+    if (key === "readAloud") metricsA11y("tts", accion, valor, "user");
+    else if (key === "easyRead") metricsA11y("easy_read", accion, valor, "user");
+    else if (key === "describeImages") metricsA11y("image_description", accion, valor, "user");
+  }
+
   function clickRuntime(labels) {
     var k = kit();
     for (var i = 0; i < labels.length; i += 1) {
@@ -179,6 +197,7 @@
       }
       clickRuntime(["Glosario", "Glossary"]);
       this.setAttribute("aria-expanded", "true");
+      metricsA11y("glossary", "open", "", "user");
       setTimeout(tagGlossaryDialog, 60);
     });
     barra.querySelector("#reflow-tools").addEventListener("click", function () {
@@ -286,6 +305,17 @@
     } catch (e) {}
     var trigger = document.getElementById("reflow-glossary");
     if (trigger) trigger.setAttribute("aria-expanded", "true");
+    var switchGlosario = dlg.querySelector('[role="switch"]');
+    if (switchGlosario && switchGlosario.dataset.evaMetricas !== "1") {
+      switchGlosario.dataset.evaMetricas = "1";
+      switchGlosario.addEventListener("click", function () {
+        var self = this;
+        window.setTimeout(function () {
+          var activo = self.getAttribute("aria-checked") === "true";
+          metricsA11y("highlight", "change", activo ? "on" : "off", "user");
+        }, 120);
+      });
+    }
   }
 
   function initIndexPanel() {
@@ -737,32 +767,44 @@
         var key = btn.getAttribute("data-switch");
         var st = state();
         if (!st) return;
-        kit().set(key, !st[key]);
+        var activo = !st[key];
+        kit().set(key, activo);
         syncTools(shell);
+        metricsSwitch(key, activo);
       });
     });
     shell.querySelectorAll("[data-voice]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        kit().set("voice", btn.getAttribute("data-voice"));
+        var voz = btn.getAttribute("data-voice");
+        kit().set("voice", voz);
         syncTools(shell);
+        metricsA11y("tts", "change", "voice", "user", {
+          voice: voz === "secondary" ? "mateo" : "lucia"
+        });
       });
     });
     shell.querySelectorAll("[data-speed]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        kit().set("speed", parseFloat(btn.getAttribute("data-speed")));
+        var velocidad = btn.getAttribute("data-speed");
+        kit().set("speed", parseFloat(velocidad));
         syncTools(shell);
+        metricsA11y("tts", "change", "speed", "user", { speed: velocidad });
       });
     });
     shell.querySelectorAll("[data-highlight]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        kit().set("highlight", btn.getAttribute("data-highlight") === "word");
+        var modo = btn.getAttribute("data-highlight");
+        kit().set("highlight", modo === "word");
         syncTools(shell);
+        metricsA11y("highlight", "change", modo, "user");
       });
     });
     shell.querySelectorAll("[data-font-size]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        applyFontSize(btn.getAttribute("data-font-size"));
+        var paso = Number(btn.getAttribute("data-font-size"));
+        applyFontSize(paso);
         syncTools(shell);
+        if (FONT_KEYS[paso]) metricsA11y("font_size", "change", FONT_KEYS[paso], "user");
       });
     });
     var atajos = shell.querySelector("[data-shortcuts-open]");
@@ -1582,6 +1624,11 @@
           delete boton.dataset.evaLocateFallback;
           return;
         }
+        try {
+          if (window.ADTMetrics && typeof window.ADTMetrics.a11y === "function") {
+            window.ADTMetrics.a11y("glossary", "use", palabra, "user", { term_key: palabra });
+          }
+        } catch (e) {}
         window.location.href = href + "#glossary=" + encodeURIComponent(palabra);
       });
     },
