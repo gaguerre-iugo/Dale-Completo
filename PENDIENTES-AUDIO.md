@@ -1,7 +1,7 @@
 # Audios pendientes de regenerar (TTS)
 
 Fecha de registro: 2026-11-24
-Actualizado: 2026-11-26 (títulos, actividades 9, 10, 12, 13, 25 y 37; pendientes de pronunciación de Mateo: “coyote” y “ovejas”)
+Actualizado: 2026-11-27 (lectura fácil: 53 clips de Mateo y 94 de Lucía; “coyote” y “ovejas” resueltos en Mateo)
 
 Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-flash-lite-tts`**. No mezclar modelos por voz.
 
@@ -36,6 +36,15 @@ Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-fla
 | `pg072_sec001_ans_item-5` | `Tambor.` | Lucía y Mateo | Regenerada con voz propia; antes usaba un archivo compartido. |
 | `gl213` | `Pantalón.` | Mateo | Antes decía “pandalón”. |
 
+## Completados el 2026-11-27
+
+| Tanda | Detalle | Estado |
+|---|---|---|
+| Lectura fácil — Mateo | 53 clips pendientes | **Completo**: 252 de 252 con archivo propio. |
+| Lectura fácil — Lucía | 97 clips pendientes | **94 generados**; quedan 3 por el límite diario de 100 solicitudes. |
+| Coyote — Mateo | `pg037_sec001_ans_item-8`, `pg037_n0016`, `gl072`, `pg037_s2_easy_read`, `pg040_s2_easy_read` | Regenerados con la grafía “coshote”; verificado 2/2 que suena con sh. |
+| Ovejas — Mateo | `pg067_n0024`, `pg067_s2_easy_read` y `gl218_def` | Regenerados; “ovejas” verificado 2/2 (antes decía “ovecas/bejas”). La lectura fácil quedó incluida en la tanda. |
+
 ## Otros arreglos
 
 - Actividad 11: se quitó el fondo blanco de images/pg061_im004.png (escoba).
@@ -53,89 +62,25 @@ Regla del libro: **Lucía = `gemini-3.8-flash-tts`** y **Mateo = `gemini-3.8-fla
 
 ## Pendiente
 
-### Pronunciación — Mateo: “coyote”
+### Lectura fácil — Lucía (3)
 
-En Mateo la palabra **COYOTE** suena “co-ió-te” (COIOTE) y debería sonar “co-shó-te” (COSHOTE, con la ye rioplatense). Afecta a las actividades **30** y **33**, que comparten audios.
+El 2026-11-27 Lucía alcanzó el límite diario de 100 solicitudes. Faltan estos 3 clips:
 
-| ID | Dónde aparece | Archivo |
-|---|---|---|
-| `pg037_sec001_ans_item-8` | Tarjeta COYOTE (la usan también `pg040_sec001_ans_item-4` en la 33) | `voices/consultor/audio/pg037_sec001_ans_item-8.mp3` |
-| `pg037_n0016` | Lista “GALERA, GANADO, CADENA, COYOTE” (también `pg040_n0013`) | `voices/consultor/audio/pg037_n0016.mp3` |
-| `gl072` | Glosario: “coyote” | `voices/consultor/audio/gl072.mp3` |
-| `pg037_s2_easy_read` | Lectura fácil de la actividad 30 (dice COYOTE dos veces) | `voices/consultor/audio/pg037_s2_easy_read.mp3` |
-| `pg040_s2_easy_read` | Lectura fácil de la actividad 33 (dice COYOTE dos veces) | `voices/consultor/audio/pg040_s2_easy_read.mp3` |
+- `text-pg026-26_easy_read`
+- `text-pg027-31_easy_read`
+- `text-pg027-32_easy_read`
 
-- Corrección: regenerar con grafía fonética “coshote” (como se hizo con “Shusho”) o empalmar el fragmento; después verificar por transcripción que no diga “coyote/coiote”.
-- Lucía fue revisada y no presenta el mismo problema; no tocar sus clips.
-
-### Pronunciación — Mateo: “ovejas”
-
-En la actividad **18, parte 2** (`pg067_sec001.html`) Mateo lee la definición “Persona que cría cabras u ovejas” y dice “**persona que queria cabras u ovecas**”: cambia “ovejas” por “ovecas” y “cría” por “quería”.
-
-| ID | Texto | Archivo |
-|---|---|---|
-| `pg067_n0024` | `Persona que cría cabras u ovejas.` | `voices/consultor/audio/pg067_n0024.mp3` |
-
-- Esperado: “ovejas” con j suave (no “ovecas”) y “cría” bien acentuado.
-- La lectura fácil `pg067_s2_easy_read` incluye la misma definición y todavía no tiene clip propio de Mateo; al generarlo, verificar que diga “ovejas”.
-- Regenerar el clip y confirmar por transcripción antes de darlo por cerrado.
+Mateo ya tiene los 252 clips de lectura fácil; Lucía tiene 249 de 252.
 
 Nota: el libro usa **252** clips de lectura fácil.
+
+- El detalle de esta tanda está en `pendientes_easy_read.json`.
+- La lectura normal, las tarjetas y las consignas usan siempre Lucía o Mateo.
 
 ### Otras consignas
 
 - `text-pg017-22` — Consigna de la letra C: revisar el mismo caso del sonido /c/.
 - `pg073_n0032` — **Resuelto**: la consigna de la actividad 25 ya dice el fonema /k/, no “ka”.
-
-### Lectura fácil — Mateo (53)
-
-Faltan estos clips. Los otros 199 del total de 252 ya tienen archivo propio de Mateo.
-
-```
-pg062_s2_easy_read, pg063_n0007_easy_read, pg063_n0012_easy_read, pg063_n0014_easy_read, pg063_s2_easy_read
-pg064_n0006_easy_read, pg064_n0011_easy_read, pg064_n0045_easy_read, pg064_n0047_easy_read, pg064_s2_easy_read
-pg065_n0007_easy_read, pg065_n0012_easy_read, pg065_n0014_easy_read, pg065_s2_easy_read, pg066_n0010_easy_read
-pg066_n0012_easy_read, pg066_s2_easy_read, pg067_n0009_easy_read, pg067_n0011_easy_read, pg067_s2_easy_read
-pg068_n0010_easy_read, pg068_n0012_easy_read, pg068_s2_easy_read, pg069_n0009_easy_read, pg069_n0011_easy_read
-pg069_n0013_easy_read, pg069_s2_easy_read, pg070_n0007_easy_read, pg070_n0014_easy_read, pg070_s2_easy_read
-pg071_n0007_easy_read, pg071_n0010_easy_read, pg071_n0012_easy_read, pg071_n0014_easy_read, pg071_s2_easy_read
-pg074_n0007_easy_read, pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read, pg075_n0014_easy_read
-pg075_n0016_easy_read, pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read, pg076_s2_easy_read
-pg078_n0002_easy_read, pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read, text-pg017-22_easy_read
-text-pg026-26_easy_read, text-pg027-31_easy_read, text-pg027-32_easy_read
-```
-
-### Lectura fácil — Lucía (97)
-
-Faltan estos clips. Los otros 155 del total de 252 ya tienen archivo propio de Lucía.
-
-```
-pg050_n0009_easy_read, pg050_n0010_easy_read, pg050_s2_easy_read, pg051_n0009_easy_read, pg051_n0013_easy_read
-pg051_n0015_easy_read, pg051_s2_easy_read, pg053_n0010_easy_read, pg053_n0014_easy_read, pg053_n0016_easy_read
-pg053_s2_easy_read, pg054_n0007_easy_read, pg054_n0014_easy_read, pg054_s2_easy_read, pg055_n0010_easy_read
-pg055_n0012_easy_read, pg055_n0016_easy_read, pg055_s2_easy_read, pg056_n0009_easy_read, pg056_n0015_easy_read
-pg056_n0017_easy_read, pg056_s2_easy_read, pg057_n0010_easy_read, pg057_n0012_easy_read, pg057_n0014_easy_read
-pg057_s2_easy_read, pg058_n0010_easy_read, pg058_n0012_easy_read, pg058_s2_easy_read, pg059_n0007_easy_read
-pg059_n0014_easy_read, pg059_s2_easy_read, pg060_n0007_easy_read, pg060_n0012_easy_read, pg060_n0014_easy_read
-pg060_s2_easy_read, pg061_n0008_easy_read, pg061_n0010_easy_read, pg061_n0012_easy_read, pg061_s2_easy_read
-pg062_n0009_easy_read, pg062_n0013_easy_read, pg062_n0015_easy_read, pg062_n0017_easy_read, pg062_s2_easy_read
-pg063_n0007_easy_read, pg063_n0012_easy_read, pg063_n0014_easy_read, pg063_s2_easy_read, pg064_n0006_easy_read
-pg064_n0011_easy_read, pg064_n0045_easy_read, pg064_n0047_easy_read, pg064_s2_easy_read, pg065_n0007_easy_read
-pg065_n0012_easy_read, pg065_n0014_easy_read, pg065_s2_easy_read, pg066_n0010_easy_read, pg066_n0012_easy_read
-pg066_s2_easy_read, pg067_n0009_easy_read, pg067_n0011_easy_read, pg067_s2_easy_read, pg068_n0010_easy_read
-pg068_n0012_easy_read, pg068_s2_easy_read, pg069_n0009_easy_read, pg069_n0011_easy_read, pg069_n0013_easy_read
-pg069_s2_easy_read, pg070_n0007_easy_read, pg070_n0014_easy_read, pg070_s2_easy_read, pg071_n0007_easy_read
-pg071_n0010_easy_read, pg071_n0012_easy_read, pg071_n0014_easy_read, pg071_s2_easy_read, pg074_n0007_easy_read
-pg074_n0014_easy_read, pg074_s2_easy_read, pg075_n0007_easy_read, pg075_n0014_easy_read, pg075_n0016_easy_read
-pg075_s2_easy_read, pg076_n0010_easy_read, pg076_n0012_easy_read, pg076_s2_easy_read, pg078_n0002_easy_read
-pg078_n0003_easy_read, text-pg014-126_easy_read, text-pg016-27_easy_read, text-pg017-22_easy_read, text-pg026-26_easy_read
-text-pg027-31_easy_read, text-pg027-32_easy_read
-```
-
-- La lista completa también está en `pendientes_easy_read.json`.
-- Hoy se generaron **91 clips de Mateo** y **97 de Lucía**. Mateo llegó al límite diario de la API.
-- Quedan **53 de Mateo** y **97 de Lucía** para la próxima tanda.
-- La lectura normal, las tarjetas y las consignas usan siempre Lucía o Mateo.
 
 ## Verificación
 
